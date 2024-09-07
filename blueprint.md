@@ -1,67 +1,34 @@
 ```mermaid
-graph TD
-    subgraph Kundenaktionen
-        A1[Anmeldung/Registrierung] --> A2[Suche nach Equipment]
-        A2 --> A3[Auswahl des Equipments]
-        A3 --> A4[Ausleihe beantragen]
-        A4 --> A5[Genehmigung abwarten]
-        A5 --> A6[Equipment abholen]
-        A6 --> A7[Equipment nutzen]
-        A7 --> A8[Equipment zurückgeben]
+graph LR
+
+    subgraph Support processes
+        D1[Benutzer-DB] --> D2[Equipment-DB] --> D3[Ausleih-Verwaltung] --> D4[Genehmigungs-Workflow] --> D5[" "] --> D6[" "] --> D7[Erinnerungs-System] --> D8[Reporting-Tool]
     end
 
-    subgraph Mitarbeiterkontakt
-        B1[Unterstützung bei Registrierung] --> B2[Beratung zu Equipment]
-        B2 --> B3[Entgegennahme des Antrags]
-        B3 --> B4[Übergabe des Equipments]
-        B4 --> B5[Rücknahme und Prüfung]
+    subgraph Backstage actions
+        C1[Benutzerkonten verwalten] --> C2[Equipmentdatenbank pflegen] --> C3[Anträge prüfen] --> C4[Genehmigungen einholen] --> C5[Verfügbarkeit prüfen] --> C6[" "] --> C7[Erinnerungen versenden] --> C8[Rückgaben verfolgen]
     end
 
-    subgraph Unterstützungsprozesse
-        C1[Benutzerkonten verwalten] --> C2[Equipmentdatenbank pflegen]
-        C2 --> C3[Anträge prüfen]
-        C3 --> C4[Genehmigungen einholen]
-        C4 --> C5[Verfügbarkeit prüfen]
-        C5 --> C6[Erinnerungen versenden]
-        C6 --> C7[Rückgaben verfolgen]
+    subgraph Frontstage actions
+        B1[Unterstützung bei Anmeldung] --> B2[Beratung zu Equipment] --> B3[Entgegennahme des Antrags] --> B4[" "] --> B5[" "] --> B6[Übergabe des Equipments] --> B7[" "] --> B8[Rücknahme und Prüfung]
     end
 
-    subgraph IT-Systeme
-        D1[Benutzer-DB] --> D2[Equipment-DB]
-        D2 --> D3[Ausleih-Verwaltung]
-        D3 --> D4[Genehmigungs-Workflow]
-        D4 --> D5[Erinnerungs-System]
-        D5 --> D6[Reporting-Tool]
+    subgraph The customer's actions
+        A1[Anmeldung] --> A2[Suche nach Equipment] --> A3[Auswahl des Equipments] --> A4[Ausleihe beantragen] --> A5[Genehmigung abwarten] --> A6[Equipment abholen] --> A7[Equipment nutzen] --> A8[Equipment zurückgeben]
     end
 
-    %% Verbindungen zwischen den Ebenen
-    A1 -.-> B1
-    A2 -.-> B2
-    A3 -.-> B2
-    A4 -.-> B3
-    A6 -.-> B4
-    A8 -.-> B5
+    A1 -.- B1 -.- C1 -.- D1
+    A2 -.- B2 -.- C2 -.- D2
+    A3 -.- B3 -.- C3 -.- D3
+    A4 -.- B4 -.- C4 -.- D4
+    A5 -.- B5 -.- C5 -.- D5
+    A6 -.- B6 -.- C6 -.- D6
+    A7 -.- B7 -.- C7 -.- D7
+    A8 -.- B8 -.- C8
 
-    B1 -.-> C1
-    B2 -.-> C2
-    B3 -.-> C3
-    B4 -.-> C5
-    B5 -.-> C7
-
-    C1 -.-> D1
-    C2 -.-> D2
-    C3 -.-> D3
-    C4 -.-> D4
-    C5 -.-> D2
-    C6 -.-> D5
-    C7 -.-> D6
-
-    %% Legende
-    classDef defaultStyle fill:#f9f,stroke:#333,stroke-width:2px;
-    class A1,A2,A3,A4,A5,A6,A7,A8 defaultStyle;
-    class B1,B2,B3,B4,B5 defaultStyle;
-    class C1,C2,C3,C4,C5,C6,C7 defaultStyle;
-    class D1,D2,D3,D4,D5,D6 defaultStyle;
+    classDef default fill:#00b1ab,stroke:#333,stroke-width:1px,color:#000;
+    classDef invisible fill:#ffffff,stroke:#ffffff,color:#000;
+    class D5,D6,B4,B5,B7,C6 invisible;
 
 
 ```
