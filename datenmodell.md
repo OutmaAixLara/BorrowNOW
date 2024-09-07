@@ -30,9 +30,9 @@ erDiagram
         choice equipment FK "References u_equipment"
         choice borrower FK "References u_borrower"
         choice lender FK "References u_lender"
-        datetime start_date
-        datetime end_date
-        datetime actual_return_date
+        date start_date
+        date end_date
+        date actual_return_date
         choice status
         choice approval_status
     }
@@ -40,7 +40,7 @@ erDiagram
     u_reminder {
         string sys_id PK
         string loan FK "References u_loan"
-        datetime reminder_date
+        date reminder_date
         choice status
     }
 
