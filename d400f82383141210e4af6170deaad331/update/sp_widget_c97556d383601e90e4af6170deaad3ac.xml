@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+    $scope.selectedEquipment = null;
+    $scope.availableEquipments = [];
+    $scope.errorMessage = '';
+
+    function getToday() {
+        var today = new Date();
+        return today.toISOString().split('T')[0];  // Format YYYY-MM-DD
+    }
+
+    function getReturnDate() {
+        var today = new Date();
+        today.setDate(today.getDate() + 7);  // Eine Woche hinzufügen
+        return today.toISOString().split('T')[0];  // Format YYYY-MM-DD
+    }
+
+    $scope.loadAvailableEquipments = function() {
+        $scope.availableEquipments = $scope.data.availableEquipments;
+    };
+
+    $scope.selectEquipment = function(equipmentId) {
+        $scope.selectedEquipment = equipmentId;
+        $scope.addLoan();  // Direkt nach Auswahl ausleihen
+    };
+
+    $scope.addLoan = function() {
+        if (!$scope.selectedEquipment) {
+            $scope.errorMessage = "Bitte wählen Sie ein Equipment aus.";
+            return;
+        }
+
+        var loanData = {
+            equipment: $scope.selectedEquipment,
+            user: $scope.data.userId,  // Benutze die vom Server bereitgestellte Benutzer-ID
+            ausleihdatum: getToday(),
+            ruckgabedatum: getReturnDate()
+        };
+
+        $http.post('/api/now/table/x_1521148_borrowno_ausleihe', loanData)
+            .then(function(response) {
+                alert('Ausleihe erfolgreich hinzugefügt!');
+                $scope.selectedEquipment = null;
+                $scope.errorMessage = '';
+                $scope.loadAvailableEquipments();
+								location.reload();
+            });
+    };
+
+    // Initiale Daten laden
+    $scope.loadAvailableEquipments();
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Container für die verfügbaren Ausrüstungen */&#13;
+.available-equipments-container {&#13;
+    margin: 20px;&#13;
+    font-family: Arial, sans-serif;&#13;
+}&#13;
+&#13;
+/* Titel der Sektion */&#13;
+.section-title {&#13;
+    font-size: 24px;&#13;
+    font-weight: bold;&#13;
+    color: #333;&#13;
+    margin-bottom: 20px;&#13;
+    border-bottom: 2px solid #007bff;&#13;
+    padding-bottom: 10px;&#13;
+}&#13;
+&#13;
+/* Container für die Ausrüstungs-Liste */&#13;
+.equipments-list {&#13;
+    background-color: #ffffff;&#13;
+    border-radius: 8px;&#13;
+    padding: 15px;&#13;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);&#13;
+}&#13;
+&#13;
+/* Listenelemente für die Ausrüstungen */&#13;
+.list-group-item {&#13;
+    display: flex;&#13;
+    justify-content: space-between;&#13;
+    align-items: center;&#13;
+    border: 1px solid #ddd;&#13;
+    border-radius: 8px;&#13;
+    margin-bottom: 10px;&#13;
+    padding: 15px;&#13;
+    background-color: #f9f9f9;&#13;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;&#13;
+}&#13;
+&#13;
+.list-group-item:hover {&#13;
+    background-color: #f1f1f1;&#13;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);&#13;
+}&#13;
+&#13;
+/* Info-Bereich für die Ausrüstung */&#13;
+.equipment-info {&#13;
+    flex: 1;&#13;
+    margin-right: 15px;&#13;
+}&#13;
+&#13;
+.equipment-name {&#13;
+    font-size: 18px;&#13;
+    margin: 0;&#13;
+    color: #333;&#13;
+    font-weight: bold;&#13;
+}&#13;
+&#13;
+.equipment-description {&#13;
+    font-size: 14px;&#13;
+    color: #666;&#13;
+    margin: 5px 0;&#13;
+}&#13;
+&#13;
+/* Stil für die Buttons */&#13;
+.btn-primary {&#13;
+    background-color: #007bff;&#13;
+    border-color: #007bff;&#13;
+    color: #ffffff;&#13;
+    border-radius: 20px;&#13;
+    padding: 8px 16px;&#13;
+    font-size: 14px;&#13;
+    text-transform: uppercase;&#13;
+    transition: background-color 0.3s ease, border-color 0.3s ease;&#13;
+}&#13;
+&#13;
+.btn-primary:hover {&#13;
+    background-color: #0056b3;&#13;
+    border-color: #004085;&#13;
+}&#13;
+&#13;
+/* Nachricht, wenn keine Ausrüstungen verfügbar sind */&#13;
+.no-equipments-message, .error-message {&#13;
+    margin: 20px 0;&#13;
+    border-radius: 8px;&#13;
+    padding: 15px;&#13;
+    font-size: 16px;&#13;
+    text-align: center;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    justify-content: center;&#13;
+}&#13;
+&#13;
+.no-equipments-message i, .error-message i {&#13;
+    margin-right: 10px;&#13;
+}&#13;
+&#13;
+.no-equipments-message {&#13;
+    background-color: #d1ecf1;&#13;
+    color: #0c5460;&#13;
+}&#13;
+&#13;
+.error-message {&#13;
+    background-color: #f8d7da;&#13;
+    color: #721c24;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Hinzufügen einer Ausleihe</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>ausleihe_hinzufugen_einer_ausleihe</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Hinzufügen einer Ausleihe</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var userId = gs.getUserID(); // Benutzer-ID des aktuellen Benutzers
+
+    // Funktion zum Abrufen von verfügbarem Equipment
+    function getAvailableEquipments() {
+        var equipmentGR = new GlideRecord('x_1521148_borrowno_u_equipment');
+        equipmentGR.addQuery('verfugbarkeit', 'verfugbar'); // Equipment muss verfügbar sein
+        equipmentGR.addQuery('zustand', 'in_ordnung'); // Zustand muss in Ordnung sein
+
+        // Equipment darf nicht bereits angefragt sein
+        var requestedGR = new GlideRecord('x_1521148_borrowno_ausleihe');
+        requestedGR.addQuery('status', 'angefragt');
+        requestedGR.query();
+        var requestedEquipmentIds = [];
+        while (requestedGR.next()) {
+            requestedEquipmentIds.push(requestedGR.equipment.toString());
+        }
+
+        if (requestedEquipmentIds.length > 0) {
+            equipmentGR.addQuery('sys_id', 'NOT IN', requestedEquipmentIds.join(','));
+        }
+
+        equipmentGR.query();
+        var availableEquipments = [];
+        while (equipmentGR.next()) {
+            availableEquipments.push({
+                sys_id: equipmentGR.sys_id.toString(),
+                name: equipmentGR.name.getDisplayValue(),
+                beschreibung: equipmentGR.beschreibung.getDisplayValue()
+            });
+        }
+
+        return availableEquipments;
+    }
+
+    // Rückgabe der gefilterten Daten
+    data.availableEquipments = getAvailableEquipments();
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 10:38:44</sys_created_on>
+        <sys_id>c97556d383601e90e4af6170deaad3ac</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Hinzufügen einer Ausleihe</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_c97556d383601e90e4af6170deaad3ac</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-17 14:47:47</sys_updated_on>
+        <template><![CDATA[<div class="available-equipments-container">
+    <h3 class="section-title">Verfügbare Ausrüstungen</h3>
+    
+    <div ng-if="availableEquipments.length > 0" class="equipments-list">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="equipment in availableEquipments">
+                <div class="equipment-info">
+                    <h4 class="equipment-name">{{equipment.name}}</h4>
+                    <p class="equipment-description">{{equipment.beschreibung}}</p>
+                </div>
+                <button class="btn btn-primary btn-sm" ng-click="selectEquipment(equipment.sys_id)">
+                    Ausleihe hinzufügen
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-if="availableEquipments.length === 0" class="no-equipments-message">
+        <i class="fa fa-info-circle"></i> Keine verfügbaren Ausrüstungen gefunden.
+    </div>
+
+    <div ng-if="errorMessage" class="error-message">
+        <i class="fa fa-exclamation-circle"></i> {{errorMessage}}
+    </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

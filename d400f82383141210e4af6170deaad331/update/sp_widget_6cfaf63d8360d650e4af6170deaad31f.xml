@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};
+// Client Script to fetch user roles and display buttons
+function onLoad() {
+    var ga = new GlideAjax('x_1521148_borrowno.UserRoleFetcher');
+    ga.addParam('sysparm_name', 'getUserRoles');
+    ga.getXMLAnswer(function(response) {
+        var roles = JSON.parse(response);
+        console.log('Roles:', roles); // Debugging: Check if roles are correctly fetched
+
+  /*      // Show buttons based on roles
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user')) {
+            document.getElementById('verleiher-button').style.display = 'inline-block';
+        }
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+            document.getElementById('ausleiher-button').style.display = 'inline-block';
+        }
+    */
+ });
+    // Handle button clicks
+    document.getElementById('verleiher-button').addEventListener('click', function() {
+        window.location.href = '/bn?id=verleiher_dashboard'; // Redirect to Verleiher Dashboard
+    });
+
+    document.getElementById('ausleiher-button').addEventListener('click', function() {
+        window.location.href = '/bn?id=ausleiher_dashboard'; // Redirect to Ausleiher Dashboard
+    });
+}
+
+// Ensure the onLoad function is called when the document is ready
+document.addEventListener('DOMContentLoaded', onLoad);
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>:root {
+            --primary-color: #00b1ab;
+            --primary-light: #00d6cf;
+            --primary-dark: #008c87;
+            --background-color: #f5f7fa;
+            --text-color: #333;
+            --accent-color: #ff6b6b;
+        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #00b1ab;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.equipment-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.equipment-item {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.equipment-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.equipment-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #008c87;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+.equipment-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.equipment-item:hover .equipment-info {
+    opacity: 1;
+}
+
+h1 {
+    color: white; /* Main color for headings */
+}
+
+.equipment-info h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.equipment-info p {
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #00b1ab;
+    color: white;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>equipment_page</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Equipment Page</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[var UserRoleFetcher = Class.create();
+UserRoleFetcher.prototype = {
+    initialize: function() {},
+    
+    getUserRoles: function() {
+        var user = gs.getUser();
+        var roles = user.getRoles();
+        var customRoles = [];
+        
+        if (roles.contains('admin')) {
+            customRoles.push('admin');
+        }
+        if (roles.contains('x_1521148_borrowno.verleiher_user')) {
+            customRoles.push('verleiher');
+        }
+        if (roles.contains('x_1521148_borrowno.ausleiher_user')) {
+            customRoles.push('ausleiher');
+        }
+        
+        return JSON.stringify(customRoles);
+    },
+
+    type: 'UserRoleFetcher'
+};]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 21:18:10</sys_created_on>
+        <sys_id>6cfaf63d8360d650e4af6170deaad31f</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>Equipment Page</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_6cfaf63d8360d650e4af6170deaad31f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-17 14:17:28</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vorgestellte Ausrüstung</title>
+    <link rel="stylesheet" href="equipments.css"> 
+  
+</head>
+<body>
+
+    <header>
+        <h1>Entdecken Sie unsere Ausrüstung</h1>
+        <p>Wir bieten eine breite Palette an Ausrüstung für Ihre Projekte und Studienbedürfnisse. Bewegen Sie die Maus über jeden Artikel, um mehr zu erfahren!</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="?id=equipment_rental_home">Startseite</a></li>
+            <li><a href="?id=about_us">Über uns</a></li>
+            <li><a href="?id=equipment">Katalog</a></li>
+            <li><a href="?id=contact">Kontakt</a></li>
+            <li><a href="/bn?id=verleiher_dashboard" id="verleiherLink" style="display: none;">Verleiher-Dashboard</a></li>
+            <li><a href="/bn?id=ausleiher_dashboard" id="ausleiherLink" style="display: none;">Ausleiher-Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="equipment-gallery">
+        <div class="equipment-item">
+            <img src="x_1521148_borrowno.Books.png" alt="Bücher">
+            <div class="equipment-info">
+                <h2>Bücher</h2>
+                <p>Wir haben eine umfangreiche Sammlung von Studienmaterialien, Zeitschriften und Literatur. Von Fachbüchern bis hin zur Freizeitlektüre finden Sie hier alles, was Sie brauchen.</p>
+            </div>
+        </div>
+
+        <div class="equipment-item">
+            <img src="x_1521148_borrowno.projectors.png" alt="Projektoren">
+            <div class="equipment-info">
+                <h2>Projektoren</h2>
+                <p>Hochwertige Projektoren, die sich ideal für Präsentationen, Vorträge und Workshops eignen. Erhältlich in verschiedenen Auflösungen und Helligkeitsstufen.</p>
+            </div>
+        </div>
+
+        <div class="equipment-item">
+            <img src="x_1521148_borrowno.Laptops.png" alt="Laptops">
+            <div class="equipment-info">
+                <h2>Laptops</h2>
+                <p>Wir bieten Laptops von Top-Marken wie Dell, HP und Apple, ausgestattet mit der neuesten Software für Ihre akademischen Anforderungen.</p>
+            </div>
+        </div>
+
+        <div class="equipment-item">
+            <img src="x_1521148_borrowno.Boards.png" alt="Arduino Boards">
+            <div class="equipment-info">
+                <h2>Arduino Boards</h2>
+                <p>Perfekt für Elektronikprojekte! Wir bieten Arduino Uno-, Mega- und Nano-Versionen für all Ihre Prototyping-Bedürfnisse an.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 FH Aachen - Ausrüstungsverleih-Portal. Alle Rechte vorbehalten.</p>
+    </footer>
+      <script>
+    // Fetch user roles and display buttons based on roles
+    var ga = new GlideAjax('x_1521148_borrowno.UserRoleFetcher');
+    ga.addParam('sysparm_name', 'getUserRoles');
+    ga.getXMLAnswer(function(response) {
+        var roles = JSON.parse(response);
+        console.log('Rollen:', roles); // Debugging: Überprüfen, ob Rollen korrekt abgerufen werden
+
+        // Show links based on roles
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user')) {
+            document.getElementById('verleiherLink').style.display = 'inline-block';
+        }
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+            document.getElementById('ausleiherLink').style.display = 'inline-block';
+        }
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+        document.getElementById('verleiherLink').style.display = 'inline-block';
+        document.getElementById('ausleiherLink').style.display = 'inline-block';
+        }
+           });
+    </script>
+</body>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

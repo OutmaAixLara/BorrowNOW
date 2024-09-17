@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>false</admin_overrides>
+        <advanced>true</advanced>
+        <condition/>
+        <description>Default access control on x_1521148_borrowno_ausleihe</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1521148_borrowno_ausleihe</name>
+        <operation display_value="read">read</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 11:52:10</sys_created_on>
+        <sys_id>8230375183e4de10e4af6170deaad3c1</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>x_1521148_borrowno_ausleihe</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_security_acl_8230375183e4de10e4af6170deaad3c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 12:07:43</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

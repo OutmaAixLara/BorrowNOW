@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_dictionary action="DELETE" element="zugewiesenes_equipment" table="x_1521148_borrowno_verleiher">
+        <active>true</active>
+        <array>false</array>
+        <attributes/>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Zugewiesenes Equipment</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>zugewiesenes_equipment</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <internal_type display_value="">glide_list</internal_type>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <name>x_1521148_borrowno_verleiher</name>
+        <next_element/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_dictionary</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 12:05:50</sys_created_on>
+        <sys_id>0eb0ff1183e4de10e4af6170deaad3b1</sys_id>
+        <sys_name>Zugewiesenes Equipment</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_dictionary_x_1521148_borrowno_verleiher_zugewiesenes_equipment</sys_update_name>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-09 12:28:51</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_dictionary>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_dictionary_x_1521148_borrowno_verleiher_zugewiesenes_equipment</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update&gt;&lt;sys_dictionary action="INSERT_OR_UPDATE" element="zugewiesenes_equipment" table="x_1521148_borrowno_verleiher"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes/&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Zugewiesenes Equipment&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;zugewiesenes_equipment&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;internal_type display_value=""&gt;glide_list&lt;/internal_type&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;40&lt;/max_length&gt;&lt;name&gt;x_1521148_borrowno_verleiher&lt;/name&gt;&lt;next_element/&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_dictionary&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ahmed&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-09 12:05:50&lt;/sys_created_on&gt;&lt;sys_id&gt;0eb0ff1183e4de10e4af6170deaad3b1&lt;/sys_id&gt;&lt;sys_name&gt;Zugewiesenes Equipment&lt;/sys_name&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_dictionary_x_1521148_borrowno_verleiher_zugewiesenes_equipment&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ahmed&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-09 12:28:51&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_dictionary&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>554408224</payload_hash>
+        <record_name>u_verleiher.Zugewiesenes Equipment</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 12:28:51</sys_created_on>
+        <sys_id>e3983b5583a8de10e4af6170deaad339</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191d6c21f290000001</sys_recorded_at>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-09 12:28:51</sys_updated_on>
+        <type>Dictionary</type>
+        <update_guid>ab983b553fa8de102629b86dfd6a1c38</update_guid>
+        <update_guid_history>ab983b553fa8de102629b86dfd6a1c38:554408224,1a53f7d50e28de102e3799cb2b2dd4cf:-1019761622</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-15 13:32:16</sys_created_on>
+        <sys_db_object display_value="" name="sys_dictionary">sys_dictionary</sys_db_object>
+        <sys_id>71fbe61f24564b96bcfe4ac867d12924</sys_id>
+        <sys_metadata>0eb0ff1183e4de10e4af6170deaad3b1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Zugewiesenes Equipment</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent display_value="">ae80735d83a4de10e4af6170deaad3fa</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_dictionary_x_1521148_borrowno_verleiher_zugewiesenes_equipment</sys_update_name>
+        <sys_update_version display_value="sys_dictionary_x_1521148_borrowno_verleiher_zugewiesenes_equipment">e3983b5583a8de10e4af6170deaad339</sys_update_version>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-15 13:32:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

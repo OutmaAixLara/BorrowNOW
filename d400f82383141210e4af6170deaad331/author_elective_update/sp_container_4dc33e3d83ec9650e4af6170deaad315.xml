@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Lender Management - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="lender_management">76f27a7983ec9650e4af6170deaad3ce</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 20:45:00</sys_created_on>
+        <sys_id>4dc33e3d83ec9650e4af6170deaad315</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Lender Management - Container 1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_container_4dc33e3d83ec9650e4af6170deaad315</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 20:45:00</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_container_4dc33e3d83ec9650e4af6170deaad315</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Lender Management - Container 1</name><order>1</order><semantic_tag/><sp_page display_value="lender_management">76f27a7983ec9650e4af6170deaad3ce</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-10 20:45:00</sys_created_on><sys_id>4dc33e3d83ec9650e4af6170deaad315</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Lender Management - Container 1</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_container_4dc33e3d83ec9650e4af6170deaad315</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-10 20:45:00</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>332724955</payload_hash>
+        <record_name>Lender Management - Container 1</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 20:45:00</sys_created_on>
+        <sys_id>81c33e3d83ec9650e4af6170deaad319</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191ddaeb84b0000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 20:45:00</sys_updated_on>
+        <type>Container</type>
+        <update_guid>45c33e3d15ec9650d0f752fe0b534518</update_guid>
+        <update_guid_history>45c33e3d15ec9650d0f752fe0b534518:332724955</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Lender Management - Container 1">14e732318360d650e4af6170deaad34a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 21:03:00</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>a0c30b70fc344b74a99e80c201978f90</sys_id>
+        <sys_metadata>4dc33e3d83ec9650e4af6170deaad315</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Lender Management - Container 1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_container_4dc33e3d83ec9650e4af6170deaad315</sys_update_name>
+        <sys_update_version display_value="sp_container_4dc33e3d83ec9650e4af6170deaad315">81c33e3d83ec9650e4af6170deaad319</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 21:03:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

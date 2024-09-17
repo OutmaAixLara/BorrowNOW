@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_portal_page" unload_date="2024-09-17 16:43:59">
+    <sys_portal_page action="INSERT_OR_UPDATE">
+        <layout/>
+        <order/>
+        <read_roles/>
+        <roles/>
+        <selectable>false</selectable>
+        <sys_class_name>sys_portal_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 14:39:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>21664a4b83241a90e4af6170deaad384</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Tab 1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_portal_page_21664a4b83241a90e4af6170deaad384</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 14:39:12</sys_updated_on>
+        <title>New Tab 1</title>
+        <user/>
+        <view>new_tab_1</view>
+        <related_items_node>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone/>
+                <offset/>
+                <page display_value="New Tab 1">21664a4b83241a90e4af6170deaad384</page>
+                <summary>Ausleihe Overview</summary>
+                <sys_created_by>admin</sys_created_by>
+                <sys_created_on>2024-09-14 14:40:15</sys_created_on>
+                <sys_id>34a6c2cb83241a90e4af6170deaad3e2</sys_id>
+                <sys_mod_count>1</sys_mod_count>
+                <sys_updated_by>admin</sys_updated_by>
+                <sys_updated_on>2024-09-14 14:40:15</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2024-09-14 07:40:15">34a6c2cb83241a90e4af6170deaad3e2</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:40:15</sys_created_on>
+                        <sys_id>09a6c2cb83241a90e4af6170deaad3e3</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:40:15</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2024-09-14 07:40:15">34a6c2cb83241a90e4af6170deaad3e2</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:40:15</sys_created_on>
+                        <sys_id>41a6c2cb83241a90e4af6170deaad3e4</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:40:15</sys_updated_on>
+                        <value>Ausleihe Overview</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2024-09-14 07:40:15">34a6c2cb83241a90e4af6170deaad3e2</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:40:15</sys_created_on>
+                        <sys_id>45a6c2cb83241a90e4af6170deaad3e3</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:40:15</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2024-09-14 07:40:15">34a6c2cb83241a90e4af6170deaad3e2</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:40:15</sys_created_on>
+                        <sys_id>8da6c2cb83241a90e4af6170deaad3e3</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:40:15</sys_updated_on>
+                        <value>pie</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2024-09-14 07:40:15">34a6c2cb83241a90e4af6170deaad3e2</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:40:15</sys_created_on>
+                        <sys_id>c9a6c2cb83241a90e4af6170deaad3e3</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:40:15</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2024-09-14 07:40:15">34a6c2cb83241a90e4af6170deaad3e2</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:40:15</sys_created_on>
+                        <sys_id>f8a6c2cb83241a90e4af6170deaad3e2</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:40:15</sys_updated_on>
+                        <value>a84d75cb83a01a90e4af6170deaad3c5</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone/>
+                <offset/>
+                <page display_value="New Tab 1">21664a4b83241a90e4af6170deaad384</page>
+                <summary>Most Borrowed Equipment</summary>
+                <sys_created_by>admin</sys_created_by>
+                <sys_created_on>2024-09-15 13:29:37</sys_created_on>
+                <sys_id>4410cb9b83e81e90e4af6170deaad359</sys_id>
+                <sys_mod_count>1</sys_mod_count>
+                <sys_updated_by>admin</sys_updated_by>
+                <sys_updated_on>2024-09-15 13:29:37</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2024-09-15 06:29:37">4410cb9b83e81e90e4af6170deaad359</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-15 13:29:37</sys_created_on>
+                        <sys_id>0810cb9b83e81e90e4af6170deaad35a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-15 13:29:37</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2024-09-15 06:29:37">4410cb9b83e81e90e4af6170deaad359</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-15 13:29:37</sys_created_on>
+                        <sys_id>4010cb9b83e81e90e4af6170deaad35b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-15 13:29:37</sys_updated_on>
+                        <value>Most Borrowed Equipment</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2024-09-15 06:29:37">4410cb9b83e81e90e4af6170deaad359</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-15 13:29:37</sys_created_on>
+                        <sys_id>4410cb9b83e81e90e4af6170deaad35a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-15 13:29:37</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2024-09-15 06:29:37">4410cb9b83e81e90e4af6170deaad359</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-15 13:29:37</sys_created_on>
+                        <sys_id>8c10cb9b83e81e90e4af6170deaad35a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-15 13:29:37</sys_updated_on>
+                        <value>bar</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2024-09-15 06:29:37">4410cb9b83e81e90e4af6170deaad359</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-15 13:29:37</sys_created_on>
+                        <sys_id>c810cb9b83e81e90e4af6170deaad359</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-15 13:29:37</sys_updated_on>
+                        <value>d9ff369b83e81e90e4af6170deaad32f</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2024-09-15 06:29:37">4410cb9b83e81e90e4af6170deaad359</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-15 13:29:37</sys_created_on>
+                        <sys_id>c810cb9b83e81e90e4af6170deaad35a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-15 13:29:37</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone/>
+                <offset/>
+                <page display_value="New Tab 1">21664a4b83241a90e4af6170deaad384</page>
+                <summary>Equipment Availability</summary>
+                <sys_created_by>admin</sys_created_by>
+                <sys_created_on>2024-09-14 14:44:51</sys_created_on>
+                <sys_id>d4b7424f83241a90e4af6170deaad32a</sys_id>
+                <sys_mod_count>1</sys_mod_count>
+                <sys_updated_by>admin</sys_updated_by>
+                <sys_updated_on>2024-09-14 14:44:51</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2024-09-14 07:44:51">d4b7424f83241a90e4af6170deaad32a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:44:51</sys_created_on>
+                        <sys_id>14b7424f83241a90e4af6170deaad32b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:44:51</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2024-09-14 07:44:51">d4b7424f83241a90e4af6170deaad32a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:44:51</sys_created_on>
+                        <sys_id>50b7424f83241a90e4af6170deaad32b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:44:51</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2024-09-14 07:44:51">d4b7424f83241a90e4af6170deaad32a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:44:51</sys_created_on>
+                        <sys_id>58b7424f83241a90e4af6170deaad32a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:44:51</sys_updated_on>
+                        <value>cb87060f83241a90e4af6170deaad308</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2024-09-14 07:44:51">d4b7424f83241a90e4af6170deaad32a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:44:51</sys_created_on>
+                        <sys_id>98b7424f83241a90e4af6170deaad32b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:44:51</sys_updated_on>
+                        <value>Equipment Availability</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2024-09-14 07:44:51">d4b7424f83241a90e4af6170deaad32a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:44:51</sys_created_on>
+                        <sys_id>9cb7424f83241a90e4af6170deaad32a</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:44:51</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2024-09-14 07:44:51">d4b7424f83241a90e4af6170deaad32a</portal_section>
+                        <sys_created_by>admin</sys_created_by>
+                        <sys_created_on>2024-09-14 14:44:51</sys_created_on>
+                        <sys_id>d4b7424f83241a90e4af6170deaad32b</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>admin</sys_updated_by>
+                        <sys_updated_on>2024-09-14 14:44:51</sys_updated_on>
+                        <value>pie</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+        </related_items_node>
+    </sys_portal_page>
+</record_update>

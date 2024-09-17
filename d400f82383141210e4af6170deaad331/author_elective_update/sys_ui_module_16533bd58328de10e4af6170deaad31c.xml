@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="Verleiher">5253f7d58328de10e4af6170deaad3da</application>
+        <filter/>
+        <name>Verleihers</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_1521148_borrowno.verleiher_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 12:05:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>16533bd58328de10e4af6170deaad31c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Verleihers</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_ui_module_16533bd58328de10e4af6170deaad31c</sys_update_name>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-09 12:05:51</sys_updated_on>
+        <table>x_1521148_borrowno_verleiher</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_ui_module_16533bd58328de10e4af6170deaad31c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Verleiher">5253f7d58328de10e4af6170deaad3da</application><filter/><name>Verleihers</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_1521148_borrowno.verleiher_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>ahmed</sys_created_by><sys_created_on>2024-09-09 12:05:51</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>16533bd58328de10e4af6170deaad31c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Verleihers</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sys_ui_module_16533bd58328de10e4af6170deaad31c</sys_update_name><sys_updated_by>ahmed</sys_updated_by><sys_updated_on>2024-09-09 12:05:51</sys_updated_on><table>x_1521148_borrowno_verleiher</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>1091421587</payload_hash>
+        <record_name>Verleihers</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 12:05:51</sys_created_on>
+        <sys_id>96533bd58328de10e4af6170deaad31f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191d6ad0e3b0000001</sys_recorded_at>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-09 12:05:51</sys_updated_on>
+        <type>Module</type>
+        <update_guid>9a533bd56328de10bcd15520873c021e</update_guid>
+        <update_guid_history>9a533bd56328de10bcd15520873c021e:1091421587</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-15 13:32:14</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>86d371c4d1224d6e8cffe2d052902351</sys_id>
+        <sys_metadata>16533bd58328de10e4af6170deaad31c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Verleihers</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_ui_module_16533bd58328de10e4af6170deaad31c</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_16533bd58328de10e4af6170deaad31c">96533bd58328de10e4af6170deaad31f</sys_update_version>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-15 13:32:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

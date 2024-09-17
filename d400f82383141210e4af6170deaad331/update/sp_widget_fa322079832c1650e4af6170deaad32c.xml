@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* General Styles */&#13;
+body {&#13;
+    font-family: Arial, sans-serif;&#13;
+    margin: 0;&#13;
+    padding: 0;&#13;
+    background-color: #f4f4f4;&#13;
+    color: #333;&#13;
+}&#13;
+&#13;
+/* Header Styles */&#13;
+header {&#13;
+    background-color: #00b1ab;&#13;
+    color: white;&#13;
+    padding: 20px;&#13;
+    text-align: center;&#13;
+    width: 100vw; /* Full viewport width */&#13;
+    position: relative;&#13;
+    left: 50%;&#13;
+    right: 50%;&#13;
+    margin-left: -50vw;&#13;
+    margin-right: -50vw;&#13;
+    box-sizing: border-box;&#13;
+}&#13;
+&#13;
+/* Footer Styles */&#13;
+footer {&#13;
+    background-color: #00b1ab;&#13;
+    color: white;&#13;
+    text-align: center;&#13;
+    padding: 15px;&#13;
+    width: 100vw; /* Full viewport width */&#13;
+    position: relative;&#13;
+    left: 50%;&#13;
+    right: 50%;&#13;
+    margin-left: -50vw;&#13;
+    margin-right: -50vw;&#13;
+    box-sizing: border-box;&#13;
+    position: fixed;&#13;
+    bottom: 0;&#13;
+}&#13;
+&#13;
+/* Access Denied Content Styles */&#13;
+.access-denied-content {&#13;
+    text-align: center;&#13;
+    padding: 50px;&#13;
+    max-width: 600px;&#13;
+    margin: 100px auto; /* Center content vertically and horizontally */&#13;
+    background: white;&#13;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */&#13;
+    border-radius: 8px;&#13;
+}&#13;
+&#13;
+.access-denied-content h2 {&#13;
+    color: #e74c3c; /* Red color for warning */&#13;
+    font-size: 2em;&#13;
+}&#13;
+&#13;
+.access-denied-content p {&#13;
+    font-size: 1.1em;&#13;
+    margin-bottom: 30px;&#13;
+}&#13;
+&#13;
+/* Button Styles */&#13;
+.btn {&#13;
+    display: inline-block;&#13;
+    padding: 15px 25px;&#13;
+    font-size: 1em;&#13;
+    color: white;&#13;
+    background-color: #00b1ab; /* Match the main theme color */&#13;
+    text-decoration: none;&#13;
+    border-radius: 5px;&#13;
+    transition: background-color 0.3s ease;&#13;
+}&#13;
+&#13;
+.btn:hover {&#13;
+    background-color: #008080; /* Darker shade on hover */&#13;
+}&#13;
+&#13;
+/* Responsive Design */&#13;
+@media (max-width: 768px) {&#13;
+    .access-denied-content {&#13;
+        padding: 20px;&#13;
+        margin: 50px auto;&#13;
+    }&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>equipment_rental_access_denied_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Equipment Rental Access Denied Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 10:10:12</sys_created_on>
+        <sys_id>fa322079832c1650e4af6170deaad32c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Equipment Rental Access Denied Widget</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_fa322079832c1650e4af6170deaad32c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-10 15:28:51</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+
+    <header>
+        <h1>University Equipment Rental Portal</h1>
+    </header>
+
+    <div class="access-denied-content">
+        <h2>Access Denied</h2>
+        <p>Sorry, you do not have the necessary permissions to view this page.</p>
+        <p>If you believe this is a mistake, please contact the system administrator.</p>
+        <a href="?id=equipment_rental_login" class="btn">Return to Login</a> <!-- Updated link to redirect to login page -->
+    </div>
+
+    <footer>
+        <p>&copy; 2023 University Equipment Rental Portal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

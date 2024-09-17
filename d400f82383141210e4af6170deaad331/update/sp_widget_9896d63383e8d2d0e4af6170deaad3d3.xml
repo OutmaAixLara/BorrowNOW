@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    var c = this;
+
+    // Initialize the state
+    c.showEmailList = false;
+
+    // Toggle email list visibility
+    c.toggleEmailList = function() {
+        c.showEmailList = !c.showEmailList;
+    };
+
+    // Toggle email body visibility
+    c.toggleBody = function(email) {
+        email.showFullBody = !email.showFullBody;
+    };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Style for the toggle button */
+.toggle-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #00b1ab;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the collapsible container */
+.email-container {
+    margin-top: 20px;
+}
+
+.email-list-container {
+    color: #556665;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Ein Widget zur Anzeige von E-Mails aus der sys_email-Tabelle für den aktuellen Benutzer im Service Portal.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>verleiher_email_anzeige_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Email Anzeige Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.emails = [];
+
+    // Helper function to strip HTML tags using regex
+    function stripHtmlTags(html) {
+        return html.replace(/<\/?[^>]+>/gi, ''); // Removes HTML tags
+    }
+
+    // Benutzer E-Mail abrufen
+    var userEmail = gs.getUser().getEmail();
+
+    // GlideRecord auf die sys_email-Tabelle
+    var emailGR = new GlideRecord('sys_email');
+    emailGR.addQuery('recipients', userEmail); // E-Mails des aktuellen Benutzers abrufen
+	emailGR.addQuery('target_table', 'x_1521148_borrowno_ausleihe'); // Hier die Ziel-Tabelle anpassen
+    emailGR.orderByDesc('sys_created_on');
+    emailGR.query();
+
+    while (emailGR.next()) {
+        data.emails.push({
+            sys_id: emailGR.sys_id.toString(),
+            subject: emailGR.subject.toString(),
+            body: stripHtmlTags(emailGR.body.toString()), // Ensure email body is included
+            sentDate: emailGR.sys_created_on.getDisplayValue(),
+            recipient: emailGR.recipients.getDisplayValue()
+        });
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-16 23:48:43</sys_created_on>
+        <sys_id>9896d63383e8d2d0e4af6170deaad3d3</sys_id>
+        <sys_mod_count>72</sys_mod_count>
+        <sys_name>Email Anzeige Widget</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_9896d63383e8d2d0e4af6170deaad3d3</sys_update_name>
+        <sys_updated_by>mohamed</sys_updated_by>
+        <sys_updated_on>2024-09-17 12:23:55</sys_updated_on>
+        <template><![CDATA[<div class="email-container">
+    <button class="toggle-button" ng-click="c.toggleEmailList()">
+        {{c.showEmailList ? 'Hide Emails' : 'Show Emails'}}
+    </button>
+    <div class="email-list-container" ng-if="c.showEmailList">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Betreff</th>
+                    <th>Nachricht</th>
+                    <th>Datum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="email in c.data.emails">
+                    <td>{{email.subject}}</td>
+                    <td>
+                        <div class="email-body-container">
+                            <p class="email-body-preview" ng-click="c.toggleBody(email)">
+                                {{email.body | limitTo:100}}
+                                <span ng-if="email.body.length > 100">
+                                    ... <a href="javascript:void(0)" ng-click="c.toggleBody(email); $event.preventDefault()"></a>
+                                </span>
+                            </p>
+                            <div class="email-body-full" ng-if="email.showFullBody">
+                                <p>{{email.body}}</p>
+                                <a href="javascript:void(0)" ng-click="c.toggleBody(email); $event.preventDefault()">Read Less</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{email.sentDate}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p ng-if="c.data.emails.length === 0">Sie haben keine Emails</p>
+    </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

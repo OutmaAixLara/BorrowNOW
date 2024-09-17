@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $http) {
+    $scope.data.ausleihdatum = new Date().toISOString().split('T')[0]; // Set current date
+    var returnDate = new Date();
+    returnDate.setDate(returnDate.getDate() + 7); // Set return date one week later
+    $scope.data.rueckgabedatum = returnDate.toISOString().split('T')[0];
+
+    $scope.submit = function() {
+        var formData = {
+            equipment: $scope.data.equipment,
+            ausleihdatum: $scope.data.ausleihdatum,
+            rueckgabedatum: $scope.data.rueckgabedatum
+        };
+
+        // Send data to server for processing
+        $http.post('/api/now/table/x_1521148_borrowno_ausleihe', formData)
+            .then(function(response) {
+                alert('Equipment borrowed successfully!');
+                // Redirect or reset form as needed
+            })
+            .catch(function(error) {
+                alert('An error occurred: ' + error.message);
+            });
+    };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#borrowForm {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Ermöglicht dem Verleiher, neues Equipment hinzuzufügen.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>add_new_equipment</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Add New Equipment</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_1521148_borrowno.verleiher_user</roles>
+        <script><![CDATA[(function() {
+    // Get current user
+    data.currentUser = gs.getUser().getName();
+
+    // Fetch available equipment options
+    var equipmentGR = new GlideRecord('x_1521148_borrowno_u_equipment');
+    equipmentGR.addQuery('verfugbarkeit', 'verfügbar');
+    equipmentGR.query();
+    
+    data.equipmentOptions = [];
+    while (equipmentGR.next()) {
+        data.equipmentOptions.push({
+            sys_id: equipmentGR.getValue('sys_id'),
+            name: equipmentGR.getValue('name')
+        });
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 11:52:17</sys_created_on>
+        <sys_id>18797cf183a05650e4af6170deaad395</sys_id>
+        <sys_mod_count>92</sys_mod_count>
+        <sys_name>Add New Equipment</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_18797cf183a05650e4af6170deaad395</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:04:48</sys_updated_on>
+        <template><![CDATA[<div>
+    <!-- Display current user -->
+    <h3>Borrowing Equipment</h3>
+    <p><strong>User: {{data.currentUser}}</strong> </p>
+    
+    <!-- Form to select equipment -->
+    <form id="borrowForm">
+        <div class="form-group">
+            <label for="equipment">Select Equipment:</label>
+            <select id="equipment" name="equipment" class="form-control" ng-model="data.equipment" ng-options="item.sys_id as item.name for item in data.equipmentOptions">
+                <option value="">-- Select Equipment --</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="ausleihdatum">Borrow Date:</label>
+            <input type="text" id="ausleihdatum" name="ausleihdatum" class="form-control" ng-model="data.ausleihdatum" readonly>
+        </div>
+        
+        <div class="form-group">
+            <label for="rueckgabedatum">Return Date:</label>
+            <input type="text" id="rueckgabedatum" name="rueckgabedatum" class="form-control" ng-model="data.rueckgabedatum" readonly>
+        </div>
+        
+        <button type="button" class="btn btn-primary" ng-click="c.submit()">Submit</button>
+    </form>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

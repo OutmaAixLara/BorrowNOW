@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+  $scope.user = {
+    username: '',
+    password: ''
+  };
+
+  $scope.login = function() {
+    // URL für die Authentifizierung
+    var loginUrl = '/api/now/v1/table/sys_user?sysparm_query=user_name=' + encodeURIComponent($scope.user.username);
+
+    // GET-Anfrage senden
+    $http.get(loginUrl).then(function(response) {
+      // Überprüfen, ob ein Ergebnis vorhanden ist
+      if (response.data.result && response.data.result.length > 0) {
+        // Überprüfen, ob das Passwort stimmt
+        var user = response.data.result[0];
+        if (user.password === $scope.user.password) {
+          // Erfolgreiche Authentifizierung, Weiterleitung zur nächsten Seite
+          window.location.href = '/bn?id=loan_start_page';
+        } else {
+          // Fehlgeschlagene Authentifizierung
+          alert('Login failed: Invalid username or password.' + user[0]);
+        }
+      } else {
+        // Fehlgeschlagene Authentifizierung
+         alert('Login failed: Invalid username or password.' + user[0]);
+      }
+    }).catch(function() {
+      // Fehler beim HTTP-Request
+      alert('An error occurred during login. Please try again.');
+    });
+  };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>login-widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Login Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 12:30:54</sys_created_on>
+        <sys_id>910f220d836cd610e4af6170deaad3ea</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Login Widget</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_910f220d836cd610e4af6170deaad3ea</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 18:58:52</sys_updated_on>
+        <template><![CDATA[<div class="container">
+  <h1>Login</h1>
+  <form ng-submit="login()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" ng-model="user.username" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" ng-model="user.password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

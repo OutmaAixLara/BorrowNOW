@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+  $scope.requests = [];
+
+  if ($scope.currentUser.role === 'verleiher_user') {
+    $http.get('/api/now/table/u_ausleihe?sysparm_query=verleiher=' + $scope.currentUser.sys_id + '^status=Angefragt').then(function(response) {
+      $scope.requests = response.data.result;
+    }).catch(function(error) {
+      alert('Fehler beim Laden der Ausleihanfragen: ' + error.data.error.message);
+    });
+  }
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.widget-container {&#13;
+  margin: 20px;&#13;
+  padding: 15px;&#13;
+  border: 1px solid #ddd;&#13;
+  border-radius: 8px;&#13;
+  background-color: #f9f9f9;&#13;
+}&#13;
+&#13;
+.widget-title {&#13;
+  font-size: 24px;&#13;
+  margin-bottom: 15px;&#13;
+  color: #333;&#13;
+}&#13;
+&#13;
+.widget-table {&#13;
+  width: 100%;&#13;
+  border-collapse: collapse;&#13;
+}&#13;
+&#13;
+.widget-table th,&#13;
+.widget-table td {&#13;
+  padding: 10px;&#13;
+  border: 1px solid #ddd;&#13;
+  text-align: left;&#13;
+}&#13;
+&#13;
+.widget-table th {&#13;
+  background-color: #f4f4f4;&#13;
+  font-weight: bold;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Zeigt eine Liste der angeforderten Ausleihen an.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>requested_items_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Requested Items List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 11:53:14</sys_created_on>
+        <sys_id>d7d9387583a05650e4af6170deaad38e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Requested Items List</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_d7d9387583a05650e4af6170deaad38e</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 12:47:32</sys_updated_on>
+        <template><![CDATA[<div class="widget-container">
+  <h2 class="widget-title">Requested Items List</h2>
+  <table class="widget-table">
+    <thead>
+      <tr>
+        <th>Ausleiher</th>
+        <th>Equipment</th>
+        <th>Ausleihdatum</th>
+        <th>Rückgabedatum</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="request in requests">
+        <td>{{request.ausleiher}}</td>
+        <td>{{request.equipment}}</td>
+        <td>{{request.ausleihdatum}}</td>
+        <td>{{request.rückgabedatum}}</td>
+        <td>{{request.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_widget_d7d9387583a05650e4af6170deaad38e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function($scope, $http) {
+  $scope.requests = [];
+
+  if ($scope.currentUser.role === 'verleiher_user') {
+    $http.get('/api/now/table/u_ausleihe?sysparm_query=verleiher=' + $scope.currentUser.sys_id + '^status=Angefragt').then(function(response) {
+      $scope.requests = response.data.result;
+    }).catch(function(error) {
+      alert('Fehler beim Laden der Ausleihanfragen: ' + error.data.error.message);
+    });
+  }
+};
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.widget-container {&amp;#13;
+  margin: 20px;&amp;#13;
+  padding: 15px;&amp;#13;
+  border: 1px solid #ddd;&amp;#13;
+  border-radius: 8px;&amp;#13;
+  background-color: #f9f9f9;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.widget-title {&amp;#13;
+  font-size: 24px;&amp;#13;
+  margin-bottom: 15px;&amp;#13;
+  color: #333;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.widget-table {&amp;#13;
+  width: 100%;&amp;#13;
+  border-collapse: collapse;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.widget-table th,&amp;#13;
+.widget-table td {&amp;#13;
+  padding: 10px;&amp;#13;
+  border: 1px solid #ddd;&amp;#13;
+  text-align: left;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.widget-table th {&amp;#13;
+  background-color: #f4f4f4;&amp;#13;
+  font-weight: bold;&amp;#13;
+}&amp;#13;
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description&gt;Zeigt eine Liste der angeforderten Ausleihen an.&lt;/description&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;requested_items_list&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;&lt;name&gt;Requested Items List&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;amine&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-10 11:53:14&lt;/sys_created_on&gt;&lt;sys_id&gt;d7d9387583a05650e4af6170deaad38e&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Requested Items List&lt;/sys_name&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_d7d9387583a05650e4af6170deaad38e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;amine&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-10 12:47:32&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="widget-container"&gt;
+  &lt;h2 class="widget-title"&gt;Requested Items List&lt;/h2&gt;
+  &lt;table class="widget-table"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Ausleiher&lt;/th&gt;
+        &lt;th&gt;Equipment&lt;/th&gt;
+        &lt;th&gt;Ausleihdatum&lt;/th&gt;
+        &lt;th&gt;Rückgabedatum&lt;/th&gt;
+        &lt;th&gt;Status&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr ng-repeat="request in requests"&gt;
+        &lt;td&gt;{{request.ausleiher}}&lt;/td&gt;
+        &lt;td&gt;{{request.equipment}}&lt;/td&gt;
+        &lt;td&gt;{{request.ausleihdatum}}&lt;/td&gt;
+        &lt;td&gt;{{request.rückgabedatum}}&lt;/td&gt;
+        &lt;td&gt;{{request.status}}&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-83375233</payload_hash>
+        <record_name>Requested Items List</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 12:47:32</sys_created_on>
+        <sys_id>3676cd3183a45650e4af6170deaad3ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191dbf993560000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 12:47:32</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>fa76cd310da45650f6fb1bbb701f7afe</update_guid>
+        <update_guid_history>fa76cd310da45650f6fb1bbb701f7afe:-83375233,89234d31176456503d6e94d47815dcd5:-1537109354,2d018d755e2456505243534f71ed45cf:504983429,930abcf1aea05650bf6583e49e3e5ed2:1114362124</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Requested Items List">5467053583a45650e4af6170deaad33b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 12:51:28</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>0c4b2e2c62b84de880e2016359970881</sys_id>
+        <sys_metadata>d7d9387583a05650e4af6170deaad38e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Requested Items List</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_widget_d7d9387583a05650e4af6170deaad38e</sys_update_name>
+        <sys_update_version display_value="sp_widget_d7d9387583a05650e4af6170deaad38e">3676cd3183a45650e4af6170deaad3ff</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 12:51:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

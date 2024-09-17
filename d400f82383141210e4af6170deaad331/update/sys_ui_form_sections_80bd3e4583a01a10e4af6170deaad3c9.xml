@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="80bd3e4583a01a10e4af6170deaad3c9" sys_domain="global" table="sys_user_has_role" version="3">
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>sys_user_has_role</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>amine</sys_created_by>
+            <sys_created_on>2024-09-08 13:33:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>80bd3e4583a01a10e4af6170deaad3c9</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>sys_user_has_role</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+            <sys_update_name>sys_ui_form_sections_80bd3e4583a01a10e4af6170deaad3c9</sys_update_name>
+            <sys_updated_by>amine</sys_updated_by>
+            <sys_updated_on>2024-09-08 13:35:22</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

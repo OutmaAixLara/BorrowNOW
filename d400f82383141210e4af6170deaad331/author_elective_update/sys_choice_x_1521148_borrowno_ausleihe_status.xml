@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="status" table="x_1521148_borrowno_ausleihe" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <name>x_1521148_borrowno_ausleihe</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>ahmed</sys_created_by>
+            <sys_created_on>2024-09-09 12:21:48</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>status</sys_name>
+            <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+            <sys_update_name>sys_choice_x_1521148_borrowno_ausleihe_status</sys_update_name>
+            <sys_updated_by>ahmed</sys_updated_by>
+            <sys_updated_on>2024-09-09 12:21:48</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Angefragt</label>
+            <language>en</language>
+            <name>x_1521148_borrowno_ausleihe</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>amine</sys_created_by>
+            <sys_created_on>2024-09-11 14:32:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_updated_by>amine</sys_updated_by>
+            <sys_updated_on>2024-09-13 19:30:14</sys_updated_on>
+            <value>angefragt</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Genehmigt</label>
+            <language>en</language>
+            <name>x_1521148_borrowno_ausleihe</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>amine</sys_created_by>
+            <sys_created_on>2024-09-11 02:11:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>amine</sys_updated_by>
+            <sys_updated_on>2024-09-13 19:30:14</sys_updated_on>
+            <value>genehmigt</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Abgelehnt</label>
+            <language>en</language>
+            <name>x_1521148_borrowno_ausleihe</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>amine</sys_created_by>
+            <sys_created_on>2024-09-11 02:11:50</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>amine</sys_updated_by>
+            <sys_updated_on>2024-09-13 19:30:14</sys_updated_on>
+            <value>abgelehnt</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Zurückgegeben</label>
+            <language>en</language>
+            <name>x_1521148_borrowno_ausleihe</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>amine</sys_created_by>
+            <sys_created_on>2024-09-12 10:51:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>amine</sys_updated_by>
+            <sys_updated_on>2024-09-13 19:30:14</sys_updated_on>
+            <value>zuruckgegeben</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Rückgabe angefordert</label>
+            <language>en</language>
+            <name>x_1521148_borrowno_ausleihe</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>amine</sys_created_by>
+            <sys_created_on>2024-09-12 20:04:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>amine</sys_updated_by>
+            <sys_updated_on>2024-09-13 19:30:14</sys_updated_on>
+            <value>rueckgabe_angefordert</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Storniert</label>
+            <language>en</language>
+            <name>x_1521148_borrowno_ausleihe</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>amine</sys_created_by>
+            <sys_created_on>2024-09-13 06:19:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_updated_by>amine</sys_updated_by>
+            <sys_updated_on>2024-09-13 19:30:14</sys_updated_on>
+            <value>storniert</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

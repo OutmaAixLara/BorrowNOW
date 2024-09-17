@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($rootScope, $window, spUtil) {
+  /* widget controller */
+  var c = this;
+
+  c.credentials = {};
+  c.errorMessage = '';
+
+  c.login = function() {
+    c.errorMessage = '';
+    spUtil.login(c.credentials.username, c.credentials.password).then(function() {
+      $rootScope.$broadcast('user.login');
+      $window.location.href = '?id=equipment_rental_home';
+    }, function(response) {
+      c.errorMessage = response.data.error;
+    });
+  };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Login widget for Equipment Rental Portal</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Copy of Equipment Rental Login</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // No server-side processing needed for basic login
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-08 09:52:55</sys_created_on>
+        <sys_id>655b8ec5832c9610e4af6170deaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Equipment Rental Login</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_655b8ec5832c9610e4af6170deaad3c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-08 09:52:55</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Login to Equipment Rental Portal</h3>
+  </div>
+  <div class="panel-body">
+    <form ng-submit="c.login()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" ng-model="c.credentials.username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" ng-model="c.credentials.password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <p class="text-danger" ng-if="c.errorMessage">{{c.errorMessage}}</p>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_widget_655b8ec5832c9610e4af6170deaad3c2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function($rootScope, $window, spUtil) {
+  /* widget controller */
+  var c = this;
+
+  c.credentials = {};
+  c.errorMessage = '';
+
+  c.login = function() {
+    c.errorMessage = '';
+    spUtil.login(c.credentials.username, c.credentials.password).then(function() {
+      $rootScope.$broadcast('user.login');
+      $window.location.href = '?id=equipment_rental_home';
+    }, function(response) {
+      c.errorMessage = response.data.error;
+    });
+  };
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description&gt;Login widget for Equipment Rental Portal&lt;/description&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id/&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;&lt;name&gt;Copy of Equipment Rental Login&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+    // No server-side processing needed for basic login
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-08 09:52:55&lt;/sys_created_on&gt;&lt;sys_id&gt;655b8ec5832c9610e4af6170deaad3c2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Copy of Equipment Rental Login&lt;/sys_name&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_655b8ec5832c9610e4af6170deaad3c2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-08 09:52:55&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h3 class="panel-title"&gt;Login to Equipment Rental Portal&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+    &lt;form ng-submit="c.login()"&gt;
+      &lt;div class="form-group"&gt;
+        &lt;label for="username"&gt;Username&lt;/label&gt;
+        &lt;input type="text" class="form-control" id="username" ng-model="c.credentials.username" required&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+        &lt;label for="password"&gt;Password&lt;/label&gt;
+        &lt;input type="password" class="form-control" id="password" ng-model="c.credentials.password" required&gt;
+      &lt;/div&gt;
+      &lt;button type="submit" class="btn btn-primary"&gt;Login&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;p class="text-danger" ng-if="c.errorMessage"&gt;{{c.errorMessage}}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1374486803</payload_hash>
+        <record_name>Copy of Equipment Rental Login</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-08 09:52:55</sys_created_on>
+        <sys_id>295b8ec5832c9610e4af6170deaad3c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191d10d009b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-08 09:52:55</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>2d5b8ec50b2c9610a586a24cecd1d5c4</update_guid>
+        <update_guid_history>2d5b8ec50b2c9610a586a24cecd1d5c4:1374486803</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Copy of Equipment Rental Login">5eac4ecd832c9610e4af6170deaad360</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-08 09:58:43</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>62d8c2e497904a0cacde7fe45ed6d591</sys_id>
+        <sys_metadata>655b8ec5832c9610e4af6170deaad3c2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Equipment Rental Login</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_widget_655b8ec5832c9610e4af6170deaad3c2</sys_update_name>
+        <sys_update_version display_value="sp_widget_655b8ec5832c9610e4af6170deaad3c2">295b8ec5832c9610e4af6170deaad3c5</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-08 09:58:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
