@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <semantic_tag/>
+        <size>3</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">78d6f90f83601a90e4af6170deaad381</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 13:31:10</sys_created_on>
+        <sys_id>74d6398f83601a90e4af6170deaad3ef</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_column_74d6398f83601a90e4af6170deaad3ef</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:32:13</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_column_74d6398f83601a90e4af6170deaad3ef</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><class_name/><order>1</order><semantic_tag/><size>3</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">78d6f90f83601a90e4af6170deaad381</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-14 13:31:10</sys_created_on><sys_id>74d6398f83601a90e4af6170deaad3ef</sys_id><sys_mod_count>2</sys_mod_count><sys_name>1</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_column_74d6398f83601a90e4af6170deaad3ef</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-14 13:32:13</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>1853215684</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 13:32:13</sys_created_on>
+        <sys_id>901735cf83601a90e4af6170deaad353</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191f0bbec4f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:32:13</sys_updated_on>
+        <type>Column</type>
+        <update_guid>581735cf28601a90feeadd47556f4d52</update_guid>
+        <update_guid_history>581735cf28601a90feeadd47556f4d52:1853215684,3e0735cff0601a90b4ef0b6d06e8a9d5:360649828,30d6398f9f601a90a49f3276697df5f1:-1131916028</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">f5177d8f83601a90e4af6170deaad31d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 13:32:20</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>11252d06dd5a47b29de78815a88827d9</sys_id>
+        <sys_metadata>74d6398f83601a90e4af6170deaad3ef</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_column_74d6398f83601a90e4af6170deaad3ef</sys_update_name>
+        <sys_update_version display_value="sp_column_74d6398f83601a90e4af6170deaad3ef">901735cf83601a90e4af6170deaad353</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:32:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

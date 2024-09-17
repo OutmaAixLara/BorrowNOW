@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Material Detail - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="material_detail">38a4c70d83641a10e4af6170deaad399</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 14:05:30</sys_created_on>
+        <sys_id>5525074d83641a10e4af6170deaad34c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Material Detail - Container 1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_container_5525074d83641a10e4af6170deaad34c</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 14:05:30</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_container_5525074d83641a10e4af6170deaad34c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Material Detail - Container 1</name><order>1</order><semantic_tag/><sp_page display_value="material_detail">38a4c70d83641a10e4af6170deaad399</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-08 14:05:30</sys_created_on><sys_id>5525074d83641a10e4af6170deaad34c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Material Detail - Container 1</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_container_5525074d83641a10e4af6170deaad34c</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-08 14:05:30</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-1652729316</payload_hash>
+        <record_name>Material Detail - Container 1</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 14:05:30</sys_created_on>
+        <sys_id>9925074d83641a10e4af6170deaad34e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191d1f43ce70000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 14:05:30</sys_updated_on>
+        <type>Container</type>
+        <update_guid>9d25074dab641a10e37ada8d9eec5b4d</update_guid>
+        <update_guid_history>9d25074dab641a10e37ada8d9eec5b4d:-1652729316</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Material Detail - Container 1">cd82426583a09250e4af6170deaad331</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-09 22:31:21</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>0a01f4386fc64d8d8d6b2e0ec59e2061</sys_id>
+        <sys_metadata>5525074d83641a10e4af6170deaad34c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Material Detail - Container 1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_container_5525074d83641a10e4af6170deaad34c</sys_update_name>
+        <sys_update_version display_value="sp_container_5525074d83641a10e4af6170deaad34c">9925074d83641a10e4af6170deaad34e</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-09 22:31:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_definition">
+    <sys_ws_definition action="DELETE">
+        <active>true</active>
+        <base_uri>/api/x_1521148_borrowno/requestactionsapi</base_uri>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_version>No active default version</default_version>
+        <doc_link/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <is_versioned>false</is_versioned>
+        <name>RequestActionsAPI</name>
+        <namespace>x_1521148_borrowno</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>requestactionsapi</service_id>
+        <short_description/>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 18:29:00</sys_created_on>
+        <sys_id>0a7408a783e85e90e4af6170deaad3b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RequestActionsAPI</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_ws_definition_0a7408a783e85e90e4af6170deaad3b3</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-15 18:29:00</sys_updated_on>
+    </sys_ws_definition>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_ws_definition_0a7408a783e85e90e4af6170deaad3b3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_definition"><sys_ws_definition action="INSERT_OR_UPDATE"><active>true</active><base_uri>/api/x_1521148_borrowno/requestactionsapi</base_uri><consumes>application/json,application/xml,text/xml</consumes><consumes_customized>false</consumes_customized><default_version>No active default version</default_version><doc_link/><enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl><is_versioned>false</is_versioned><name>RequestActionsAPI</name><namespace>x_1521148_borrowno</namespace><produces>application/json,application/xml,text/xml</produces><produces_customized>false</produces_customized><service_id>requestactionsapi</service_id><short_description/><sys_class_name>sys_ws_definition</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-15 18:29:00</sys_created_on><sys_id>0a7408a783e85e90e4af6170deaad3b3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>RequestActionsAPI</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sys_ws_definition_0a7408a783e85e90e4af6170deaad3b3</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-15 18:29:00</sys_updated_on></sys_ws_definition></record_update>]]></payload>
+        <payload_hash>1626263192</payload_hash>
+        <record_name>RequestActionsAPI</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 18:29:00</sys_created_on>
+        <sys_id>219480e783e85e90e4af6170deaad3e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191f6f2012d0000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-15 18:29:00</sys_updated_on>
+        <type>Scripted REST API</type>
+        <update_guid>259480e709e85e90e845e6a7a5854ae5</update_guid>
+        <update_guid_history>259480e709e85e90e845e6a7a5854ae5:1626263192</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 18:40:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_ws_definition">sys_ws_definition</sys_db_object>
+        <sys_id>4f18b94664e44ba59fa7ff502be4c429</sys_id>
+        <sys_metadata>0a7408a783e85e90e4af6170deaad3b3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RequestActionsAPI</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_ws_definition_0a7408a783e85e90e4af6170deaad3b3</sys_update_name>
+        <sys_update_version display_value="sys_ws_definition_0a7408a783e85e90e4af6170deaad3b3">219480e783e85e90e4af6170deaad3e6</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-15 18:40:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

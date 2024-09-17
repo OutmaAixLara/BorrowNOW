@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+    $scope.data = {
+        requests: [],
+        message: '',
+        error: ''
+    };
+
+    // Funktion zum Laden der Ausleihen, die zurückgegeben werden müssen
+    $scope.loadRequests = function() {
+        $scope.server.get().then(function(response) {
+            if (response.data.requests) {
+                $scope.data.requests = response.data.requests;
+                $scope.data.message = response.data.message || '';
+            } else {
+                $scope.data.error = response.data.error || "Fehler beim Abrufen der Rückgaben.";
+            }
+        }).catch(function(error) {
+            $scope.data.error = "Fehler beim Abrufen der Rückgaben: " + (error.message || 'Unbekannter Fehler');
+        });
+    };
+
+    // Funktion zum Markieren als zurückgegeben
+    $scope.markAsReturned = function(requestId) {
+        if (confirm('Möchten Sie diese Rückgabe als zurückgegeben markieren?')) {
+            $scope.server.get({
+                action: 'returned',
+                requestID: requestId
+            }).then(function(response) {
+                alert('Rückgabe als zurückgegeben markiert!');
+                $scope.loadRequests(); // Seite aktualisieren
+            }).catch(function(error) {
+                $scope.data.error = "Fehler beim Markieren der Rückgabe als zurückgegeben: " + (error.data.error.message || 'Unbekannter Fehler');
+            });
+        }
+    };
+
+    // Funktion zum Markieren als beschädigt
+    $scope.markAsDamaged = function(requestId) {
+        if (confirm('Möchten Sie diese Rückgabe als beschädigt markieren?')) {
+            $scope.server.get({
+                action: 'damaged',
+                requestID: requestId
+            }).then(function(response) {
+                alert('Rückgabe als beschädigt markiert!');
+                $scope.loadRequests(); // Seite aktualisieren
+            }).catch(function(error) {
+                $scope.data.error = "Fehler beim Markieren der Rückgabe als beschädigt: " + (error.data.error.message || 'Unbekannter Fehler');
+            });
+        }
+    };
+
+    // Initiale Daten laden
+    $scope.loadRequests();
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Allgemeine Stile für das Widget */&#13;
+.widget-container {&#13;
+    padding: 20px;&#13;
+    background-color: #f9f9f9;&#13;
+    border-radius: 8px;&#13;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);&#13;
+}&#13;
+&#13;
+/* Überschrift */&#13;
+.widget-container h3 {&#13;
+    font-size: 1.5em;&#13;
+    margin-bottom: 20px;&#13;
+    color: #333;&#13;
+}&#13;
+&#13;
+/* Formularstile */&#13;
+.form-group {&#13;
+    margin-bottom: 15px;&#13;
+}&#13;
+&#13;
+.form-group label {&#13;
+    display: block;&#13;
+    font-weight: bold;&#13;
+    margin-bottom: 5px;&#13;
+}&#13;
+&#13;
+.form-group input {&#13;
+    width: 100%;&#13;
+    padding: 8px;&#13;
+    border: 1px solid #ccc;&#13;
+    border-radius: 4px;&#13;
+    box-sizing: border-box;&#13;
+}&#13;
+&#13;
+/* Tabellenstile */&#13;
+.table {&#13;
+    width: 100%;&#13;
+    border-collapse: collapse;&#13;
+    margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.table th, .table td {&#13;
+    padding: 10px;&#13;
+    text-align: left;&#13;
+    border-bottom: 1px solid #ddd;&#13;
+}&#13;
+&#13;
+.table th {&#13;
+    background-color: #f4f4f4;&#13;
+    font-weight: bold;&#13;
+}&#13;
+&#13;
+.table tbody tr:nth-child(even) {&#13;
+    background-color: #f9f9f9;&#13;
+}&#13;
+&#13;
+/* Button-Stile */&#13;
+.btn {&#13;
+    padding: 8px 12px;&#13;
+    border: none;&#13;
+    border-radius: 4px;&#13;
+    color: #fff;&#13;
+    cursor: pointer;&#13;
+    font-size: 0.9em;&#13;
+}&#13;
+&#13;
+.btn-primary {&#13;
+    background-color: #007bff;&#13;
+}&#13;
+&#13;
+.btn-success {&#13;
+    background-color: #28a745;&#13;
+}&#13;
+&#13;
+.btn-danger {&#13;
+    background-color: #dc3545;&#13;
+}&#13;
+&#13;
+.btn-warning {&#13;
+    background-color: #ffc107;&#13;
+}&#13;
+&#13;
+.btn:hover {&#13;
+    opacity: 0.9;&#13;
+}&#13;
+&#13;
+/* Fehlermeldungen */&#13;
+.text-danger {&#13;
+    color: #dc3545;&#13;
+}&#13;
+&#13;
+/* Erfolgsmeldungen */&#13;
+.text-success {&#13;
+    color: #28a745;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Widget zum Überprüfen und Genehmigen von Equipment-Rückgaben.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>verleiher_approve_return</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Rückgabe überprüfen und genehmigen</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // Funktion zum Bearbeiten von Rückgaben
+    function processReturn(action, requestId) {
+        var requestGR = new GlideRecord('x_1521148_borrowno_ausleihe');
+        if (requestGR.get(requestId)) {
+            switch (action) {
+                case 'returned':
+                    requestGR.status = 'zuruckgegeben';
+                    break;
+                case 'damaged':
+					requestGR.zustand = 'beschaedigt';
+					requestGR.status = 'zuruckgegeben';
+                    break;
+                default:
+                    return { error: 'Unbekannte Aktion.' };
+            }
+            requestGR.update();
+            return { success: true };
+        } else {
+            return { error: 'Anfrage nicht gefunden.' };
+        }
+    }
+
+			if (input && input.action && input.requestID) {
+            data.response = processReturn(input.action, input.requestID);
+        } else {
+            data.response = { error: 'Fehlende Eingabedaten.' };
+        }
+
+    // Lade alle Rückgaben, die den Status "zurückgegeben" oder "beschädigt" haben
+    var requestGR2 = new GlideRecord('x_1521148_borrowno_ausleihe');
+    requestGR2.addQuery('status', 'rueckgabe_angefordert'); // Abfrage für Rückgaben, die noch nicht bearbeitet wurden
+    requestGR2.query();
+    data.requests = [];
+
+    while (requestGR2.next()) {
+        data.requests.push({
+            sys_id: requestGR2.sys_id.toString(),
+            ausleiher: requestGR2.ausleiher.getDisplayValue(),
+            equipment: requestGR2.equipment.getDisplayValue(),
+            ausleihdatum: requestGR2.ausleihdatum.getDisplayValue(),
+            rueckgabedatum: requestGR2.ruckgabedatum.getDisplayValue(),
+        });
+    }
+
+    // Überprüfen Sie, ob Daten vorhanden sind
+    if (data.requests.length === 0) {
+        data.message = "Keine Rückgaben mit dem Status 'Rückgabe angefordert' gefunden.";
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-14 09:40:06</sys_created_on>
+        <sys_id>59114dcb83a4d690e4af6170deaad3c4</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Rückgabe überprüfen und genehmigen</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_59114dcb83a4d690e4af6170deaad3c4</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-16 18:03:41</sys_updated_on>
+        <template><![CDATA[<div>
+    <h3>Rückgaben überprüfen</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ausleiher</th>
+                <th>Equipment</th>
+                <th>Ausleihdatum</th>
+                <th>Rückgabedatum</th>
+                <th>Aktion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="request in data.requests">
+                <td>{{ request.ausleiher }}</td>
+                <td>{{ request.equipment }}</td>
+                <td>{{ request.ausleihdatum }}</td>
+                <td>{{ request.rueckgabedatum }}</td>
+                <td>
+                    <button class="btn btn-success" ng-click="markAsReturned(request.sys_id)">Zurückgegeben</button>
+                    <button class="btn btn-warning" ng-click="markAsDamaged(request.sys_id)">Beschädigt</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>{{data.message}}</p>
+    <p class="text-danger">{{data.error}}</p>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

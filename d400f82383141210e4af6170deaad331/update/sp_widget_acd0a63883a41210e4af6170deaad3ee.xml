@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+	// Fetch user roles and display buttons based on roles
+    var ga = new GlideAjax('x_1521148_borrowno.UserRoleFetcher');
+    ga.addParam('sysparm_name', 'getUserRoles');
+    ga.getXMLAnswer(function(response) {
+        var roles = JSON.parse(response);
+        // Show links based on roles
+        if (roles.includes('admin') || roles.includes('x_1521148_borrowno.verleiher_user')) {
+            document.getElementById('verleiherLink').style.display = 'inline-block';
+        }
+        if (roles.includes('admin') || roles.includes('x_1521148_borrowno.ausleiher_user')) {
+            document.getElementById('ausleiherLink').style.display = 'inline-block';
+        }
+           });
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>welcome</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Welcome</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script/>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-07 16:50:33</sys_created_on>
+        <sys_id>acd0a63883a41210e4af6170deaad3ee</sys_id>
+        <sys_mod_count>130</sys_mod_count>
+        <sys_name>Welcome</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_acd0a63883a41210e4af6170deaad3ee</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-17 15:57:58</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausrüstungsverleih-Portal</title>
+    <style>
+        :root {
+            --primary-color: #00b1ab;
+            --primary-light: #00d6cf;
+            --primary-dark: #008c87;
+            --background-color: #f5f7fa;
+            --text-color: #333;
+            --accent-color: #ff6b6b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+
+       nav {
+    background-color: #008c87;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Materialverleih der FH Aachen</h1>
+        <p>Leihen Sie sich die Ausrüstung für Ihre Projekte und Studienzwecke!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="?id=equipment_rental_home">Startseite</a></li>
+            <li><a href="?id=about_us">Über uns</a></li>
+            <li><a href="?id=equipment">Katalog</a></li>
+            <li><a href="?id=contact">Kontakt</a></li>
+            <li><a href="/bn?id=verleiher_dashboard" id="verleiherLink" style="display: none;">Verleiher-Dashboard</a></li>
+            <li><a href="/bn?id=ausleiher_dashboard" id="ausleiherLink" style="display: none;">Ausleiher-Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h2>Willkommen beim Materialverleih</h2>
+        <p>Unser Materialverleih bietet Ihnen eine breite Auswahl an Ausrüstungsgegenständen für Ihre Studien- und Projektbedürfnisse. Von Lehrbüchern bis zu technischen Geräten – bei uns finden Sie, was Sie brauchen.</p>
+        
+        <h3>Unsere Angebote</h3>
+        <ul>
+            <li>Bücher</li>
+            <li>Projektoren</li>
+            <li>Laptops</li>
+            <li>Boards</li>
+        </ul>
+
+        <h3>So funktioniert's</h3>
+        <p>Durchstöbern Sie einfach unseren Katalog, wählen Sie die gewünschten Materialien in euerem Dashboard aus und wir kümmern uns um den Rest.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 FH Aachen - Ausrüstungsverleih-Portal. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

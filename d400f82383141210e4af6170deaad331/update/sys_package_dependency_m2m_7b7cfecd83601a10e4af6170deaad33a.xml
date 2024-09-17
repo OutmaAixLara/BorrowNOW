@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Service Management Basics" source="com.snc.service">620fb7e6f8b2021008dd9cfea425acb5</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 13:27:43</sys_created_on>
+        <sys_id>7b7cfecd83601a10e4af6170deaad33a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 13:27:43</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Restrict Ausleiher to Current User</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    if (g_user.hasRole('x_1521148_borrowno.ausleiher_user')) {
+        g_form.setValue('ausleiher', g_user.userID); 
+        g_form.setReadOnly('ausleiher', true); 
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 11:29:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>af8a9183832cd690e4af6170deaad33b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Restrict Ausleiher to Current User</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_script_client_af8a9183832cd690e4af6170deaad33b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 11:30:16</sys_updated_on>
+        <table>x_1521148_borrowno_ausleihe</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

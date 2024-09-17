@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Verleiher Dashboard - Container 4</name>
+        <order>4</order>
+        <semantic_tag/>
+        <sp_page display_value="verleiher_dashboard">8d3eb84783a4d690e4af6170deaad36c</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-14 09:41:26</sys_created_on>
+        <sys_id>bb32054f83a4d690e4af6170deaad31f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Verleiher Dashboard - Container 4</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_container_bb32054f83a4d690e4af6170deaad31f</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-14 09:41:42</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_container_bb32054f83a4d690e4af6170deaad31f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Verleiher Dashboard - Container 4</name><order>4</order><semantic_tag/><sp_page display_value="verleiher_dashboard">8d3eb84783a4d690e4af6170deaad36c</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-14 09:41:26</sys_created_on><sys_id>bb32054f83a4d690e4af6170deaad31f</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Verleiher Dashboard - Container 4</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_container_bb32054f83a4d690e4af6170deaad31f</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-14 09:41:42</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>139302</payload_hash>
+        <record_name>Verleiher Dashboard - Container 4</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-14 09:41:42</sys_created_on>
+        <sys_id>ef420d4f83a4d690e4af6170deaad36d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191efe8e0ac0000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-14 09:41:42</sys_updated_on>
+        <type>Container</type>
+        <update_guid>a7420d4f44a4d69058ba2e99c185bc6d</update_guid>
+        <update_guid_history>a7420d4f44a4d69058ba2e99c185bc6d:139302,3f32054faea4d690337023461f269520:-514916539</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Verleiher Dashboard - Container 4">e882894f83a4d690e4af6170deaad3e1</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-14 09:42:35</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>01098104cb8e4a7d800dd88e911b0229</sys_id>
+        <sys_metadata>bb32054f83a4d690e4af6170deaad31f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Verleiher Dashboard - Container 4</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_container_bb32054f83a4d690e4af6170deaad31f</sys_update_name>
+        <sys_update_version display_value="sp_container_bb32054f83a4d690e4af6170deaad31f">ef420d4f83a4d690e4af6170deaad36d</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-14 09:42:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

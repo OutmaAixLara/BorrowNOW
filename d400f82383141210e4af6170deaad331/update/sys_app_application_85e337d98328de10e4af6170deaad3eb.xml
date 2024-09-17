@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name>u_erinnerungen</name>
+        <order>100</order>
+        <roles>x_1521148_borrowno.u_erinnerungen_user</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 12:08:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>85e337d98328de10e4af6170deaad3eb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>u_erinnerungen</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_app_application_85e337d98328de10e4af6170deaad3eb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 11:13:41</sys_updated_on>
+        <title>u_erinnerungen</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

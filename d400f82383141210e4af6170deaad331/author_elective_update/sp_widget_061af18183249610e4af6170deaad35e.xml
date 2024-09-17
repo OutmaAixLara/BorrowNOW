@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http, $window, $timeout) {
+    var c = this;
+
+    c.credentials = {};
+    c.errorMessage = '';
+
+    c.login = function() {
+        c.errorMessage = '';
+        console.log('Attempting login for user:', c.credentials.username);
+
+        var ga = new GlideAjax('x_1521148_borrowno.UserLoginAjax');
+        ga.addParam('sysparm_name', 'loginAndGetRoles');
+        ga.addParam('sysparm_user', c.credentials.username);
+        ga.addParam('sysparm_password', c.credentials.password);
+
+        ga.getXML(function(response) {
+            if (!response || !response.responseXML) {
+                c.errorMessage = "No response from server. Please try again later.";
+                $scope.$applyAsync();
+                return;
+            }
+
+            var answer = response.responseXML.documentElement.getAttribute("answer");
+            if (!answer) {
+                c.errorMessage = "No answer received from server.";
+                $scope.$applyAsync();
+                return;
+            }
+
+            var result;
+            try {
+                result = JSON.parse(answer);
+            } catch (e) {
+                c.errorMessage = "Failed to parse response. Please try again.";
+                console.error('Parse error:', e);
+                $scope.$applyAsync();
+                return;
+            }
+
+            console.log("Parsed result: ", result);
+
+            $timeout(function() {
+                if (result.status === 'success') {
+                    if (result.hasRole) {
+                        console.log('User has required role. Redirecting to home page');
+                        $window.location.href = '?id=equipment_rental_home';
+                    } else {
+                        console.log('User does not have required role. Redirecting to access denied page');
+                        $window.location.href = '?id=equipment_rental_access_denied';
+                    }
+                } else {
+                    console.error('Login error:', result.message);
+                    c.errorMessage = "Login failed. Please check your credentials and try again.";
+                    if (result.message) {
+                        c.errorMessage += " Error: " + result.message;
+                    }
+                }
+                $scope.$applyAsync();
+            }, 0);
+        });
+    };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Login widget for Equipment Rental Portal</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>equipment_rental_login_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Equipment Rental Login</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[var UserLoginAjax = Class.create();
+UserLoginAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    loginAndGetRoles: function() {
+        var user = this.getParameter('sysparm_user');
+        var pwd = this.getParameter('sysparm_password');
+        
+        var result = {};
+        
+        var userGR = new GlideRecord('sys_user');
+        userGR.addQuery('user_name', user);
+        userGR.query();
+
+        if (userGR.next()) {
+            // Check the password for the found user
+            var isAuthenticated = gs.checkPassword(userGR.sys_id, pwd);
+            
+            if (isAuthenticated) { // If password is correct
+                var hasVerleihRole = gs.hasRole('x_1521148_borrowno.verleiher_user');
+                var hasAusleiherRole = gs.hasRole('x_1521148_borrowno.ausleiher_user');
+                
+                gs.info("User: " + user + ", hasVerleihRole: " + hasVerleihRole + ", hasAusleiherRole: " + hasAusleiherRole);
+                
+                var hasRole = hasVerleihRole || hasAusleiherRole;
+                
+                result = {
+                    status: 'success',
+                    hasRole: hasRole,
+                    roles: {
+                        verleiher: hasVerleihRole,
+                        ausleiher: hasAusleiherRole
+                    }
+                };
+            } else {
+                result = {
+                    status: 'error',
+                    message: 'Invalid credentials'
+                };
+            }
+        } else {
+            result = {
+                status: 'error',
+                message: 'User not found'
+            };
+        }
+        
+        gs.info("Login result for " + user + ": " + JSON.stringify(result));
+        return JSON.stringify(result);
+    },
+
+    type: 'UserLoginAjax'
+});
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-08 08:51:44</sys_created_on>
+        <sys_id>061af18183249610e4af6170deaad35e</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>Equipment Rental Login</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_061af18183249610e4af6170deaad35e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-10 15:51:33</sys_updated_on>
+        <template><![CDATA[  <form ng-submit="c.login()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" ng-model="c.credentials.username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" ng-model="c.credentials.password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <p class="text-danger" ng-if="c.errorMessage">{{c.errorMessage}}</p>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_widget_061af18183249610e4af6170deaad35e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function($scope, $http, $window, $timeout) {
+    var c = this;
+
+    c.credentials = {};
+    c.errorMessage = '';
+
+    c.login = function() {
+        c.errorMessage = '';
+        console.log('Attempting login for user:', c.credentials.username);
+
+        var ga = new GlideAjax('x_1521148_borrowno.UserLoginAjax');
+        ga.addParam('sysparm_name', 'loginAndGetRoles');
+        ga.addParam('sysparm_user', c.credentials.username);
+        ga.addParam('sysparm_password', c.credentials.password);
+
+        ga.getXML(function(response) {
+            if (!response || !response.responseXML) {
+                c.errorMessage = "No response from server. Please try again later.";
+                $scope.$applyAsync();
+                return;
+            }
+
+            var answer = response.responseXML.documentElement.getAttribute("answer");
+            if (!answer) {
+                c.errorMessage = "No answer received from server.";
+                $scope.$applyAsync();
+                return;
+            }
+
+            var result;
+            try {
+                result = JSON.parse(answer);
+            } catch (e) {
+                c.errorMessage = "Failed to parse response. Please try again.";
+                console.error('Parse error:', e);
+                $scope.$applyAsync();
+                return;
+            }
+
+            console.log("Parsed result: ", result);
+
+            $timeout(function() {
+                if (result.status === 'success') {
+                    if (result.hasRole) {
+                        console.log('User has required role. Redirecting to home page');
+                        $window.location.href = '?id=equipment_rental_home';
+                    } else {
+                        console.log('User does not have required role. Redirecting to access denied page');
+                        $window.location.href = '?id=equipment_rental_access_denied';
+                    }
+                } else {
+                    console.error('Login error:', result.message);
+                    c.errorMessage = "Login failed. Please check your credentials and try again.";
+                    if (result.message) {
+                        c.errorMessage += " Error: " + result.message;
+                    }
+                }
+                $scope.$applyAsync();
+            }, 0);
+        });
+    };
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description&gt;Login widget for Equipment Rental Portal&lt;/description&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;equipment_rental_login_widget&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;&lt;name&gt;Equipment Rental Login&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[var UserLoginAjax = Class.create();
+UserLoginAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    loginAndGetRoles: function() {
+        var user = this.getParameter('sysparm_user');
+        var pwd = this.getParameter('sysparm_password');
+        
+        var result = {};
+        
+        var userGR = new GlideRecord('sys_user');
+        userGR.addQuery('user_name', user);
+        userGR.query();
+
+        if (userGR.next()) {
+            // Check the password for the found user
+            var isAuthenticated = gs.checkPassword(userGR.sys_id, pwd);
+            
+            if (isAuthenticated) { // If password is correct
+                var hasVerleihRole = gs.hasRole('x_1521148_borrowno.verleiher_user');
+                var hasAusleiherRole = gs.hasRole('x_1521148_borrowno.ausleiher_user');
+                
+                gs.info("User: " + user + ", hasVerleihRole: " + hasVerleihRole + ", hasAusleiherRole: " + hasAusleiherRole);
+                
+                var hasRole = hasVerleihRole || hasAusleiherRole;
+                
+                result = {
+                    status: 'success',
+                    hasRole: hasRole,
+                    roles: {
+                        verleiher: hasVerleihRole,
+                        ausleiher: hasAusleiherRole
+                    }
+                };
+            } else {
+                result = {
+                    status: 'error',
+                    message: 'Invalid credentials'
+                };
+            }
+        } else {
+            result = {
+                status: 'error',
+                message: 'User not found'
+            };
+        }
+        
+        gs.info("Login result for " + user + ": " + JSON.stringify(result));
+        return JSON.stringify(result);
+    },
+
+    type: 'UserLoginAjax'
+});
+]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-08 08:51:44&lt;/sys_created_on&gt;&lt;sys_id&gt;061af18183249610e4af6170deaad35e&lt;/sys_id&gt;&lt;sys_mod_count&gt;27&lt;/sys_mod_count&gt;&lt;sys_name&gt;Equipment Rental Login&lt;/sys_name&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_061af18183249610e4af6170deaad35e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-10 15:51:33&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[  &lt;form ng-submit="c.login()"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="username"&gt;Username&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="username" ng-model="c.credentials.username" required&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="password"&gt;Password&lt;/label&gt;
+      &lt;input type="password" class="form-control" id="password" ng-model="c.credentials.password" required&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Login&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;p class="text-danger" ng-if="c.errorMessage"&gt;{{c.errorMessage}}&lt;/p&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1583622573</payload_hash>
+        <record_name>Equipment Rental Login</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 15:51:33</sys_created_on>
+        <sys_id>e29039f583ec5650e4af6170deaad308</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191dca20e950000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-10 15:51:33</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>aa9039f515ec56507ecaf88b1b7d4f07</update_guid>
+        <update_guid_history>aa9039f515ec56507ecaf88b1b7d4f07:-1583622573,996039352cec565067bbc091be8d9f68:-450469711,bebfedf137ec5650d428f41aad940b0c:-1583622573,82afe97df7ac56507034d4e250dd27c2:-450469711,e30d29b556ac56500e4eafb20b515679:-1583622573,dfbc65b503ac565011c3e2193aedec3f:-1383120319,ea5ca97131ac56506336c40f482da746:-1034567521,8a012139e72c5650bbfd267709de95e8:2103837871,80c069f5b12c5650dd62dab3167fe6f6:-395305016,03a31131306856503789e658c2e2e026:1711744568,4403153d8a285650ca5a4cf98c960cf1:2044124745,e9d0ddb1452856507acaba44e25a34b7:1904997766,90f530f9116056502826eceaf55193b9:2108739334,44b378f1c66056508804634b9d275dd7:-1740795927,b7dda4790dec16503f6ccda84526730f:-751300851,860c2c7552ec165033c3efdf5921eaf4:2000534698,552a2c7dc9ac1650515b9150ed88b773:155700491,2a78e87575ac16502c1a5292eb2868c0:934210711,12c52835a66c1650de4ad06085d0f641:916153579,3075e8b13b6c16505f38f26a7788c8d7:779711896,0d82ec39542c16508afe35638a15c61b:2077475582,91616839e02c16509f509632edf8ad61:633401814,7cd0e4b52a2c1650d258bb733f5c816e:77796297,440020f1d02c1650ef1de570222b7231:1145077383,80ef57c969ac1a10a66b4a32211ce1e5:1483182511,fe3f5f057eac1a1049928c0b94f2b913:-199716391,614d4acd056c961042f39489bce230e6:1748877692,155db105efe496107436e35e78e05cf0:2109516802</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Equipment Rental Login">6806fab58320d650e4af6170deaad360</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 20:54:48</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>2be16093fb2b43b8a4f6d0e690982240</sys_id>
+        <sys_metadata>061af18183249610e4af6170deaad35e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Equipment Rental Login</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_widget_061af18183249610e4af6170deaad35e</sys_update_name>
+        <sys_update_version display_value="sp_widget_061af18183249610e4af6170deaad35e">e29039f583ec5650e4af6170deaad308</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-10 20:54:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>zustand</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-13 17:31:07</sys_created_on>
+        <sys_id>c6246d32832c1690e4af6170deaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>zustand</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_ui_policy_action_c6246d32832c1690e4af6170deaad3c2</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-13 17:31:07</sys_updated_on>
+        <table>x_1521148_borrowno_ausleihe</table>
+        <ui_policy display_value="visible after creation">79246d32832c1690e4af6170deaad38c</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="DELETE" query="documentkey=c6246d32832c1690e4af6170deaad3c2"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_ui_policy_action_c6246d32832c1690e4af6170deaad3c2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action"><sys_ui_policy_action action="INSERT_OR_UPDATE"><cleared>false</cleared><disabled>ignore</disabled><field>zustand</field><field_message/><field_message_type>none</field_message_type><mandatory>ignore</mandatory><sys_class_name>sys_ui_policy_action</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-13 17:31:07</sys_created_on><sys_id>c6246d32832c1690e4af6170deaad3c2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>zustand</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sys_ui_policy_action_c6246d32832c1690e4af6170deaad3c2</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-13 17:31:07</sys_updated_on><table>x_1521148_borrowno_ausleihe</table><ui_policy display_value="visible after creation">79246d32832c1690e4af6170deaad38c</ui_policy><value/><value_action>ignore</value_action><visible>true</visible></sys_ui_policy_action><sys_translated_text action="delete_multiple" query="documentkey=c6246d32832c1690e4af6170deaad3c2"/></record_update>]]></payload>
+        <payload_hash>560275791</payload_hash>
+        <record_name>zustand</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-13 17:31:07</sys_created_on>
+        <sys_id>1a246d32832c1690e4af6170deaad3c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191ec704ab40000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-13 17:31:07</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>9a246d32762c169006b384ee1f2586c4</update_guid>
+        <update_guid_history>9a246d32762c169006b384ee1f2586c4:560275791</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 13:36:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>0033948a897245f59119ab1ff84112d1</sys_id>
+        <sys_metadata>c6246d32832c1690e4af6170deaad3c2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>zustand</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_c6246d32832c1690e4af6170deaad3c2</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_c6246d32832c1690e4af6170deaad3c2">1a246d32832c1690e4af6170deaad3c5</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-15 13:36:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

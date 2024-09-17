@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+    $scope.data = {
+        loans: [],
+        message: '',
+        error: ''
+    };
+
+    // Funktion zum Laden der Ausleihhistorie
+    $scope.loadLoanHistory = function() {
+        console.log('Loading loan history...');
+        $scope.server.get().then(function(response) {
+            console.log('Response:', response);
+            if (response.data.loans) {
+                $scope.data.loans = response.data.loans.map(function(loan) {
+                    return {
+                        ...loan,
+                        canCancel: loan.status === 'Angefragt',
+                        canExtend: loan.status === 'Genehmigt',
+                        canRequestReturn: loan.status === 'Genehmigt'
+                    };
+                });
+                $scope.data.message = response.data.message || '';
+            } else {
+                $scope.data.message = "Keine Ausleihen gefunden.";
+            }
+        }).catch(function(error) {
+            console.log('Error:', error);
+            $scope.data.error = "Fehler beim Abrufen der Ausleihen: " + (error.data.error.message || 'Unbekannter Fehler');
+        });
+    };
+
+    // Funktion zum Stornieren der Ausleihe
+   $scope.cancelLoan = function(loanId) {
+    console.log('Cancel loan with ID:', loanId);  // Debugging hinzufügen
+    if (confirm('Möchten Sie diese Ausleihe stornieren?')) {
+       $scope.server.get({
+            action: 'cancel',
+				 		loanID: loanId
+        }).then(function(response) {
+            console.log('Cancel response:', response);  // Debugging hinzufügen
+            alert(response.data.message || "Ausleihe erfolgreich storniert!");
+            $scope.loadLoanHistory(); // Daten neu laden
+        }).catch(function(error) {
+            console.log('Cancel error:', error);  // Debugging hinzufügen
+            $scope.data.error = "Fehler beim Stornieren der Ausleihe: " + (error.data.error.message || 'Unbekannter Fehler');
+        });
+    }
+};
+
+
+ // Funktion zum Verlängern der Ausleihe
+   $scope.extendLoan = function(loanId) {
+    console.log('Extend loan with ID:', loanId);  // Debugging hinzufügen
+    if (confirm('Möchten Sie diese Ausleihe verlängern?')) {
+       $scope.server.get({
+				 action: 'extend',
+				 loanID: loanId
+        }).then(function(response) {
+            console.log('Extend response:', response);  // Debugging hinzufügen
+            alert(response.data.message || "Ausleihe erfolgreich verlängert!");
+            $scope.loadLoanHistory(); // Daten neu laden
+        }).catch(function(error) {
+            console.log('Extend error:', error);  // Debugging hinzufügen
+            $scope.data.error = "Fehler beim Verlängern der Ausleihe: " + (error.data.error.message || 'Unbekannter Fehler');
+        });
+    }
+};
+
+
+    // Funktion zum Anfordern der Rückgabe
+    $scope.requestReturn = function(loanId) {
+        console.log('Request return for loan with ID:', loanId);
+        if (confirm('Möchten Sie die Rückgabe dieser Ausleihe anfordern?')) {
+							 $scope.server.get({
+								 action: 'requestReturn',
+                 loanID: loanId
+            }).then(function(response) {
+                console.log('Request return response:', response);
+                alert(response.data.message || "Rückgabe erfolgreich angefordert!");
+                $scope.loadLoanHistory(); // Daten neu laden
+            }).catch(function(error) {
+                console.log('Request return error:', error);
+                $scope.data.error = "Fehler beim Anfordern der Rückgabe: " + (error.data.error.message || 'Unbekannter Fehler');
+            });
+        }
+    };
+
+    // Initiale Daten laden
+    $scope.loadLoanHistory();
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.loan-history-table {&#13;
+    background-color: #f9f9f9;&#13;
+    border-radius: 8px;&#13;
+    overflow: hidden;&#13;
+}&#13;
+&#13;
+.table th {&#13;
+    background-color: #007bff;&#13;
+    color: #ffffff;&#13;
+    text-align: center;&#13;
+    font-weight: bold;&#13;
+}&#13;
+&#13;
+.table td {&#13;
+    text-align: center;&#13;
+    vertical-align: middle;&#13;
+}&#13;
+&#13;
+.table tbody tr:nth-child(odd) {&#13;
+    background-color: #f2f2f2;&#13;
+}&#13;
+&#13;
+.table tbody tr:nth-child(even) {&#13;
+    background-color: #ffffff;&#13;
+}&#13;
+&#13;
+.btn {&#13;
+    margin: 0 5px;&#13;
+    padding: 5px 10px;&#13;
+    font-size: 14px;&#13;
+    border-radius: 4px;&#13;
+    transition: background-color 0.3s ease, border-color 0.3s ease;&#13;
+}&#13;
+&#13;
+.btn-danger {&#13;
+    background-color: #dc3545;&#13;
+    border-color: #dc3545;&#13;
+    color: #fff;&#13;
+}&#13;
+&#13;
+.btn-danger:hover {&#13;
+    background-color: #c82333;&#13;
+    border-color: #bd2130;&#13;
+}&#13;
+&#13;
+.btn-warning {&#13;
+    background-color: #ffc107;&#13;
+    border-color: #ffc107;&#13;
+    color: #212529;&#13;
+}&#13;
+&#13;
+.btn-warning:hover {&#13;
+    background-color: #e0a800;&#13;
+    border-color: #d39e00;&#13;
+}&#13;
+&#13;
+.btn-info {&#13;
+    background-color: #17a2b8;&#13;
+    border-color: #17a2b8;&#13;
+    color: #fff;&#13;
+}&#13;
+&#13;
+.btn-info:hover {&#13;
+    background-color: #138496;&#13;
+    border-color: #117a8b;&#13;
+}&#13;
+&#13;
+.no-loans-message, .alert {&#13;
+    margin: 20px 0;&#13;
+    border-radius: 8px;&#13;
+    padding: 15px;&#13;
+    font-size: 16px;&#13;
+    text-align: center;&#13;
+}&#13;
+&#13;
+.no-loans-message i, .alert i {&#13;
+    margin-right: 10px;&#13;
+}&#13;
+&#13;
+.alert-danger {&#13;
+    background-color: #f8d7da;&#13;
+    color: #721c24;&#13;
+}&#13;
+&#13;
+.alert-info {&#13;
+    background-color: #d1ecf1;&#13;
+    color: #0c5460;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Historie der Ausleihen</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>ausleihe_historie_ausleihen</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Historie der Ausleihen</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    function processLoanAction(action, loanId) {
+        var loanGR = new GlideRecord('x_1521148_borrowno_ausleihe');
+        if (loanGR.get(loanId)) {
+            switch (action) {
+                case 'cancel':
+                    if (loanGR.status == 'angefragt') {
+                        loanGR.status = 'storniert';
+                        loanGR.update();
+                        return { success: true, message: 'Ausleihe erfolgreich storniert!' };
+                    } else {
+                        return { error: 'Stornieren ist nur möglich, wenn der Status "Angefragt" ist.' };
+                    }
+                case 'extend':
+                    if (loanGR.status == 'genehmigt') {
+                        var newReturnDate = new GlideDateTime(loanGR.ruckgabedatum);
+                        newReturnDate.addDaysUTC(7);
+                        loanGR.ruckgabedatum = newReturnDate.getValue();
+						if (loanGR.verlangerungen > 4) {
+                            return { error: 'Verlängerungslimit erreicht. Maximal 4 Verlängerungen erlaubt.' };
+                        }
+                        loanGR.update();
+                        return { success: true, message: 'Ausleihe erfolgreich verlängert!' };
+                    } else {
+                        return { error: 'Verlängern ist nur möglich, wenn der Status "Genehmigt" ist.' };
+                    }
+                case 'requestReturn':
+                    if (loanGR.status == 'genehmigt') {
+                        loanGR.status = 'rueckgabe_angefordert';
+                        loanGR.update();
+                        return { success: true, message: 'Rückgabe erfolgreich angefordert!' };
+                    } else {
+                        return { error: 'Rückgabe anfordern ist nur möglich, wenn der Status "Genehmigt" ist.' };
+                    }
+                default:
+                    return { error: 'Unbekannte Aktion.' };
+            }
+        } else {
+            return { error: 'Ausleihe nicht gefunden.' };
+        }
+    }
+
+		if (input && input.action && input.loanID) {
+            data.response = processLoanAction(input.action, input.loanID);
+        } else {
+            data.response = { error: 'Fehlende Eingabedaten.' };
+        }
+
+    var userId = gs.getUserID();
+    var loanGR = new GlideRecord('x_1521148_borrowno_ausleihe');
+    loanGR.addQuery('ausleiher', userId);
+    loanGR.orderByDesc('ausleihdatum');
+    loanGR.query();
+
+    data.loans = [];
+    while (loanGR.next()) {
+        data.loans.push({
+            sys_id: loanGR.sys_id.toString(),
+            equipmentName: loanGR.equipment.name.getDisplayValue(),
+            equipmentDescription: loanGR.equipment.beschreibung.getDisplayValue(),
+            ausleihdatum: loanGR.ausleihdatum.getDisplayValue(),
+            ruckgabedatum: loanGR.ruckgabedatum.getDisplayValue(),
+            status: loanGR.status.getDisplayValue(),
+			verlangerungen: loanGR.verlangerungen.getDisplayValue() || 0,
+            quittiertVon: loanGR.quittiert_von.getDisplayValue()
+        });
+    }
+
+    data.message = data.message || (data.loans.length === 0 ? "Keine Ausleihen gefunden." : '');
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 11:01:51</sys_created_on>
+        <sys_id>c5fd96d383e01e90e4af6170deaad3cc</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_name>Historie der Ausleihen</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_c5fd96d383e01e90e4af6170deaad3cc</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-17 15:51:56</sys_updated_on>
+        <template><![CDATA[<div class="loan-history-container">
+    <div ng-if="data.loans.length > 0" class="loan-history-table">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Equipment Name</th>
+                    <th>Beschreibung</th>
+                    <th>Ausleihdatum</th>
+                    <th>Rückgabedatum</th>
+                    <th>Status</th>
+                  	<th>Anzahl der Verlängerungen</th>
+                    <th>Rückgabe quittiert von</th>
+                    <th>Aktionen</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="loan in data.loans">
+                  <td>{{loan.equipmentName}}</td>
+                  <td>{{loan.equipmentDescription}}</td>
+                  <td>{{loan.ausleihdatum}}</td>
+                  <td>{{loan.ruckgabedatum}}</td>
+                  <td>{{loan.status}}</td>
+                  <td>{{loan.verlangerungen}}</td>
+                  <td>{{loan.quittiertVon}}</td>
+                  <td>
+                      <!-- Aktionen -->
+                      <button ng-if="loan.canCancel" class="btn btn-danger btn-sm" ng-click="cancelLoan(loan.sys_id)">
+                          <i class="fa fa-times-circle"></i> Stornieren
+                      </button>
+                      <button ng-if="loan.canExtend" class="btn btn-warning btn-sm" ng-click="extendLoan(loan.sys_id)">
+                          <i class="fa fa-calendar-plus"></i> Verlängern
+                      </button>
+                      <button ng-if="loan.canRequestReturn" class="btn btn-info btn-sm" ng-click="requestReturn(loan.sys_id)">
+                          <i class="fa fa-arrow-right"></i> Rückgabe anfordern
+                      </button>
+                  </td>
+              </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div ng-if="data.loans.length === 0" class="no-loans-message">
+        <i class="fa fa-exclamation-circle"></i> Keine Ausleihen gefunden.
+    </div>
+    <div ng-if="data.error" class="alert alert-danger">
+        <i class="fa fa-times-circle"></i> {{data.error}}
+    </div>
+    <div ng-if="data.message" class="alert alert-info">
+        <i class="fa fa-info-circle"></i> {{data.message}}
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

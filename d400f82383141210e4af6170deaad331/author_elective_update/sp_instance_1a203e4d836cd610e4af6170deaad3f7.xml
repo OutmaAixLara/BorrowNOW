@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">a520bac9836cd610e4af6170deaad34b</sp_column>
+        <sp_widget display_value="Login Widget">910f220d836cd610e4af6170deaad3ea</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 12:33:49</sys_created_on>
+        <sys_id>1a203e4d836cd610e4af6170deaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_instance_1a203e4d836cd610e4af6170deaad3f7</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 12:33:49</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=1a203e4d836cd610e4af6170deaad3f7"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_instance_1a203e4d836cd610e4af6170deaad3f7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">a520bac9836cd610e4af6170deaad34b</sp_column><sp_widget display_value="Login Widget">910f220d836cd610e4af6170deaad3ea</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-08 12:33:49</sys_created_on><sys_id>1a203e4d836cd610e4af6170deaad3f7</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_instance_1a203e4d836cd610e4af6170deaad3f7</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-08 12:33:49</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=1a203e4d836cd610e4af6170deaad3f7"/></record_update>]]></payload>
+        <payload_hash>569032657</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 12:33:49</sys_created_on>
+        <sys_id>12203e4d836cd610e4af6170deaad3fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191d1a04d4c0000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 12:33:49</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>16203e4de46cd6106cfd31552340c6f9</update_guid>
+        <update_guid_history>16203e4de46cd6106cfd31552340c6f9:569032657</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">56ac1cf183e81650e4af6170deaad33b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 09:44:49</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>4097fda37f4b4fb69acd50ff62a75f41</sys_id>
+        <sys_metadata>1a203e4d836cd610e4af6170deaad3f7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_instance_1a203e4d836cd610e4af6170deaad3f7</sys_update_name>
+        <sys_update_version display_value="sp_instance_1a203e4d836cd610e4af6170deaad3f7">12203e4d836cd610e4af6170deaad3fa</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 09:44:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

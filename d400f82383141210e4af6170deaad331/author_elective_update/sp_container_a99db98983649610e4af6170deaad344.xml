@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Login - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="equipment_rental_login">7259710183249610e4af6170deaad3a9</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-08 08:52:51</sys_created_on>
+        <sys_id>a99db98983649610e4af6170deaad344</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Login - Container 1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_container_a99db98983649610e4af6170deaad344</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-08 08:53:14</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_container_a99db98983649610e4af6170deaad344</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Login - Container 1</name><order>1</order><semantic_tag/><sp_page display_value="equipment_rental_login">7259710183249610e4af6170deaad3a9</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-08 08:52:51</sys_created_on><sys_id>a99db98983649610e4af6170deaad344</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Login - Container 1</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_container_a99db98983649610e4af6170deaad344</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-08 08:53:14</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>2090051949</payload_hash>
+        <record_name>Login - Container 1</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-08 08:53:14</sys_created_on>
+        <sys_id>53adb90583e49610e4af6170deaad386</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191d0d65b710000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-08 08:53:14</sys_updated_on>
+        <type>Container</type>
+        <update_guid>1badb90599e49610b3bfef6d35011285</update_guid>
+        <update_guid_history>1badb90599e49610b3bfef6d35011285:2090051949,4cadf5cdcba496105409f2bae5bece2b:-1584944498,699db989ed649610a5e37be5828ab346:2090051949</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Login - Container 1">e5c0ca0983e49610e4af6170deaad3f1</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-08 09:06:47</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>064fff41d95745698cb59eda5c8e0fb9</sys_id>
+        <sys_metadata>a99db98983649610e4af6170deaad344</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Login - Container 1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_container_a99db98983649610e4af6170deaad344</sys_update_name>
+        <sys_update_version display_value="sp_container_a99db98983649610e4af6170deaad344">53adb90583e49610e4af6170deaad386</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-08 09:06:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

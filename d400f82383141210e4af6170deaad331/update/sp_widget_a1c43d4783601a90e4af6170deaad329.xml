@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function requestReturn() {
+    // Call the server-side script
+    var ga = new GlideAjax('YourServerScriptName');
+    ga.addParam('sys_id', $scope.data.recordId);
+    ga.getXMLAnswer(function(response) {
+        var result = JSON.parse(response);
+        if (result.success) {
+            alert('Rückgabe anfordern successful.');
+            location.reload(); // Reload the page to reflect changes
+        } else {
+            alert('Error: ' + result.errorMessage);
+        }
+    });
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Add custom styles for the request return button */
+.btn-info {
+    background-color: #00b1ab;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>rueckgabe_anfordern</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Rückgabe anfordern</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // Define the server-side logic for the "Rückgabe anfordern" button
+    var recordId = data.recordId;
+    
+    // Use GlideRecord to find the Ausleihe record
+    var gr = new GlideRecord('x_1521148_borrowno_ausleihe');
+    if (gr.get(recordId)) {
+        // Check if the current user has the 'x_1521148_borrowno.ausleiher_user' role
+        if (gs.hasRole('x_1521148_borrowno.ausleiher_user') && gr.ausleiher == gs.getUserID()) {
+            // Set status to 'rueckgabe_angefordert' and notify the 'verleiher'
+            gr.status = 'rueckgabe_angefordert';
+            gr.update();
+            
+            // Notify the 'verleiher'
+            var equipmentGR = new GlideRecord('x_1521148_borrowno_equipment');
+            if (equipmentGR.get(gr.equipment)) {
+                var verleiher = equipmentGR.verleiher_id;
+                if (verleiher) {
+                    gs.eventQueue('x_1521148_borrowno.ausleihe.rueckgabe_be', gr, verleiher.sys_id, 'Das Equipment wurde zurückgegeben und muss quittiert werden.');
+                } else {
+                    gs.addErrorMessage('Kein Verleiher für dieses Equipment gefunden.');
+                }
+            } else {
+                gs.addErrorMessage('Das Equipment konnte nicht gefunden werden.');
+            }
+        } else {
+            gs.addErrorMessage('Unauthorized to request return.');
+        }
+    } else {
+        gs.addErrorMessage('Record not found.');
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 13:22:29</sys_created_on>
+        <sys_id>a1c43d4783601a90e4af6170deaad329</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Rückgabe anfordern</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_a1c43d4783601a90e4af6170deaad329</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:23:11</sys_updated_on>
+        <template><![CDATA[<div class="widget-content">
+    <button class="btn btn-info" ng-click="c.requestReturn()">Rückgabe anfordern</button>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

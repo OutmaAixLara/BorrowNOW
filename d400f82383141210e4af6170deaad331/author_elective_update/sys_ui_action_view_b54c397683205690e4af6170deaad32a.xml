@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_view">
+    <sys_ui_action_view action="DELETE">
+        <sys_class_name>sys_ui_action_view</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-13 19:16:30</sys_created_on>
+        <sys_id>b54c397683205690e4af6170deaad32a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Ausleihe genehmigen.Default view</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_ui_action display_value="Ausleihe genehmigen">49cd076e83ac9290e4af6170deaad3ee</sys_ui_action>
+        <sys_ui_view display_value="Default view" name="NULL">Default view</sys_ui_view>
+        <sys_update_name>sys_ui_action_view_b54c397683205690e4af6170deaad32a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-13 19:18:25</sys_updated_on>
+        <visibility>exclude</visibility>
+    </sys_ui_action_view>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_ui_action_view_b54c397683205690e4af6170deaad32a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_view"><sys_ui_action_view action="INSERT_OR_UPDATE"><sys_class_name>sys_ui_action_view</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-13 19:16:30</sys_created_on><sys_id>b54c397683205690e4af6170deaad32a</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Ausleihe genehmigen.Default view</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_ui_action display_value="Ausleihe genehmigen">49cd076e83ac9290e4af6170deaad3ee</sys_ui_action><sys_ui_view display_value="Default view" name="NULL">Default view</sys_ui_view><sys_update_name>sys_ui_action_view_b54c397683205690e4af6170deaad32a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-13 19:18:25</sys_updated_on><visibility>exclude</visibility></sys_ui_action_view></record_update>]]></payload>
+        <payload_hash>2107865610</payload_hash>
+        <record_name>exclude</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-13 19:18:25</sys_created_on>
+        <sys_id>3dbcf93a83205690e4af6170deaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191ecd285040000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-13 19:18:25</sys_updated_on>
+        <type>UI View Action</type>
+        <update_guid>f1bcf93a0220569089dfd6965bccfe6a</update_guid>
+        <update_guid_history>f1bcf93a0220569089dfd6965bccfe6a:2107865610,c64c3976fa20569076ad72f8c855582d:321288574</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-13 19:20:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action_view">sys_ui_action_view</sys_db_object>
+        <sys_id>4a33842b76564243b089bb2b072bfe11</sys_id>
+        <sys_metadata>b54c397683205690e4af6170deaad32a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Ausleihe genehmigen.Default view</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent display_value="Ausleihe genehmigen">49cd076e83ac9290e4af6170deaad3ee</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_ui_action_view_b54c397683205690e4af6170deaad32a</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_view_b54c397683205690e4af6170deaad32a">3dbcf93a83205690e4af6170deaad36a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-13 19:20:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

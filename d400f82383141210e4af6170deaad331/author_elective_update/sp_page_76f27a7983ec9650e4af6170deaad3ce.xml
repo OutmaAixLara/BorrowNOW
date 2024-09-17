@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>lender_management</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>true</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 20:42:38</sys_created_on>
+        <sys_id>76f27a7983ec9650e4af6170deaad3ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>lender_management</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_page_76f27a7983ec9650e4af6170deaad3ce</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 20:42:38</sys_updated_on>
+        <title>Lender Management</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=76f27a7983ec9650e4af6170deaad3ce"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_page_76f27a7983ec9650e4af6170deaad3ce</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>custom</category><css/><draft>false</draft><dynamic_title_structure/><human_readable_url_structure/><id>lender_management</id><internal>false</internal><omit_watcher>false</omit_watcher><public>true</public><roles/><seo_script/><short_description/><sys_class_name>sp_page</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-10 20:42:38</sys_created_on><sys_id>76f27a7983ec9650e4af6170deaad3ce</sys_id><sys_mod_count>0</sys_mod_count><sys_name>lender_management</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_page_76f27a7983ec9650e4af6170deaad3ce</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-10 20:42:38</sys_updated_on><title>Lender Management</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=76f27a7983ec9650e4af6170deaad3ce"/></record_update>]]></payload>
+        <payload_hash>-1716969639</payload_hash>
+        <record_name>lender_management</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 20:42:38</sys_created_on>
+        <sys_id>da33bab983ec9650e4af6170deaad330</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191ddac8b600000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 20:42:38</sys_updated_on>
+        <type>Page</type>
+        <update_guid>1a333e75b7ec965092f5fcf380f7b367</update_guid>
+        <update_guid_history>1a333e75b7ec965092f5fcf380f7b367:-1716969639</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="lender_management">88e7fafd8320d650e4af6170deaad371</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 21:03:01</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>312e1eae64c0498084a489ab9687c400</sys_id>
+        <sys_metadata>76f27a7983ec9650e4af6170deaad3ce</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>lender_management</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_page_76f27a7983ec9650e4af6170deaad3ce</sys_update_name>
+        <sys_update_version display_value="sp_page_76f27a7983ec9650e4af6170deaad3ce">da33bab983ec9650e4af6170deaad330</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 21:03:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

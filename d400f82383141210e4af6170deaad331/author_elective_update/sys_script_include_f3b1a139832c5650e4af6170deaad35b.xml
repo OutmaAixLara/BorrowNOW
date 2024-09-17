@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1521148_borrowno.UserRoleChecker</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>UserRoleChecker</name>
+        <script><![CDATA[var UserRoleChecker = Class.create();
+UserRoleChecker.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    checkUserRole: function() {
+        var userId = gs.getUserID();
+        var userRoleGr = new GlideRecord('sys_user_has_role');
+        userRoleGr.addQuery('user', userId);
+        userRoleGr.query();
+
+        var roles = [];
+        while (userRoleGr.next()) {
+            var role = new GlideRecord('sys_user_role');
+            if (role.get(userRoleGr.role)) {
+                roles.push(role.getValue('name'));
+            }
+        }
+
+        // Prüfen, ob die Rolle x_1521148_borrowno.verleiher_user vorhanden ist
+        var hasRole = roles.includes('x_1521148_borrowno.verleiher_user');
+        return hasRole.toString();
+    }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 14:46:54</sys_created_on>
+        <sys_id>f3b1a139832c5650e4af6170deaad35b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>UserRoleChecker</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_script_include_f3b1a139832c5650e4af6170deaad35b</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 17:44:48</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_script_include_f3b1a139832c5650e4af6170deaad35b</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1521148_borrowno.UserRoleChecker&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;UserRoleChecker&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var UserRoleChecker = Class.create();
+UserRoleChecker.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    checkUserRole: function() {
+        var userId = gs.getUserID();
+        var userRoleGr = new GlideRecord('sys_user_has_role');
+        userRoleGr.addQuery('user', userId);
+        userRoleGr.query();
+
+        var roles = [];
+        while (userRoleGr.next()) {
+            var role = new GlideRecord('sys_user_role');
+            if (role.get(userRoleGr.role)) {
+                roles.push(role.getValue('name'));
+            }
+        }
+
+        // Prüfen, ob die Rolle x_1521148_borrowno.verleiher_user vorhanden ist
+        var hasRole = roles.includes('x_1521148_borrowno.verleiher_user');
+        return hasRole.toString();
+    }
+});
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;amine&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-10 14:46:54&lt;/sys_created_on&gt;&lt;sys_id&gt;f3b1a139832c5650e4af6170deaad35b&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;UserRoleChecker&lt;/sys_name&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_f3b1a139832c5650e4af6170deaad35b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;amine&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-10 17:44:48&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1685441210</payload_hash>
+        <record_name>UserRoleChecker</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 17:44:48</sys_created_on>
+        <sys_id>118a82b583a49650e4af6170deaad368</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191dd09bcfa0000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 17:44:48</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>d58a82b520a496509c9cf3e6b9518367</update_guid>
+        <update_guid_history>d58a82b520a496509c9cf3e6b9518367:1685441210,26a7ce39ac6496505ff2ec03e43417d1:-1090779799,ff473df51b609650f526af4d9cc06f4a:-1253717906,c391b5f9b3ec5650b9b94c9035807d16:-662097262,1ee079791aec5650ba7632fccca1002b:-2075273150,abf42dbdbf2c565020dc79eefab02f86:-1253717906,60d4a5bdda2c56500d73fa8c6344de11:1968690769,3883edf93c2c56502dc314d8fb8eb086:1754668730,53c121b97e2c565086c31bf39b9e9b4d:-184615576</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 13:30:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>66b4619c49f347e6a35554f254ab57f9</sys_id>
+        <sys_metadata>f3b1a139832c5650e4af6170deaad35b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UserRoleChecker</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_script_include_f3b1a139832c5650e4af6170deaad35b</sys_update_name>
+        <sys_update_version display_value="sys_script_include_f3b1a139832c5650e4af6170deaad35b">118a82b583a49650e4af6170deaad368</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-15 13:30:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

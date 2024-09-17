@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="DELETE">
+        <caller_access/>
+        <derived_priority>100</derived_priority>
+        <description>Benachrichtigung über die Rückgabe eines Equipments.</description>
+        <event_name>x_1521148_borrowno.ausleihe.rueckgabe_be</event_name>
+        <fired_by/>
+        <priority>100</priority>
+        <queue/>
+        <suffix>ausleihe.rueckgabe_benachrichtigung</suffix>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-12 20:59:42</sys_created_on>
+        <sys_id>dec94dee83605290e4af6170deaad38b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1521148_borrowno.ausleihe.rueckgabe_be</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sysevent_register_dec94dee83605290e4af6170deaad38b</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-12 20:59:42</sys_updated_on>
+        <table/>
+    </sysevent_register>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sysevent_register_dec94dee83605290e4af6170deaad38b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register"><sysevent_register action="INSERT_OR_UPDATE"><caller_access/><derived_priority>100</derived_priority><description>Benachrichtigung über die Rückgabe eines Equipments.</description><event_name>x_1521148_borrowno.ausleihe.rueckgabe_be</event_name><fired_by/><priority>100</priority><queue/><suffix>ausleihe.rueckgabe_benachrichtigung</suffix><sys_class_name>sysevent_register</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-12 20:59:42</sys_created_on><sys_id>dec94dee83605290e4af6170deaad38b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1521148_borrowno.ausleihe.rueckgabe_be</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sysevent_register_dec94dee83605290e4af6170deaad38b</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-12 20:59:42</sys_updated_on><table/></sysevent_register></record_update>]]></payload>
+        <payload_hash>547510702</payload_hash>
+        <record_name>x_1521148_borrowno.ausleihe.rueckgabe_be</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-12 20:59:42</sys_created_on>
+        <sys_id>7b4a896283a05290e4af6170deaad3af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191e808e4c30000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-12 20:59:42</sys_updated_on>
+        <type>Event Registration</type>
+        <update_guid>7f4a8962b7a052904346c98a837d6eae</update_guid>
+        <update_guid_history>7f4a8962b7a052904346c98a837d6eae:547510702</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-12 21:00:20</sys_created_on>
+        <sys_db_object display_value="" name="sysevent_register">sysevent_register</sys_db_object>
+        <sys_id>6cf3ff6a50434812b1f2fcf083f360c1</sys_id>
+        <sys_metadata>dec94dee83605290e4af6170deaad38b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1521148_borrowno.ausleihe.rueckgabe_be</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sysevent_register_dec94dee83605290e4af6170deaad38b</sys_update_name>
+        <sys_update_version display_value="sysevent_register_dec94dee83605290e4af6170deaad38b">7b4a896283a05290e4af6170deaad3af</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-12 21:00:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

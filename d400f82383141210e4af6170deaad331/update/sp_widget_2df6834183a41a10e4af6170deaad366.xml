@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $http) {
+  $scope.loans = [];
+  
+  $http.get('/api/now/table/loan_requests?sysparm_query=borrower=' + gs.getUserID()).then(function(response) {
+    $scope.loans = response.data.result;
+  });
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {&#13;
+    font-family: Arial, sans-serif;&#13;
+    background-color: #f4f4f9;&#13;
+    margin: 0;&#13;
+    padding: 20px;&#13;
+}&#13;
+&#13;
+.table-container {&#13;
+    max-width: 800px;&#13;
+    margin: 0 auto;&#13;
+    background: #fff;&#13;
+    padding: 20px;&#13;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);&#13;
+    border-radius: 8px;&#13;
+}&#13;
+&#13;
+h2 {&#13;
+    text-align: center;&#13;
+    color: #333;&#13;
+}&#13;
+&#13;
+table {&#13;
+    width: 100%;&#13;
+    border-collapse: collapse;&#13;
+    margin-top: 20px;&#13;
+}&#13;
+&#13;
+table, th, td {&#13;
+    border: 1px solid #ddd;&#13;
+}&#13;
+&#13;
+th, td {&#13;
+    padding: 12px;&#13;
+    text-align: left;&#13;
+}&#13;
+&#13;
+th {&#13;
+    background-color: #f2f2f2;&#13;
+    color: #333;&#13;
+}&#13;
+&#13;
+tr:nth-child(even) {&#13;
+    background-color: #f9f9f9;&#13;
+}&#13;
+&#13;
+tr:hover {&#13;
+    background-color: #f1f1f1;&#13;
+}&#13;
+&#13;
+.action-btn {&#13;
+    background-color: #007bff;&#13;
+    color: white;&#13;
+    border: none;&#13;
+    padding: 5px 10px;&#13;
+    text-align: center;&#13;
+    text-decoration: none;&#13;
+    display: inline-block;&#13;
+    font-size: 14px;&#13;
+    margin: 2px 1px;&#13;
+    cursor: pointer;&#13;
+    border-radius: 4px;&#13;
+}&#13;
+&#13;
+.action-btn:hover {&#13;
+    background-color: #0056b3;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>my-borrowed-items</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>My Borrowed Items</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_1521148_borrowno.borrower_role</roles>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 14:14:13</sys_created_on>
+        <sys_id>2df6834183a41a10e4af6170deaad366</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>My Borrowed Items</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_2df6834183a41a10e4af6170deaad366</sys_update_name>
+        <sys_updated_by>michael</sys_updated_by>
+        <sys_updated_on>2024-09-09 17:13:16</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Borrowed Items</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="table-container">
+        <h2>My Borrowed Items</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Artikelname</th>
+                    <th>Ausleihdatum</th>
+                    <th>Rückgabedatum</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                    <td>
+                        <button class="action-btn">Return</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>]]></template>
+    </sp_widget>
+</record_update>

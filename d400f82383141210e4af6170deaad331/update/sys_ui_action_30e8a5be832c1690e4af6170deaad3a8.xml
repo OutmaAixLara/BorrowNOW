@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>equipment_beschaedigt</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>g_user.hasRole('x_1521148_borrowno.verleiher_user')</condition>
+        <form_action>false</form_action>
+        <form_button>false</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>true</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Equipment beschädigt</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[if (current.status == 'rueckgabe_angefordert' && current.zustand == 'in_ordnung') {
+
+	current.zustand = 'beschaedigt'; 
+    current.status = 'zuruckgegeben';
+	
+    current.update();
+
+    var equipmentGR = new GlideRecord('x_1521148_borrowno_u_equipment');
+    if (equipmentGR.get(current.equipment)) {
+        equipmentGR.zustand = 'beschaedigt'; 
+		equipmentGR.update();
+    } else {
+		gs.addErrorMessage('Das Equipment konnte nicht gefunden werden.');
+		}
+    
+    // Show a confirmation message
+    gs.addInfoMessage('Der Equipment wurde als beschädigt markiert.');
+} else {
+    gs.addErrorMessage('Der Zustand muss "In Ordnung" sein und der Status muss "Rückgabe angefordert" sein, um den Zustand zu ändern');
+}
+]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-13 17:55:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>30e8a5be832c1690e4af6170deaad3a8</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Equipment beschädigt</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_ui_action_30e8a5be832c1690e4af6170deaad3a8</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-14 04:50:30</sys_updated_on>
+        <table>x_1521148_borrowno_ausleihe</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

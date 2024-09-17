@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Allgemeine Stile für das Widget */&#13;
+.widget-container {&#13;
+    padding: 20px;&#13;
+    background-color: #f9f9f9;&#13;
+    border-radius: 8px;&#13;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);&#13;
+}&#13;
+&#13;
+/* Überschrift */&#13;
+.widget-container h3 {&#13;
+    font-size: 1.5em;&#13;
+    margin-bottom: 20px;&#13;
+    color: #333;&#13;
+}&#13;
+&#13;
+/* Formularstile */&#13;
+.form-group {&#13;
+    margin-bottom: 15px;&#13;
+}&#13;
+&#13;
+.form-group label {&#13;
+    display: block;&#13;
+    font-weight: bold;&#13;
+    margin-bottom: 5px;&#13;
+}&#13;
+&#13;
+.form-group select {&#13;
+    width: 100%;&#13;
+    padding: 8px;&#13;
+    border: 1px solid #ccc;&#13;
+    border-radius: 4px;&#13;
+    box-sizing: border-box;&#13;
+}&#13;
+&#13;
+/* Tabellenstile */&#13;
+.table {&#13;
+    width: 100%;&#13;
+    border-collapse: collapse;&#13;
+    margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.table th, .table td {&#13;
+    padding: 10px;&#13;
+    text-align: left;&#13;
+    border-bottom: 1px solid #ddd;&#13;
+}&#13;
+&#13;
+.table th {&#13;
+    background-color: #f4f4f4;&#13;
+    font-weight: bold;&#13;
+}&#13;
+&#13;
+.table tbody tr:nth-child(even) {&#13;
+    background-color: #f9f9f9;&#13;
+}&#13;
+&#13;
+/* Fehlermeldungen */&#13;
+.text-danger {&#13;
+    color: #dc3545;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Zeigt dem Verleiher das aktuelle Equipment, das er zur Verfügung hat.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>verleiher_equipment_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Verleiher Equipment List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var userId = gs.getUserID();
+    var equipmentGR = new GlideRecord('x_1521148_borrowno_u_equipment');
+    equipmentGR.addQuery('verleiher_id', userId); // Filter für den aktuellen Benutzer
+    equipmentGR.query();
+    var equipment = [];
+    while (equipmentGR.next()) {
+        equipment.push({
+            name: equipmentGR.name.getDisplayValue(),
+            beschreibung: equipmentGR.beschreibung.getDisplayValue(),
+            verfugbarkeit: equipmentGR.verfugbarkeit.getDisplayValue(),
+            zustand: equipmentGR.zustand.getDisplayValue()
+        });
+    }
+    data.equipment = equipment;
+	
+	if (data.equipment.length === 0) {
+        data.message = "Sie haben keine Equipment zum Verleihen.";
+    }
+	
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 11:50:07</sys_created_on>
+        <sys_id>9219f83d83605650e4af6170deaad3c9</sys_id>
+        <sys_mod_count>89</sys_mod_count>
+        <sys_name>Verleiher Equipment List</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_9219f83d83605650e4af6170deaad3c9</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-17 00:21:31</sys_updated_on>
+        <template><![CDATA[<div class="widget-container">
+    <h3>Mein Equipment</h3>
+    <table class="table" ng-if="data.equipment.length > 0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Beschreibung</th>
+                <th>Verfügbarkeit</th>
+              	<th>Zustand</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in data.equipment">
+                <td>{{ item.name }}</td>
+                <td>{{ item.beschreibung }}</td>
+                <td>{{ item.verfugbarkeit }}</td>
+              	<td>{{ item.zustand }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p ng-if="data.equipment.length === 0">Keine Ausrüstung verfügbar.</p>
+    <p ng-if="data.error" class="text-danger">{{ data.error }}</p>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

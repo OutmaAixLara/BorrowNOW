@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1521148_borrowno.UserRoleUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Ein Script Include zur Überprüfung, ob der aktuelle Benutzer eine bestimmte Rolle hat.</description>
+        <name>UserRoleUtils</name>
+        <script><![CDATA[var UserRoleChecker = Class.create();
+UserRoleChecker.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+  checkUserRole: function() {
+    var roleName = this.getParameter('role_name');
+    var user = gs.getUser(); // Holt den aktuellen Benutzer
+    
+    return user.hasRole(roleName) ? 'true' : 'false';
+  }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 14:00:37</sys_created_on>
+        <sys_id>37d691bd83685650e4af6170deaad3b2</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>UserRoleUtils</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_script_include_37d691bd83685650e4af6170deaad3b2</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 14:42:26</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_script_include_37d691bd83685650e4af6170deaad3b2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1521148_borrowno.UserRoleUtils&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description&gt;Ein Script Include zur Überprüfung, ob der aktuelle Benutzer eine bestimmte Rolle hat.&lt;/description&gt;&lt;name&gt;UserRoleUtils&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var UserRoleChecker = Class.create();
+UserRoleChecker.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+  checkUserRole: function() {
+    var roleName = this.getParameter('role_name');
+    var user = gs.getUser(); // Holt den aktuellen Benutzer
+    
+    return user.hasRole(roleName) ? 'true' : 'false';
+  }
+});
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;amine&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-10 14:00:37&lt;/sys_created_on&gt;&lt;sys_id&gt;37d691bd83685650e4af6170deaad3b2&lt;/sys_id&gt;&lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;&lt;sys_name&gt;UserRoleUtils&lt;/sys_name&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_37d691bd83685650e4af6170deaad3b2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;amine&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-10 14:42:26&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1710369504</payload_hash>
+        <record_name>UserRoleUtils</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 14:42:26</sys_created_on>
+        <sys_id>31c0e9f5832c5650e4af6170deaad30a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191dc62c63e0000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 14:42:26</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>f5c0e9f58a2c56503e28f56f24c61409</update_guid>
+        <update_guid_history>f5c0e9f58a2c56503e28f56f24c61409:1710369504,0f9915b9cea856508bd8388165ad9416:-516663252,8129d1395ea8565006ba36d2016655b7:-1744555984,9919d9b5e4a856509774e50bd805ff63:-1788552513,f9d89d750ca8565039753c4aa1b37016:-1744555984,c1a85d751aa8565067855abceb611dc3:-516663252,03289571cfa85650e2133723a26adb13:1925883051,213751bd396856503f1ed4b2af0def2c:-1352639104</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 14:46:06</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>160360f0b5344f5c94f32e95a85be251</sys_id>
+        <sys_metadata>37d691bd83685650e4af6170deaad3b2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UserRoleUtils</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_script_include_37d691bd83685650e4af6170deaad3b2</sys_update_name>
+        <sys_update_version display_value="sys_script_include_37d691bd83685650e4af6170deaad3b2">31c0e9f5832c5650e4af6170deaad30a</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 14:46:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

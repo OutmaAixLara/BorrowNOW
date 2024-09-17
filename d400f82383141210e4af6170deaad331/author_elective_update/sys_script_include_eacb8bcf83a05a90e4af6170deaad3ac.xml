@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1521148_borrowno.EquipmentAjaxProcessor</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>EquipmentAjaxProcessor</name>
+        <script><![CDATA[var EquipmentAjaxProcessor = Class.create();
+EquipmentAjaxProcessor.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    addEquipment: function() {
+        var name = this.getParameter('sysparm_name'); // Name des Equipments
+        var description = this.getParameter('sysparm_beschreibung'); // Beschreibung des Equipments
+        var availability = this.getParameter('sysparm_verfugbarkeit'); // Verfügbarkeit
+
+        var equipmentGR = new GlideRecord('x_1521148_borrowno_u_equipment');
+        equipmentGR.initialize();
+        equipmentGR.setValue('name', name); // Falls das Feld auf Deutsch ist, z.B. 'Name'
+        equipmentGR.setValue('beschreibung', description); // Falls das Feld auf Deutsch ist, z.B. 'Beschreibung'
+        equipmentGR.setValue('verfugbarkeit', availability); // Falls das Feld auf Deutsch ist, z.B. 'Verfügbarkeit'
+        equipmentGR.insert();
+
+        return "Equipment erfolgreich hinzugefügt";
+    }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-14 19:44:13</sys_created_on>
+        <sys_id>eacb8bcf83a05a90e4af6170deaad3ac</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>EquipmentAjaxProcessor</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_script_include_eacb8bcf83a05a90e4af6170deaad3ac</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-14 20:48:06</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_script_include_eacb8bcf83a05a90e4af6170deaad3ac</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1521148_borrowno.EquipmentAjaxProcessor&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;EquipmentAjaxProcessor&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var EquipmentAjaxProcessor = Class.create();
+EquipmentAjaxProcessor.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    addEquipment: function() {
+        var name = this.getParameter('sysparm_name'); // Name des Equipments
+        var description = this.getParameter('sysparm_beschreibung'); // Beschreibung des Equipments
+        var availability = this.getParameter('sysparm_verfugbarkeit'); // Verfügbarkeit
+
+        var equipmentGR = new GlideRecord('x_1521148_borrowno_u_equipment');
+        equipmentGR.initialize();
+        equipmentGR.setValue('name', name); // Falls das Feld auf Deutsch ist, z.B. 'Name'
+        equipmentGR.setValue('beschreibung', description); // Falls das Feld auf Deutsch ist, z.B. 'Beschreibung'
+        equipmentGR.setValue('verfugbarkeit', availability); // Falls das Feld auf Deutsch ist, z.B. 'Verfügbarkeit'
+        equipmentGR.insert();
+
+        return "Equipment erfolgreich hinzugefügt";
+    }
+});
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;amine&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-14 19:44:13&lt;/sys_created_on&gt;&lt;sys_id&gt;eacb8bcf83a05a90e4af6170deaad3ac&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;EquipmentAjaxProcessor&lt;/sys_name&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_eacb8bcf83a05a90e4af6170deaad3ac&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;amine&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-14 20:48:06&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1051028617</payload_hash>
+        <record_name>EquipmentAjaxProcessor</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-14 20:48:06</sys_created_on>
+        <sys_id>95da13c383a45a90e4af6170deaad31f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191f24afcc10000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-14 20:48:06</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>5dda13c3f8a45a90ec43fdadea09a51e</update_guid>
+        <update_guid_history>5dda13c3f8a45a90ec43fdadea09a51e:-1051028617,175613c396645a909abf4745cd9889b1:1852901843,65d0134795245a90dabf3ff732be8b00:670232837,4a001b0f7fe05a90f006d499a70304b8:-871741727,58bf4b8f25e05a902fc215e81420fa9e:2100222096,ca3c8f0773e05a9086edb0ac16782c30:-1650048133</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 13:29:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>8196281ed33745a09db61bcbe85aa400</sys_id>
+        <sys_metadata>eacb8bcf83a05a90e4af6170deaad3ac</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>EquipmentAjaxProcessor</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_script_include_eacb8bcf83a05a90e4af6170deaad3ac</sys_update_name>
+        <sys_update_version display_value="sys_script_include_eacb8bcf83a05a90e4af6170deaad3ac">95da13c383a45a90e4af6170deaad31f</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-15 13:29:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[(function() {
+  data.items = [];
+  data.isBorrower = false;
+
+  function loadItems() {
+    $sp.getRecordList('x_1521148_borrowno_ausleihe', {
+      sysparm_query: 'x_1521148_borrowno_u_equipment=' + data.user_sys_id,
+      sysparm_fields: 'x_1521148_borrowno_u_equipment.name,x_1521148_borrowno_u_equipment.beschreibung,x_1521148_borrowno_u_equipment.rueckgabedatum,x_1521148_borrowno_ausleihe.ausleiher'
+    }).then(function(response) {
+      data.items = response.data.map(function(record) {
+        return {
+          name: record['x_1521148_borrowno_u_equipment.name'],
+          description: record['x_1521148_borrowno_u_equipment.beschreibung'],
+          end_date: record.x_1521148_borrowno_u_equipment.rueckgabedatum,
+          canBorrow: !record.x_1521148_borrowno_ausleihe.ausleiher,
+          canReturn: record.x_1521148_borrowno_ausleihe.ausleiher === data.user_sys_id
+        };
+      });
+      data.isBorrower = data.items.some(item => item.canReturn);
+    });
+  }
+
+  function borrowItem(item) {
+    // Call the server script to borrow the item
+    $sp.get('borrow_item', { sys_id: item.sys_id }).then(function(response) {
+      loadItems();
+    });
+  }
+
+  function returnItem(item) {
+    // Call the server script to return the item
+    $sp.get('return_item', { sys_id: item.sys_id }).then(function(response) {
+      loadItems();
+    });
+  }
+
+  loadItems();
+
+  // Expose functions to the template
+  c.borrowItem = borrowItem;
+  c.returnItem = returnItem;
+})();]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.borrowed-items-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.borrowed-items-table th, .borrowed-items-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.borrowed-items-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>material-detail</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Material Detail</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_1521148_borrowno.provider_role,x_1521148_borrowno.borrower_role,x_1521148_borrowno.verleiher_user</roles>
+        <script><![CDATA[(function() {
+  // Fetch user sys_id and roles
+  data.user_sys_id = gs.getUserID();
+  data.user_roles = gs.getUser().getRoles();
+  data.isAusleiher = data.user_roles.indexOf('ausleiher') > -1;
+
+  if (input && input.sys_id) {
+    var loan = new GlideRecord('x_1521148_borrowno_ausleihe');
+    if (loan.get(input.sys_id)) {
+      if (input.action === 'borrow') {
+        loan.x_1521148_borrowno_ausleihe.ausleiher = data.user_sys_id;
+        loan.update();
+      } else if (input.action === 'return') {
+        loan.x_1521148_borrowno_ausleihe.ausleiher = '';
+        loan.update();
+      }
+    }
+  }
+
+  var items = [];
+  var gr = new GlideRecord('x_1521148_borrowno_ausleihe');
+  gr.query();
+  while (gr.next()) {
+    var item = {};
+    item.sys_id = gr.sys_id.toString();
+    item.name = gr.x_1521148_borrowno_u_equipment.name;
+    item.description = gr.x_1521148_borrowno_u_equipment.beschreibung;
+    item.end_date = gr.x_1521148_borrowno_u_equipment.rueckgabedatum.toString();
+    item.canBorrow = !gr.x_1521148_borrowno_ausleihe.nil();
+    item.canReturn = gr.x_1521148_borrowno_ausleihe == data.user_sys_id;
+    items.push(item);
+  }
+  data.items = items;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 14:05:04</sys_created_on>
+        <sys_id>6bd4834d83641a10e4af6170deaad3cb</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Material Detail</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_6bd4834d83641a10e4af6170deaad3cb</sys_update_name>
+        <sys_updated_by>michael</sys_updated_by>
+        <sys_updated_on>2024-09-16 14:20:42</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html>
+  <head>
+    <title>Artikelbeschreibung</title>
+  </head>
+  <body>
+    <h2>Artikelbeschreibung</h2>
+    <div>
+      <table class="borrowed-items-table">
+        <thead>
+          <tr>
+            <th>Artikelname</th>
+            <th>Beschreibung</th>
+            <th ng-if="data.isBorrower">Rückgabedatum</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in data.items">
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td ng-if="data.isBorrower">{{ item.end_date }}</td>
+            <td>
+              <button ng-if="item.canBorrow" ng-click="borrowItem(item)">Ausleihen</button>
+              <button ng-if="item.canReturn" ng-click="returnItem(item)">Zurückgeben</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>]]></template>
+    </sp_widget>
+</record_update>

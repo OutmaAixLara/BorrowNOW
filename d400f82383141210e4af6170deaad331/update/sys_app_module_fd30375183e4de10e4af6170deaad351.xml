@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Ausleihe">2530bf1183e4de10e4af6170deaad316</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Ausleihes</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_1521148_borrowno_ausleihe</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles>x_1521148_borrowno.ausleihe_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 11:52:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fd30375183e4de10e4af6170deaad351</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Ausleihes</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_app_module_fd30375183e4de10e4af6170deaad351</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-11 14:23:22</sys_updated_on>
+        <timeline_page/>
+        <title>Ausleihes</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>
