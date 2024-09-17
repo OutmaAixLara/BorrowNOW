@@ -2,23 +2,22 @@
 graph LR
 
     subgraph Support processes
-        D1[Benutzer-DB] --> D2[Equipment-DB] --> D3[Ausleih-Verwaltung] --> D4[Genehmigungs-Workflow] --> D5[" "] --> D6[" "] --> D7[Erinnerungs-System] --> D8[Reporting-Tool]
+    D2[Equipment-DB] --> D3[Ausleih-Verwaltung] --> D4[Genehmigungs-Workflow] --> D5[" "] --> D6[" "] --> D7[Erinnerungs-System] --> D8[Reporting-Tool]
     end
 
     subgraph Backstage actions
-        C1[Benutzerkonten verwalten] --> C2[Equipmentdatenbank pflegen] --> C3[Anträge prüfen] --> C4[Genehmigungen einholen] --> C5[Verfügbarkeit prüfen] --> C6[" "] --> C7[Erinnerungen versenden] --> C8[Rückgaben verfolgen]
+        C2[Equipmentdatenbank pflegen] --> C3[Anträge prüfen] --> C4[Genehmigungen einholen] --> C5[Verfügbarkeit prüfen] --> C6[" "] --> C7[Erinnerungen versenden] --> C8[Rückgaben verfolgen]
     end
 
     subgraph Frontstage actions
-        B1[Unterstützung bei Anmeldung] --> B2[Beratung zu Equipment] --> B3[Entgegennahme des Antrags] --> B4[" "] --> B5[" "] --> B6[Übergabe des Equipments] --> B7[" "] --> B8[Rücknahme und Prüfung]
+        B2[Beratung zu Equipment] --> B3[Entgegennahme des Antrags] --> B4[" "] --> B5[" "] --> B6[Übergabe des Equipments] --> B7[" "] --> B8[Rücknahme und Prüfung]
     end
 
     subgraph The customer's actions
-        A1[Anmeldung] --> A2[Suche nach Equipment] --> A3[Auswahl des Equipments] --> A4[Ausleihe beantragen] --> A5[Genehmigung abwarten] --> A6[Equipment abholen] --> A7[Equipment nutzen] --> A8[Equipment zurückgeben]
+        A2[Suche nach Equipment] --> A3[Auswahl des Equipments] --> A4[Ausleihe beantragen] --> A5[Genehmigung abwarten] --> A6[Equipment abholen] --> A7[Equipment nutzen] --> A8[Equipment zurückgeben]
     end
 
-    A1 -.- B1 -.- C1 -.- D1
-    A2 -.- B2 -.- C2 -.- D2
+        A2 -.- B2 -.- C2 -.- D2
     A3 -.- B3 -.- C3 -.- D3
     A4 -.- B4 -.- C4 -.- D4
     A5 -.- B5 -.- C5 -.- D5

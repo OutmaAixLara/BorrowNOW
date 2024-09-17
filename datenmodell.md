@@ -1,55 +1,36 @@
 ```mermaid
 erDiagram
-    u_equipment {
+    Ausleihe {
         string sys_id PK
-        string name
-        choice type
-        string description
-        choice status
-        choice owner FK "References u_lender"
-        string location
+        ref Ausleiher FK "References sys_user"
+        date Ausleihdatum
+        date Ruckgabedatum
+        ref Equipment "References Equipment"
+        choice Zustand
+        choice Status
+        ref Quittiert_von FK "References sys_user"
+        int Verlaengerungen
+
     }
 
-    u_lender {
+    Equipment {
         string sys_id PK
-        string name
-        choice department
-        string contact_info
+        string Name
+        string Beschreibung
+        date Rueckgabedatum
+        ref Verleiher "References sys_user"
     }
 
-    u_borrower {
+    sys_user {
         string sys_id PK
-        string name
-        choice type
-        string contact_info
-        choice status
     }
 
-    u_loan {
-        string sys_id PK
-        choice equipment FK "References u_equipment"
-        choice borrower FK "References u_borrower"
-        choice lender FK "References u_lender"
-        date start_date
-        date end_date
-        date actual_return_date
-        choice status
-        choice approval_status
-    }
-
-    u_reminder {
-        string sys_id PK
-        string loan FK "References u_loan"
-        date reminder_date
-        choice status
-    }
 
     %% Relationships
-    u_lender ||--o{ u_equipment : "owns"
-    u_loan }o--|| u_equipment : "belongs to"
-    u_loan }o--|| u_borrower : "is assigned to"
-    u_loan }o--|| u_lender : "is approved by"
-    u_reminder ||--o{ u_loan : "relates to"
-
+    Ausleihe ||--o{ sys_user : ""
+    Ausleihe }o--|| sys_user : ""
+    Ausleihe }o--|| Equipment : ""
+    Equipment }o--|| sys_user : ""
+  
 
 ```
