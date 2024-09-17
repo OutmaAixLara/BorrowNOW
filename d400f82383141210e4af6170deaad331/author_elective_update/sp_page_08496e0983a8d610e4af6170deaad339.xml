@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>loan_start_page</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>true</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 12:04:01</sys_created_on>
+        <sys_id>08496e0983a8d610e4af6170deaad339</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>loan_start_page</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_page_08496e0983a8d610e4af6170deaad339</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 12:37:00</sys_updated_on>
+        <title>Start Page</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=08496e0983a8d610e4af6170deaad339"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_page_08496e0983a8d610e4af6170deaad339</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>custom</category><css/><draft>false</draft><dynamic_title_structure/><human_readable_url_structure/><id>loan_start_page</id><internal>false</internal><omit_watcher>false</omit_watcher><public>true</public><roles/><seo_script/><short_description/><sys_class_name>sp_page</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-08 12:04:01</sys_created_on><sys_id>08496e0983a8d610e4af6170deaad339</sys_id><sys_mod_count>1</sys_mod_count><sys_name>loan_start_page</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_page_08496e0983a8d610e4af6170deaad339</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-08 12:37:00</sys_updated_on><title>Start Page</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=08496e0983a8d610e4af6170deaad339"/></record_update>]]></payload>
+        <payload_hash>702917419</payload_hash>
+        <record_name>loan_start_page</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 12:37:00</sys_created_on>
+        <sys_id>81e0b28d836cd610e4af6170deaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191d1a338200000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 12:37:00</sys_updated_on>
+        <type>Page</type>
+        <update_guid>49e0b28de66cd610db648fc2528ead6e</update_guid>
+        <update_guid_history>49e0b28de66cd610db648fc2528ead6e:702917419,4259a209bba8d61003c034ac085cf44e:-1139674738</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="loan_start_page">10b736bd8320d650e4af6170deaad339</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 21:02:14</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>1265875b2664453d8131116af8749719</sys_id>
+        <sys_metadata>08496e0983a8d610e4af6170deaad339</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>loan_start_page</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_page_08496e0983a8d610e4af6170deaad339</sys_update_name>
+        <sys_update_version display_value="sp_page_08496e0983a8d610e4af6170deaad339">81e0b28d836cd610e4af6170deaad36f</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-10 21:02:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

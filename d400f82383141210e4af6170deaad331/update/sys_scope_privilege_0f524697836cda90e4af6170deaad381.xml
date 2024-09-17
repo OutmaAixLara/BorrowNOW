@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>read</operation>
+        <source_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>michael</sys_created_by>
+        <sys_created_on>2024-09-15 09:00:02</sys_created_on>
+        <sys_id>0f524697836cda90e4af6170deaad381</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_ausleihe</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_scope_privilege_0f524697836cda90e4af6170deaad381</sys_update_name>
+        <sys_updated_by>michael</sys_updated_by>
+        <sys_updated_on>2024-09-15 09:00:02</sys_updated_on>
+        <target_name>u_ausleihe</target_name>
+        <target_scope display_value="AusleiheNow">e4eea60a83289a50e4af6170deaad338</target_scope>
+        <target_type>sys_db_object</target_type>
+    </sys_scope_privilege>
+</record_update>

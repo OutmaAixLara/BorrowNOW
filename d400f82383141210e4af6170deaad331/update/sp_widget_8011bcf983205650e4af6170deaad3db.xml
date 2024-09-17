@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+  // Initialisieren von Variablen
+  $scope.equipmentList = [];
+
+  // API-Aufruf, um das Equipment zu laden, das dem Verleiher gehört
+  var url = '/api/now/table/x_1521148_borrowno_u_equipment?sysparm_query=x_1521148_borrowno.u_verleiher=' + $scope.data.verleiherId;
+
+  // Abrufen der Ausleihen des Verleihers
+  $http.get(url).then(function(response) {
+    $scope.equipmentList = response.data.result;
+  }).catch(function(error) {
+    console.log("Fehler beim Laden des Equipments", error);
+  });
+
+  // Funktion zum Genehmigen/Ablehnen einer Ausleihe
+  $scope.approveLoan = function(loanId) {
+    var approveUrl = '/api/now/table/x_1521148_borrowno.u_ausleihe/' + loanId;
+    $http.patch(approveUrl, { status: 'genehmigt' }).then(function(response) {
+      alert('Die Ausleihe wurde genehmigt.');
+    }).catch(function(error) {
+      console.log('Fehler beim Genehmigen der Ausleihe', error);
+    });
+  };
+
+  $scope.rejectLoan = function(loanId) {
+    var rejectUrl = '/api/now/table/x_1521148_borrowno.u_ausleihe/' + loanId;
+    $http.patch(rejectUrl, { status: 'abgelehnt' }).then(function(response) {
+      alert('Die Ausleihe wurde abgelehnt.');
+    }).catch(function(error) {
+      console.log('Fehler beim Ablehnen der Ausleihe', error);
+    });
+  };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Zeigt dem Verleiher eine Liste aller verfügbaren Equipments und deren Status. Der Verleiher kann hier auch Equipment als "verliehen" oder "verfügbar" markieren.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>borrower_equipment_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Borrower Equipment List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 11:15:43</sys_created_on>
+        <sys_id>8011bcf983205650e4af6170deaad3db</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Borrower Equipment List</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_8011bcf983205650e4af6170deaad3db</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-12 15:06:29</sys_updated_on>
+        <template><![CDATA[<div>
+  <h2>Verliehenes Equipment</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Aktionen</th>
+    </tr>
+    <tr ng-repeat="equipment in equipmentList">
+      <td>{{ equipment.name }}</td>
+      <td>{{ equipment.verfügbarkeit }}</td>
+      <td>
+        <button ng-click="approveLoan(equipment.sys_id)">Genehmigen</button>
+        <button ng-click="rejectLoan(equipment.sys_id)">Ablehnen</button>
+      </td>
+    </tr>
+  </table>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

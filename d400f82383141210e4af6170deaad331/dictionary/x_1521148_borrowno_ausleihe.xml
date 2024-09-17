@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="c030735d83a4de10e4af6170deaad3f5" label="Ausleihe" max_length="40" name="x_1521148_borrowno_ausleihe" type="collection">
+        <element label="Rückgabedatum" max_length="40" name="ruckgabedatum" read_only="true" type="glide_date"/>
+        <element choice="1" default="angefragt" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Rückgabe angefordert" sequence="4" value="rueckgabe_angefordert"/>
+                <element inactive_on_update="false" label="Angefragt" sequence="0" value="angefragt"/>
+                <element inactive_on_update="false" label="Zurückgegeben" sequence="3" value="zuruckgegeben"/>
+                <element inactive_on_update="false" label="Genehmigt" sequence="1" value="genehmigt"/>
+                <element inactive_on_update="false" label="Storniert" sequence="5" value="storniert"/>
+                <element inactive_on_update="false" label="Abgelehnt" sequence="2" value="abgelehnt"/>
+            </choice>
+        </element>
+        <element default="0" label="Verlängerungen" max_length="40" name="verlangerungen" read_only="true" type="integer"/>
+        <element choice="3" default="in_ordnung" label="Zustand" max_length="32" name="zustand" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In Ordnung" sequence="0" value="in_ordnung"/>
+                <element inactive_on_update="false" label="Beschädigt" sequence="1" value="beschaedigt"/>
+            </choice>
+        </element>
+        <element label="Quittiert von" max_length="32" name="quittiert_von" read_only="true" reference="sys_user" reference_qual="roles=x_1521148_borrowno.verleiher_user^EQ" reference_qual_condition="roles=x_1521148_borrowno.verleiher_user^EQ" type="reference"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="bdcb83a85f220100a9ad2572f2b4773d" label="Ausleiher" mandatory="true" max_length="32" name="ausleiher" reference="sys_user" reference_qual="roles=x_1521148_borrowno.ausleiher_user^EQ" reference_qual_condition="roles=x_1521148_borrowno.ausleiher_user^EQ" type="reference" use_dynamic_default="true"/>
+        <element label="Ausleihdatum" max_length="40" name="ausleihdatum" read_only="true" type="glide_date"/>
+        <element label="Equipment" mandatory="true" max_length="255" name="equipment" reference="x_1521148_borrowno_u_equipment" reference_qual="verfugbarkeit=verfugbar^zustand=in_ordnung^EQ" reference_qual_condition="verfugbarkeit=verfugbar^zustand=in_ordnung^EQ" type="reference"/>
+        <index name="index">
+            <element name="ausleiher"/>
+        </index>
+        <index name="index2">
+            <element name="quittiert_von"/>
+        </index>
+        <index name="index3">
+            <element name="zustand"/>
+        </index>
+    </element>
+</database>

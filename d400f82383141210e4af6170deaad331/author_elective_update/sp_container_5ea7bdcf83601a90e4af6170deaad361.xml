@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Borrower Dashboard - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="borrower_dashboard">2726cbcd83641a10e4af6170deaad37d</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 13:34:48</sys_created_on>
+        <sys_id>5ea7bdcf83601a90e4af6170deaad361</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Borrower Dashboard - Container 1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_container_5ea7bdcf83601a90e4af6170deaad361</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:34:48</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sp_container_5ea7bdcf83601a90e4af6170deaad361</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Borrower Dashboard - Container 1</name><order>1</order><semantic_tag/><sp_page display_value="borrower_dashboard">2726cbcd83641a10e4af6170deaad37d</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-14 13:34:48</sys_created_on><sys_id>5ea7bdcf83601a90e4af6170deaad361</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Borrower Dashboard - Container 1</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sp_container_5ea7bdcf83601a90e4af6170deaad361</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-14 13:34:48</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>1770193212</payload_hash>
+        <record_name>Borrower Dashboard - Container 1</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 13:34:49</sys_created_on>
+        <sys_id>daa7f54383a01a90e4af6170deaad3c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191f0be4ca10000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:34:49</sys_updated_on>
+        <type>Container</type>
+        <update_guid>dea7f54372a01a906d4cb1e14c6fa3bf</update_guid>
+        <update_guid_history>dea7f54372a01a906d4cb1e14c6fa3bf:1770193212</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Borrower Dashboard - Container 1">74d9bd0b83a01a90e4af6170deaad3d9</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-14 13:44:20</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>3a39ca7b8a3c4430aab5bb0593ec2fd1</sys_id>
+        <sys_metadata>5ea7bdcf83601a90e4af6170deaad361</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Borrower Dashboard - Container 1</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sp_container_5ea7bdcf83601a90e4af6170deaad361</sys_update_name>
+        <sys_update_version display_value="sp_container_5ea7bdcf83601a90e4af6170deaad361">daa7f54383a01a90e4af6170deaad3c0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:44:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

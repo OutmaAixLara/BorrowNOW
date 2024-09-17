@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function MyWidgetController($scope, $http) {
+    // Initialisiere Daten
+    $scope.data = {
+        selectedMaterial: '', // Das ausgewählte Material
+        selectedVerleiher: '',
+        maxDauer: '7 Tage', // Setze die maximale Ausleihdauer auf 28 Tage
+        anfrager: 'mohamed', // Der aktuell angemeldete Benutzer
+        materialien: [] // Liste der verfügbaren Materialien
+    };
+
+    // Materialien aus der Tabelle "u_equipment" laden
+    $http.get('/api/now/table/x_1521148_borrowno_u_equipment') // API für die Equipment-Tabelle
+        .then(function(response) {
+            $scope.data.materialien = response.data.result; // Lade Materialien in die Dropdown-Liste
+        }, function(error) {
+            console.error('Fehler beim Laden der Materialien:', error); // Fehlerbehandlung
+        });
+
+	
+    // Anfrage zum Ausleihen absenden
+    $scope.ausleihen = function() {
+        var ausleihData = {
+            material: $scope.data.selectedMaterial, // Ausgewähltes Material
+            anfrager: $scope.data.anfrager, // Aktueller Benutzer
+            dauer: $scope.data.maxDauer, // Maximale Ausleihdauer
+            status: 'Ausgeliehen' // Setze den Status der Anfrage
+        };
+
+        $http.post('/api/now/table/x_1521148_borrowno_ausleihe', ausleihData) // API für die Ausleihtabelle
+            .then(function(response) {
+                alert('Anfrage erfolgreich gesendet!');
+            }, function(error) {
+                console.error('Fehler beim Senden der Anfrage:', error); // Fehlerbehandlung
+            });
+    };
+
+    // Funktion zum Navigieren zur "My Rentals"-Seite
+    $scope.navigateToMyRentals = function() {
+        // Weiterleitung zur Seite mit der ID "myrentals"
+        window.location.href = '/bn?id=myrentals';
+    };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.my-rentals {
+    display: flex;                /* Verwenden Sie Flexbox für die Anordnung */
+    justify-content: flex-end;    /* Schiebt den Inhalt nach rechts */
+    width: 100%;                  /* Stellen Sie sicher, dass der Container die volle Breite hat */
+}
+
+.my-rentals-button {
+    padding: 10px 10px;       /* Erhöhen Sie den Innenabstand (Padding) für größere Größe */
+    font-size: 1em;         /* Erhöhen Sie die Schriftgröße */
+    margin: 0;                /* Optional: Entfernen Sie den Standard-Margin */
+}
+
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ausleiheform</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Ausleiheform</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>salah</sys_created_by>
+        <sys_created_on>2024-09-10 08:44:50</sys_created_on>
+        <sys_id>2bee4cb983e41650e4af6170deaad35c</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>Ausleiheform</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_2bee4cb983e41650e4af6170deaad35c</sys_update_name>
+        <sys_updated_by>salah</sys_updated_by>
+        <sys_updated_on>2024-09-13 19:48:53</sys_updated_on>
+        <template><![CDATA[<div class="my rentals">
+      <!-- Button "My Rentals" oben links -->
+    <button type="button" class="btn-primary my-rentals-button" ng-click="navigateToMyRentals()">
+        My Rentals
+    </button>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+   
+  <h3>Material Ausleihen</h3>
+    
+</div>
+
+
+<div class="form-group">
+    <label for="material">Material:</label>
+    <select id="material" class="form-control" ng-model="data.selectedMaterial">
+        <option ng-repeat="material in data.materialien" value="{{material.sys_id}}">
+            {{material.name}} <!-- 'name' ist ein Beispiel, ersetze es mit dem entsprechenden Feld der Tabelle -->
+        </option>
+    </select>
+</div>
+
+
+
+
+<div class="form-group">
+    <label for="maxDauer">Maximale Ausleihdauer (Tage):</label>
+    <input type="text" value="28" id="maxDauer" class="form-control" ng-model="data.maxDauer" readonly>
+</div>
+
+
+<button type="button" class="btn btn-primary" ng-click="ausleihen()">Anfrage absenden</button>
+]]></template>
+    </sp_widget>
+</record_update>

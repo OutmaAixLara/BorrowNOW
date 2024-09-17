@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};
+// Client Script to fetch user roles and display buttons
+function onLoad() {
+    var ga = new GlideAjax('x_1521148_borrowno.UserRoleFetcher');
+    ga.addParam('sysparm_name', 'getUserRoles');
+    ga.getXMLAnswer(function(response) {
+        var roles = JSON.parse(response);
+        console.log('Roles:', roles); // Debugging: Check if roles are correctly fetched
+
+  /*      // Show buttons based on roles
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user')) {
+            document.getElementById('verleiher-button').style.display = 'inline-block';
+        }
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+            document.getElementById('ausleiher-button').style.display = 'inline-block';
+        }
+    */
+ });
+    // Handle button clicks
+    document.getElementById('verleiher-button').addEventListener('click', function() {
+        window.location.href = '/bn?id=verleiher_dashboard'; // Redirect to Verleiher Dashboard
+    });
+
+    document.getElementById('ausleiher-button').addEventListener('click', function() {
+        window.location.href = '/bn?id=ausleiher_dashboard'; // Redirect to Ausleiher Dashboard
+    });
+}
+
+// Ensure the onLoad function is called when the document is ready
+document.addEventListener('DOMContentLoaded', onLoad);
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #00b1ab;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #008c87;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Contact Page Styles */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3rem;
+    max-width: 1200px; /* Set a wider max width */
+    margin: 0 auto; /* Center the content */
+}
+
+.contact-info, .contact-form {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Make the sections wider */
+}
+
+.contact-info h2, .contact-form h2 {
+    color: #008c87;
+}
+
+.contact-info p {
+    line-height: 1.6;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    background-color: #008c87;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #006e68;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #008c87;
+    color: white;
+    position: relative; /* Remove fixed footer to allow scrolling */
+    width: 100%;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>aboutus</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>About Us</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[var UserRoleFetcher = Class.create();
+UserRoleFetcher.prototype = {
+    initialize: function() {},
+    
+    getUserRoles: function() {
+        var user = gs.getUser();
+        var roles = user.getRoles();
+        var customRoles = [];
+        
+        if (roles.contains('admin')) {
+            customRoles.push('admin');
+        }
+        if (roles.contains('x_1521148_borrowno.verleiher_user')) {
+            customRoles.push('verleiher');
+        }
+        if (roles.contains('x_1521148_borrowno.ausleiher_user')) {
+            customRoles.push('ausleiher');
+        }
+        
+        return JSON.stringify(customRoles);
+    },
+
+    type: 'UserRoleFetcher'
+};]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 22:06:15</sys_created_on>
+        <sys_id>f52647b583e0d650e4af6170deaad34c</sys_id>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>About Us</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_f52647b583e0d650e4af6170deaad34c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-17 14:17:18</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns - Materialverleih der FH Aachen</title>
+    <style>
+        :root {
+            --primary-color: #00b1ab;
+            --primary-light: #00d6cf;
+            --primary-dark: #008c87;
+            --background-color: #f5f7fa;
+            --text-color: #333;
+            --accent-color: #ff6b6b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+
+        nav {
+    background-color: #008c87;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial {
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial .quote {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial .author {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+         }
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Über uns</h1>
+        </header>
+
+    <nav>
+        <ul>
+            <li><a href="?id=equipment_rental_home">Startseite</a></li>
+            <li><a href="?id=about_us">Über uns</a></li>
+            <li><a href="?id=equipment">Katalog</a></li>
+            <li><a href="?id=contact">Kontakt</a></li>
+            <li><a href="/bn?id=verleiher_dashboard" id="verleiherLink" style="display: none;">Verleiher-Dashboard</a></li>
+            <li><a href="/bn?id=ausleiher_dashboard" id="ausleiherLink" style="display: none;">Ausleiher-Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <section class="story">
+            <h2>Unsere Geschichte</h2>
+            <p>
+                Im Jahr 2023 stellte das Innovations-Team der Universität eine steigende Nachfrage bei Studierenden nach einfachem Zugang zu Ausrüstung für akademische Projekte fest. 
+                Die Idee eines Ausrüstungsverleih-Portals entstand während einer Brainstorming-Sitzung zwischen Fakultätsmitgliedern und dem Studierendenrat. 
+                Studierende benötigten eine bequeme Möglichkeit, Bücher, Laptops, Projektoren und andere wichtige Werkzeuge für ihr Studium auszuleihen, 
+                ohne die Mühe des persönlichen Kaufs oder der Anmietung von außen.
+            </p>
+            <p>
+                Dank der Zusammenarbeit der IT-Abteilung und der Bibliotheksdienste wurde das Portal Anfang 2024 gestartet, wodurch Studierende die Ausrüstung, 
+                die sie benötigen, mit nur wenigen Klicks reservieren konnten. Seitdem hat es den Studierenden ermöglicht, verschiedene Projekte, 
+                Präsentationen und persönliche Vorhaben nahtlos abzuschließen.
+            </p>
+        </section>
+
+        <section class="testimonials">
+            <h2>Was Studierende sagen</h2>
+            <div class="testimonial">
+                <p class="quote">"Das Ausrüstungsverleih-Portal war für mich ein Game-Changer! Ich benötigte einen Projektor für eine Präsentation im letzten Jahr, 
+                und es war so einfach, einen zu buchen. Besserer Service hätte ich mir nicht wünschen können!"</p>
+                <p class="author">- Sarah K., Medienwissenschaften</p>
+            </div>
+            <div class="testimonial">
+                <p class="quote">"Ich hätte nie gedacht, dass es so einfach wäre, alle Technik, die ich für mein Ingenieurprojekt benötigte, zu bekommen. 
+                Das Portal hat mir Zeit gespart."</p>
+                <p class="author">- Mark L., Maschinenbau</p>
+            </div>
+            <div class="testimonial">
+                <p class="quote">"Es ist mehr als nur ein Verleihservice – es ist ein Unterstützungssystem für Studierende, die die richtigen Werkzeuge benötigen, 
+                um in ihrer Arbeit erfolgreich zu sein. Die Ausrüstung, die ich ausgeliehen habe, hat mir geholfen, mein Praktikum zu sichern."</p>
+                <p class="author">- Maria S., Informatik</p>
+            </div>
+        </section>
+
+        <section class="future">
+            <h2>Ausblick</h2>
+            <p>
+                Mit mehr als 500 erfolgreichen Ausleihen seit seiner Einführung verpflichtet sich das Ausrüstungsverleih-Portal, sein Angebot weiter auszubauen. 
+                Ziel ist es, Zugang zu noch mehr Ressourcen, einschließlich fortschrittlicher Technologie und spezialisierter Werkzeuge, zu bieten, 
+                um sicherzustellen, dass alle Studierenden das haben, was sie brauchen, um akademisch erfolgreich zu sein.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 FH Aachen - Ausrüstungsverleih-Portal. Alle Rechte vorbehalten.</p>
+    </footer>
+      <script>
+    // Fetch user roles and display buttons based on roles
+    var ga = new GlideAjax('x_1521148_borrowno.UserRoleFetcher');
+    ga.addParam('sysparm_name', 'getUserRoles');
+    ga.getXMLAnswer(function(response) {
+        var roles = JSON.parse(response);
+        console.log('Rollen:', roles); // Debugging: Überprüfen, ob Rollen korrekt abgerufen werden
+
+        // Show links based on roles
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user')) {
+            document.getElementById('verleiherLink').style.display = 'inline-block';
+        }
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+            document.getElementById('ausleiherLink').style.display = 'inline-block';
+        }
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+        document.getElementById('verleiherLink').style.display = 'inline-block';
+        document.getElementById('ausleiherLink').style.display = 'inline-block';
+        }
+           });
+    </script>
+</body>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

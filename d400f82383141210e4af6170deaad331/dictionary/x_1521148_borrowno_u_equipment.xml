@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="e0c5ebdd83e0de10e4af6170deaad3de" label="Equipment" max_length="40" name="x_1521148_borrowno_u_equipment" type="collection">
+        <element choice="3" default="verfugbar" label="Verfügbarkeit" max_length="40" name="verfugbarkeit" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Verfügbar" sequence="1" value="verfugbar"/>
+                <element inactive_on_update="false" label="Ausgeliehen" sequence="0" value="ausgeliehen"/>
+            </choice>
+        </element>
+        <element choice="3" default="in_ordnung" label="Zustand" max_length="40" name="zustand" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In Ordnung" sequence="1" value="in_ordnung"/>
+                <element inactive_on_update="false" label="Beschädigt" sequence="0" value="beschaedigt"/>
+            </choice>
+        </element>
+        <element label="Rückgabedatum" max_length="40" name="rueckgabedatum" read_only="true" type="glide_date"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="bdcb83a85f220100a9ad2572f2b4773d" label="Verleiher" mandatory="true" max_length="40" name="verleiher_id" reference="sys_user" reference_qual="roles=x_1521148_borrowno.verleiher_user^EQ" reference_qual_condition="roles=x_1521148_borrowno.verleiher_user^EQ" type="reference" use_dynamic_default="true"/>
+        <element label="Beschreibung" mandatory="true" max_length="4000" name="beschreibung" type="string_full_utf8"/>
+        <element label="Name" mandatory="true" max_length="255" name="name" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 12:08:13</sys_created_on>
+        <sys_id>c1e377d98328de10e4af6170deaad37f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1521148_borrowno_u_erinnerungen.x_1521148_borrowno.u_erinnerungen_user</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_security_acl display_value="x_1521148_borrowno_u_erinnerungen">0de377d98328de10e4af6170deaad37a</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_c1e377d98328de10e4af6170deaad37f</sys_update_name>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-09 12:08:13</sys_updated_on>
+        <sys_user_role display_value="x_1521148_borrowno.u_erinnerungen_user" name="x_1521148_borrowno.u_erinnerungen_user">f4e37fd58328de10e4af6170deaad3ff</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_security_acl_role_c1e377d98328de10e4af6170deaad37f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>ahmed</sys_created_by><sys_created_on>2024-09-09 12:08:13</sys_created_on><sys_id>c1e377d98328de10e4af6170deaad37f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1521148_borrowno_u_erinnerungen.x_1521148_borrowno.u_erinnerungen_user</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_security_acl display_value="x_1521148_borrowno_u_erinnerungen">0de377d98328de10e4af6170deaad37a</sys_security_acl><sys_update_name>sys_security_acl_role_c1e377d98328de10e4af6170deaad37f</sys_update_name><sys_updated_by>ahmed</sys_updated_by><sys_updated_on>2024-09-09 12:08:13</sys_updated_on><sys_user_role display_value="x_1521148_borrowno.u_erinnerungen_user" name="x_1521148_borrowno.u_erinnerungen_user">f4e37fd58328de10e4af6170deaad3ff</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1428583534</payload_hash>
+        <record_name>x_1521148_borrowno_u_erinnerungen.x_1521148_borrowno.u_erinnerungen_user</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-09 12:08:13</sys_created_on>
+        <sys_id>55e377d98328de10e4af6170deaad38f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191d6af3a9a0000001</sys_recorded_at>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-09 12:08:13</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>59e377d97228de10f47e06dd70f5e08e</update_guid>
+        <update_guid_history>59e377d97228de10f47e06dd70f5e08e:-1428583534</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1521148_borrowno_u_erinnerungen.x_1521148_borrowno.u_erinnerungen_user">5f70471f83e81e90e4af6170deaad385</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ahmed</sys_created_by>
+        <sys_created_on>2024-09-15 13:31:29</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>0ce70a2957e743d981a23b04fb8c44c9</sys_id>
+        <sys_metadata>c1e377d98328de10e4af6170deaad37f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1521148_borrowno_u_erinnerungen.x_1521148_borrowno.u_erinnerungen_user</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent display_value="">0de377d98328de10e4af6170deaad37a</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_c1e377d98328de10e4af6170deaad37f</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_c1e377d98328de10e4af6170deaad37f">55e377d98328de10e4af6170deaad38f</sys_update_version>
+        <sys_updated_by>ahmed</sys_updated_by>
+        <sys_updated_on>2024-09-15 13:31:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

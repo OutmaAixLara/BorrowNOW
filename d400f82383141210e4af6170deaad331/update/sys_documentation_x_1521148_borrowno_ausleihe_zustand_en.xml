@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="zustand" label="Zustand" language="en" table="x_1521148_borrowno_ausleihe">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>zustand</element>
+            <help/>
+            <hint/>
+            <label>Zustand</label>
+            <language>en</language>
+            <name>x_1521148_borrowno_ausleihe</name>
+            <plural>Zustands</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>amine</sys_created_by>
+            <sys_created_on>2024-09-13 17:11:39</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Zustand</sys_name>
+            <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+            <sys_update_name>sys_documentation_x_1521148_borrowno_ausleihe_zustand_en</sys_update_name>
+            <sys_updated_by>amine</sys_updated_by>
+            <sys_updated_on>2024-09-13 17:11:39</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $http) {
+  $scope.materials = [];
+  
+  $http.get('/api/now/table/materials?sysparm_query=provider=' + gs.getUserID()).then(function(response) {
+    $scope.materials = response.data.result;
+  });
+  
+  $scope.addMaterial = function() {
+    var newMaterial = {
+      name: $scope.newMaterialName,
+      description: $scope.newMaterialDescription,
+      provider: gs.getUserID()
+    };
+    
+    $http.post('/api/now/table/materials', newMaterial).then(function(response) {
+      $scope.materials.push(response.data.result);
+      $scope.newMaterialName = '';
+      $scope.newMaterialDescription = '';
+    });
+  };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>manage-materials</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Manage Materials</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-08 14:07:17</sys_created_on>
+        <sys_id>8f65870d83641a10e4af6170deaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Manage Materials</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_8f65870d83641a10e4af6170deaad30d</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-08 14:07:17</sys_updated_on>
+        <template><![CDATA[<div class="container">
+  <h1>Manage Materials</h1>
+  <form ng-submit="addMaterial()">
+    <div class="form-group">
+      <label for="materialName">Material Name</label>
+      <input type="text" id="materialName" ng-model="newMaterialName" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="materialDescription">Description</label>
+      <textarea id="materialDescription" ng-model="newMaterialDescription" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Material</button>
+  </form>
+  <ul>
+    <li ng-repeat="material in materials">
+      {{material.name}} - {{material.description}}
+    </li>
+  </ul>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

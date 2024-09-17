@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>verlangerungen</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-13 14:48:38</sys_created_on>
+        <sys_id>42fe303a83241690e4af6170deaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>verlangerungen</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_ui_policy_action_42fe303a83241690e4af6170deaad3c9</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-13 14:48:38</sys_updated_on>
+        <table>x_1521148_borrowno_ausleihe</table>
+        <ui_policy display_value="visible after creation">bdfe303a83241690e4af6170deaad3c4</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="DELETE" query="documentkey=42fe303a83241690e4af6170deaad3c9"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_ui_policy_action_42fe303a83241690e4af6170deaad3c9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action"><sys_ui_policy_action action="INSERT_OR_UPDATE"><cleared>false</cleared><disabled>ignore</disabled><field>verlangerungen</field><field_message/><field_message_type>none</field_message_type><mandatory>ignore</mandatory><sys_class_name>sys_ui_policy_action</sys_class_name><sys_created_by>amine</sys_created_by><sys_created_on>2024-09-13 14:48:38</sys_created_on><sys_id>42fe303a83241690e4af6170deaad3c9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>verlangerungen</sys_name><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sys_ui_policy_action_42fe303a83241690e4af6170deaad3c9</sys_update_name><sys_updated_by>amine</sys_updated_by><sys_updated_on>2024-09-13 14:48:38</sys_updated_on><table>x_1521148_borrowno_ausleihe</table><ui_policy display_value="visible after creation">bdfe303a83241690e4af6170deaad3c4</ui_policy><value/><value_action>ignore</value_action><visible>true</visible></sys_ui_policy_action><sys_translated_text action="delete_multiple" query="documentkey=42fe303a83241690e4af6170deaad3c9"/></record_update>]]></payload>
+        <payload_hash>-1202364957</payload_hash>
+        <record_name>verlangerungen</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-13 14:48:38</sys_created_on>
+        <sys_id>cafe703a83241690e4af6170deaad37c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191ebdb88800000001</sys_recorded_at>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-13 14:48:38</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>cefe703ac7241690a8bf94222321d07b</update_guid>
+        <update_guid_history>cefe703ac7241690a8bf94222321d07b:-1202364957</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-15 13:34:29</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>ac76dfa253114712887c4033fc184b04</sys_id>
+        <sys_metadata>42fe303a83241690e4af6170deaad3c9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>verlangerungen</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_42fe303a83241690e4af6170deaad3c9</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_42fe303a83241690e4af6170deaad3c9">cafe703a83241690e4af6170deaad37c</sys_update_version>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-15 13:34:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

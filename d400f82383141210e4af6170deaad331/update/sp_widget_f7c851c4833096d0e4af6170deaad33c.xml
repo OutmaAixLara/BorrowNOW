@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};
+// Client Script to fetch user roles and display buttons
+function onLoad() {
+    var ga = new GlideAjax('x_1521148_borrowno.UserRoleFetcher');
+    ga.addParam('sysparm_name', 'getUserRoles');
+    ga.getXMLAnswer(function(response) {
+        var roles = JSON.parse(response);
+        console.log('Roles:', roles); // Debugging: Check if roles are correctly fetched
+
+  /*      // Show buttons based on roles
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user')) {
+            document.getElementById('verleiher-button').style.display = 'inline-block';
+        }
+        if (roles.includes('admin') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+            document.getElementById('ausleiher-button').style.display = 'inline-block';
+        }
+    */
+ });
+    // Handle button clicks
+    document.getElementById('verleiher-button').addEventListener('click', function() {
+        window.location.href = '/bn?id=verleiher_dashboard'; // Redirect to Verleiher Dashboard
+    });
+
+    document.getElementById('ausleiher-button').addEventListener('click', function() {
+        window.location.href = '/bn?id=ausleiher_dashboard'; // Redirect to Ausleiher Dashboard
+    });
+}
+
+// Ensure the onLoad function is called when the document is ready
+document.addEventListener('DOMContentLoaded', onLoad);
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #00b1ab;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #008c87;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Contact Page Styles */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3rem;
+    max-width: 1200px; /* Set a wider max width */
+    margin: 0 auto; /* Center the content */
+}
+
+.contact-info, .contact-form {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Make the sections wider */
+}
+
+.contact-info h2, .contact-form h2 {
+    color: #008c87;
+}
+
+.contact-info p {
+    line-height: 1.6;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    background-color: #008c87;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #006e68;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #008c87;
+    color: white;
+    position: relative; /* Remove fixed footer to allow scrolling */
+    width: 100%;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>kontakt</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Kontakt</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[var UserRoleFetcher = Class.create();
+UserRoleFetcher.prototype = {
+    initialize: function() {},
+    
+    getUserRoles: function() {
+        var user = gs.getUser();
+        var roles = user.getRoles();
+        var customRoles = [];
+        
+        if (roles.contains('admin')) {
+            customRoles.push('admin');
+        }
+        if (roles.contains('x_1521148_borrowno.verleiher_user')) {
+            customRoles.push('verleiher');
+        }
+        if (roles.contains('x_1521148_borrowno.ausleiher_user')) {
+            customRoles.push('ausleiher');
+        }
+        
+        return JSON.stringify(customRoles);
+    },
+
+    type: 'UserRoleFetcher'
+};]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-17 13:54:16</sys_created_on>
+        <sys_id>f7c851c4833096d0e4af6170deaad33c</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Kontakt</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_f7c851c4833096d0e4af6170deaad33c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-17 14:17:37</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <header>
+        <h1>Kontaktieren Sie uns</h1>
+        <p>Wir freuen uns, von Ihnen zu hören! Sie können uns über die untenstehenden Informationen kontaktieren oder das Kontaktformular verwenden.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="?id=equipment_rental_home">Startseite</a></li>
+            <li><a href="?id=about_us">Über uns</a></li>
+            <li><a href="?id=equipment">Katalog</a></li>
+            <li><a href="?id=contact">Kontakt</a></li>
+            <li><a href="/bn?id=verleiher_dashboard" id="verleiherLink" style="display: none;">Verleiher-Dashboard</a></li>
+            <li><a href="/bn?id=ausleiher_dashboard" id="ausleiherLink" style="display: none;">Ausleiher-Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Unsere Kontaktinformationen</h2>
+            <p><strong>Adresse:</strong></p>
+            <p>FH Aachen - Ausleihportal für Ausrüstung<br>
+            Musterstraße 123<br>
+            52062 Aachen</p>
+
+            <p><strong>Telefon:</strong></p>
+            <p>+49 241 1234567</p>
+
+            <p><strong>Email:</strong></p>
+            <p>support@fh-ausleihportal.de</p>
+
+            <p><strong>Öffnungszeiten:</strong></p>
+            <p>Montag - Freitag: 09:00 - 17:00 Uhr</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Kontaktformular</h2>
+            <form>
+                <label for="name">Ihr Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Ihre Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Senden</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 FH Aachen - Ausrüstungsverleih-Portal. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        // Fetch user roles and display buttons based on roles
+        var ga = new GlideAjax('x_1521148_borrowno.UserRoleFetcher');
+        ga.addParam('sysparm_name', 'getUserRoles');
+        ga.getXMLAnswer(function(response) {
+            var roles = JSON.parse(response);
+            console.log('Rollen:', roles); // Debugging: Überprüfen, ob Rollen korrekt abgerufen werden
+
+            // Show links based on roles
+            if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user')) {
+                document.getElementById('verleiherLink').style.display = 'inline-block';
+            }
+            if (roles.includes('admin') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+                document.getElementById('ausleiherLink').style.display = 'inline-block';
+            }
+            if (roles.includes('admin') && roles.includes('x_1521148_borrowno.verleiher_user') && roles.includes('x_1521148_borrowno.ausleiher_user')) {
+            document.getElementById('verleiherLink').style.display = 'inline-block';
+            document.getElementById('ausleiherLink').style.display = 'inline-block';
+            }
+        });
+    </script>
+</body>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

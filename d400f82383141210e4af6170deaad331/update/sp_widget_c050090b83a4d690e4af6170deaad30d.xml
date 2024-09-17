@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+    $scope.data = {
+        requests: [],
+        message: '',
+        error: ''
+    };
+
+    // Funktion zum Laden der Ausleihen
+    $scope.loadRequests = function() {
+        // Holt die Daten vom Server
+        $scope.server.get().then(function(response) {
+            console.log('Serverantwort:', response);  // Überprüfe, ob die Antwort korrekt ist
+            if (response.data && response.data.requests) {
+                $scope.data.requests = response.data.requests;
+                $scope.data.message = response.data.message || '';
+            } else {
+                $scope.data.error = response.data.error || "Fehler beim Abrufen der Anfragen.";
+            }
+        }).catch(function(error) {
+            $scope.data.error = "Fehler beim Abrufen der Anfragen: " + (error.message || 'Unbekannter Fehler');
+        });
+    };
+
+    // Funktion zum Genehmigen einer Anfrage
+    $scope.approve = function(requestId) {
+        if (confirm('Möchten Sie diese Anfrage genehmigen?')) {
+            console.log('Genehmigung wird gesendet für: ' + requestId);
+            // Aktion an den Server senden
+            $scope.server.get({
+                action: 'approve',
+                requestID: requestId
+            }).then(function(response) {
+                console.log('Erfolgreich genehmigt: ', response);
+                alert('Anfrage genehmigt!');
+                $scope.loadRequests();  // Aktualisiert die Liste
+            });
+        }
+    };
+
+    // Funktion zum Ablehnen einer Anfrage
+    $scope.reject = function(requestId) {
+        if (confirm('Möchten Sie diese Anfrage ablehnen?')) {
+            console.log('Ablehnung wird gesendet für: ' + requestId);
+            // Aktion an den Server senden
+            $scope.server.get({
+                action: 'reject',
+                requestID: requestId
+            }).then(function(response) {
+                console.log('Erfolgreich abgelehnt: ', response);
+                alert('Anfrage abgelehnt!');
+                $scope.loadRequests();  // Aktualisiert die Liste
+            }).catch(function(error) {
+                console.error('Fehler beim Ablehnen der Anfrage: ', error);
+                alert('Fehler beim Ablehnen der Anfrage: ' + (error.data.error.message || 'Unbekannter Fehler'));
+            });
+        }
+    };
+
+    // Initiale Daten laden
+    $scope.loadRequests();
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>table {&#13;
+    width: 100%;&#13;
+    border-collapse: collapse;&#13;
+}&#13;
+&#13;
+th, td {&#13;
+    border: 1px solid #ddd;&#13;
+    padding: 8px;&#13;
+}&#13;
+&#13;
+th {&#13;
+    background-color: #f2f2f2;&#13;
+}&#13;
+&#13;
+button {&#13;
+    margin: 5px;&#13;
+}&#13;
+&#13;
+.error {&#13;
+    color: red;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>verleiher_approve_deny_request</id>
+        <internal>false</internal>
+        <link/>
+        <name>Ausleihe genehmigen/ablehnen</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	
+	gs.info('Server-Skript gestartet.');
+    if (input) {
+        gs.info('Eingabedaten: ' + JSON.stringify(input));
+        if (input.action && input.requestID) {
+            gs.info('Verarbeitung der Anfrage: action=' + input.action + ', requestID=' + input.requestID);
+            data.response = processRequest(input.action, input.requestID);
+        } else {
+            gs.error('Fehlende Eingabedaten: action=' + input.action + ', requestID=' + input.requestID);
+            data.response = { error: 'Fehlende Eingabedaten.' };
+        }
+    } else {
+        gs.error('Keine Eingabedaten vorhanden.');
+        data.response = { error: 'Keine Eingabedaten vorhanden.' };
+    }
+	
+    // Funktion zum Bearbeiten von Anfragen
+    function processRequest(action, requestId) {
+        var requestGR = new GlideRecord('x_1521148_borrowno_ausleihe');
+        if (requestGR.get(requestId)) {
+            switch (action) {
+                case 'approve':
+                    requestGR.status = 'genehmigt';
+                    break;
+                case 'reject':
+                    requestGR.status = 'abgelehnt';
+                    break;
+                default:
+                    return { error: 'Unbekannte Aktion.' };
+            }
+            requestGR.update();
+            return { success: true };
+        } else {
+            return { error: 'Anfrage nicht gefunden.' };
+        }
+    }
+
+
+
+    // Lade alle Ausleihen mit dem Status "angefragt"
+    var requestGR2 = new GlideRecord('x_1521148_borrowno_ausleihe');
+    requestGR2.addQuery('status', 'angefragt');
+    requestGR2.query();
+    data.requests = [];
+
+    while (requestGR2.next()) {
+        data.requests.push({
+            sys_id: requestGR2.sys_id.toString(),
+            ausleiher: requestGR2.ausleiher.getDisplayValue(),
+            equipment: requestGR2.equipment.getDisplayValue(),
+            ausleihdatum: requestGR2.ausleihdatum.getDisplayValue(),
+            rueckgabedatum: requestGR2.ruckgabedatum.getDisplayValue(),
+        });
+    }
+
+    // Nachricht anzeigen, wenn keine Anfragen vorhanden sind
+    if (data.requests.length === 0) {
+        data.message = "Keine Ausleihen mit dem Status 'angefragt' gefunden.";
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-14 09:35:37</sys_created_on>
+        <sys_id>c050090b83a4d690e4af6170deaad30d</sys_id>
+        <sys_mod_count>225</sys_mod_count>
+        <sys_name>Ausleihe genehmigen/ablehnen</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_c050090b83a4d690e4af6170deaad30d</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-16 16:30:10</sys_updated_on>
+        <template><![CDATA[<div>
+    <h3>Angefragte Ausleihen</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ausleiher</th>
+                <th>Equipment</th>
+                <th>Ausleihdatum</th>
+                <th>Rückgabedatum</th>
+                <th>Aktion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ng-repeat für das Durchlaufen der Anfrage-Daten -->
+            <tr ng-repeat="request in data.requests">
+                <td>{{ request.ausleiher }}</td>
+                <td>{{ request.equipment }}</td>
+                <td>{{ request.ausleihdatum }}</td>
+                <td>{{ request.rueckgabedatum }}</td>
+                <td>
+                    <!-- Genehmigen Button -->
+                    <button class="btn btn-success" ng-click="approve(request.sys_id)">
+                        Genehmigen
+                    </button>
+                    <!-- Ablehnen Button -->
+                    <button class="btn btn-danger" ng-click="reject(request.sys_id)">
+                        Ablehnen
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Nachricht oder Fehleranzeige -->
+    <p ng-show="data.message">{{data.message}}</p>
+    <p ng-show="data.error" class="text-danger">{{data.error}}</p>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

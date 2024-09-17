@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>false</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>true</advanced>
+        <condition/>
+        <description>Allow create for records in x_1521148_borrowno_ausleihe, for users with role x_1521148_borrowno.ausleiher_user, and if the ACL script returns true.</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1521148_borrowno_ausleihe</name>
+        <operation display_value="create">create</operation>
+        <script><![CDATA[answer = gs.hasRole('x_1521148_borrowno.ausleiher_user') && !gs.hasRole('admin');
+]]></script>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-13 14:20:52</sys_created_on>
+        <sys_id>9248343283e01690e4af6170deaad35e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_1521148_borrowno_ausleihe</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_security_acl_9248343283e01690e4af6170deaad35e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-13 14:55:03</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_security_acl_9248343283e01690e4af6170deaad35e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_security_acl"&gt;&lt;sys_security_acl action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;admin_overrides&gt;true&lt;/admin_overrides&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;condition/&gt;&lt;description&gt;Allow create for records in x_1521148_borrowno_ausleihe, for users with role x_1521148_borrowno.ausleiher_user, and if the ACL script returns true.&lt;/description&gt;&lt;local_or_existing&gt;Local&lt;/local_or_existing&gt;&lt;name&gt;x_1521148_borrowno_ausleihe&lt;/name&gt;&lt;operation display_value="create"&gt;create&lt;/operation&gt;&lt;script&gt;&lt;![CDATA[answer = gs.hasRole('x_1521148_borrowno.ausleiher_user') &amp;&amp; !gs.hasRole('admin');
+]]&gt;&lt;/script&gt;&lt;security_attribute/&gt;&lt;sys_class_name&gt;sys_security_acl&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-13 14:20:52&lt;/sys_created_on&gt;&lt;sys_id&gt;9248343283e01690e4af6170deaad35e&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;x_1521148_borrowno_ausleihe&lt;/sys_name&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_security_acl_9248343283e01690e4af6170deaad35e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-13 14:55:03&lt;/sys_updated_on&gt;&lt;type display_value="record"&gt;record&lt;/type&gt;&lt;/sys_security_acl&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1397116194</payload_hash>
+        <record_name>x_1521148_borrowno_ausleihe</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-13 14:55:03</sys_created_on>
+        <sys_id>8c70857e83241690e4af6170deaad39b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191ebe167a40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-13 14:55:03</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>4470857ea9241690c038e8258729089b</update_guid>
+        <update_guid_history>4470857ea9241690c038e8258729089b:1397116194,641ab8b6bbe016904f846e487663ba64:-1009191703,d398b4720de01690fc07b11907aee952:346668728</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-13 16:10:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>39f63a19cfc44980925dc91549d4c400</sys_id>
+        <sys_metadata>9248343283e01690e4af6170deaad35e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1521148_borrowno_ausleihe</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent display_value="x_1521148_borrowno_ausleihe">8a30775183e4de10e4af6170deaad319</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_security_acl_9248343283e01690e4af6170deaad35e</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_9248343283e01690e4af6170deaad35e">8c70857e83241690e4af6170deaad39b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-13 16:10:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

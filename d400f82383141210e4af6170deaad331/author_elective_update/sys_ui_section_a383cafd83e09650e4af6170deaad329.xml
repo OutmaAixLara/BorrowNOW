@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="" section_id="a383cafd83e09650e4af6170deaad329" sys_domain="global" table="x_1521148_borrowno_sys_user_role_" version="3" view="">
+        <sys_ui_section action="DELETE">
+            <caption/>
+            <header>false</header>
+            <name>x_1521148_borrowno_sys_user_role_</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-10 17:14:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a383cafd83e09650e4af6170deaad329</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1521148_borrowno_sys_user_role_</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+            <sys_update_name>sys_ui_section_a383cafd83e09650e4af6170deaad329</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-10 17:14:22</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_ui_section_a383cafd83e09650e4af6170deaad329</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="a383cafd83e09650e4af6170deaad329" sys_domain="global" table="x_1521148_borrowno_sys_user_role_" version="3" view=""><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>x_1521148_borrowno_sys_user_role_</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-10 17:14:22</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>a383cafd83e09650e4af6170deaad329</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1521148_borrowno_sys_user_role_</sys_name><sys_overrides/><sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package><sys_policy/><sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope><sys_update_name>sys_ui_section_a383cafd83e09650e4af6170deaad329</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-10 17:14:22</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>1538307163</payload_hash>
+        <record_name>sys_user_role </record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 17:14:22</sys_created_on>
+        <sys_id>a3838ab583249650e4af6170deaad363</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191dceddf140000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-10 17:14:22</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>63838ab5b3249650026ce31a9e89da63</update_guid>
+        <update_guid_history>63838ab5b3249650026ce31a9e89da63:1538307163</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-15 13:32:40</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>2b6fbe1ed5974370935d1615ad0eec10</sys_id>
+        <sys_metadata>a383cafd83e09650e4af6170deaad329</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1521148_borrowno_sys_user_role_</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent display_value="">1f7c76cd83601a10e4af6170deaad31c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_ui_section_a383cafd83e09650e4af6170deaad329</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_a383cafd83e09650e4af6170deaad329">a3838ab583249650e4af6170deaad363</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-15 13:32:40</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

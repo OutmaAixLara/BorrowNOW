@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Hide "New" Button to users without the role 'x_1521148_borrowno.ausleiher_user'</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Hide "New" Button</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    // Only run the script in list view
+    if (typeof g_list !== 'undefined') {
+        // Check if the user has the 'x_1521148_borrowno.ausleiher_user' role
+        var hasAusleiherRole = g_user.hasRole('x_1521148_borrowno.ausleiher_user');
+        
+        // Check if the user is an admin
+        var isAdmin = g_user.hasRole('admin');
+        
+        // If the user does not have the correct role, hide the 'New' button
+        if (!hasAusleiherRole && !isAdmin) {
+            // Locate and hide the "New" button
+            var newButton = document.querySelector('button[data-action-name="sysverb_new"]');
+            if (newButton) {
+                newButton.style.display = 'none';
+            }
+        }
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-13 14:06:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3645b87683a01690e4af6170deaad31a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Hide "New" Button</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_script_client_3645b87683a01690e4af6170deaad31a</sys_update_name>
+        <sys_updated_by>verleiher</sys_updated_by>
+        <sys_updated_on>2024-09-13 14:32:05</sys_updated_on>
+        <table>x_1521148_borrowno_ausleihe</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="BorrowNOW">d400f82383141210e4af6170deaad331</application>
+        <file_path/>
+        <instance_id>72f06fde1b1986d019254089bd4bcbdb</instance_id>
+        <instance_name>dev253948</instance_name>
+        <name>sys_script_client_3645b87683a01690e4af6170deaad31a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;Hide "New" Button to users without the role 'x_1521148_borrowno.ausleiher_user'&lt;/description&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Hide "New" Button&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+    // Only run the script in list view
+    if (typeof g_list !== 'undefined') {
+        // Check if the user has the 'x_1521148_borrowno.ausleiher_user' role
+        var hasAusleiherRole = g_user.hasRole('x_1521148_borrowno.ausleiher_user');
+        
+        // Check if the user is an admin
+        var isAdmin = g_user.hasRole('admin');
+        
+        // If the user does not have the correct role, hide the 'New' button
+        if (!hasAusleiherRole &amp;&amp; !isAdmin) {
+            // Locate and hide the "New" button
+            var newButton = document.querySelector('button[data-action-name="sysverb_new"]');
+            if (newButton) {
+                newButton.style.display = 'none';
+            }
+        }
+    }
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-13 14:06:59&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;3645b87683a01690e4af6170deaad31a&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Hide "New" Button&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="BorrowNOW" source="x_1521148_borrowno"&gt;d400f82383141210e4af6170deaad331&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="BorrowNOW"&gt;d400f82383141210e4af6170deaad331&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_3645b87683a01690e4af6170deaad31a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;verleiher&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-13 14:32:05&lt;/sys_updated_on&gt;&lt;table&gt;x_1521148_borrowno_ausleihe&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1180384756</payload_hash>
+        <record_name>Hide "New" Button</record_name>
+        <reverted_from/>
+        <source>2000f82383141210e4af6170deaad336</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>verleiher</sys_created_by>
+        <sys_created_on>2024-09-13 14:32:06</sys_created_on>
+        <sys_id>b32bb4ba83e01690e4af6170deaad341</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191ebcc63280000001</sys_recorded_at>
+        <sys_updated_by>verleiher</sys_updated_by>
+        <sys_updated_on>2024-09-13 14:32:06</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>7b2bb4bac3e016906b1006fa9000c640</update_guid>
+        <update_guid_history>7b2bb4bac3e016906b1006fa9000c640:-1180384756,ef9a3cb60ae016904897d0ece82afdc7:-1826391277,bb57383e01a01690e1249c6bc184d239:1761883407,77657c36b6a01690cc324aa91943fbbc:-397212531</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>verleiher</sys_created_by>
+        <sys_created_on>2024-09-13 14:35:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>30870b699ed04aa89a014d28e9c086e4</sys_id>
+        <sys_metadata>3645b87683a01690e4af6170deaad31a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Hide "New" Button</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_parent display_value="Ausleihe">c030735d83a4de10e4af6170deaad3f5</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_scope_delete display_value="">8ff3c3462b504e7eb6963be79b5e0879</sys_scope_delete>
+        <sys_update_name>sys_script_client_3645b87683a01690e4af6170deaad31a</sys_update_name>
+        <sys_update_version display_value="sys_script_client_3645b87683a01690e4af6170deaad31a">b32bb4ba83e01690e4af6170deaad341</sys_update_version>
+        <sys_updated_by>verleiher</sys_updated_by>
+        <sys_updated_on>2024-09-13 14:35:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

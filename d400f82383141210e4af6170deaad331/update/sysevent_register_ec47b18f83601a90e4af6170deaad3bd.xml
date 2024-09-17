@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <caller_access/>
+        <derived_priority>100</derived_priority>
+        <description/>
+        <event_name>x_1521148_borrowno.u_due_date_reminder</event_name>
+        <fired_by/>
+        <priority>100</priority>
+        <queue/>
+        <suffix>u_due_date_reminder</suffix>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>michael</sys_created_by>
+        <sys_created_on>2024-09-14 13:33:52</sys_created_on>
+        <sys_id>ec47b18f83601a90e4af6170deaad3bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1521148_borrowno.u_due_date_reminder</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sysevent_register_ec47b18f83601a90e4af6170deaad3bd</sys_update_name>
+        <sys_updated_by>michael</sys_updated_by>
+        <sys_updated_on>2024-09-14 13:33:52</sys_updated_on>
+        <table>x_1521148_borrowno_ausleihe</table>
+    </sysevent_register>
+</record_update>

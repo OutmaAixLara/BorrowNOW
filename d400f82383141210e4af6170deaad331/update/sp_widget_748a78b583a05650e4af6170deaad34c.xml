@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+  $scope.reminders = [];
+
+  if ($scope.currentUser.role === 'x_1521148_borrowno.verleiher_user') {
+    $http.get('/api/now/table/x_1521148_borrowno_u_erinnerungen?sysparm_query=verleiher=' + $scope.currentUser.sys_id).then(function(response) {
+      $scope.reminders = response.data.result;
+    }).catch(function(error) {
+      alert('Fehler beim Laden der Rückgabeerinnerungen: ' + error.data.error.message);
+    });
+
+    $scope.sendReminder = function() {
+      var reminderData = {
+        ausleihe: $scope.selectedLoan.sys_id,
+        benachrichtigungsdatum: new Date()
+      };
+
+      $http.post('/api/now/table/x_1521148_borrowno_u_erinnerungen', reminderData).then(function() {
+        alert('Erinnerung gesendet!');
+      }).catch(function(error) {
+        alert('Fehler beim Senden der Erinnerung: ' + error.data.error.message);
+      });
+    };
+  }
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.widget-container {&#13;
+  margin: 20px;&#13;
+  padding: 15px;&#13;
+  border: 1px solid #ddd;&#13;
+  border-radius: 8px;&#13;
+  background-color: #f9f9f9;&#13;
+}&#13;
+&#13;
+.widget-title {&#13;
+  font-size: 24px;&#13;
+  margin-bottom: 15px;&#13;
+  color: #333;&#13;
+}&#13;
+&#13;
+.widget-table {&#13;
+  width: 100%;&#13;
+  border-collapse: collapse;&#13;
+}&#13;
+&#13;
+.widget-table th,&#13;
+.widget-table td {&#13;
+  padding: 10px;&#13;
+  border: 1px solid #ddd;&#13;
+  text-align: left;&#13;
+}&#13;
+&#13;
+.widget-table th {&#13;
+  background-color: #f4f4f4;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+.action-button {&#13;
+  padding: 8px;&#13;
+  border: none;&#13;
+  border-radius: 4px;&#13;
+  background-color: #007bff;&#13;
+  color: #fff;&#13;
+  font-size: 14px;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+.action-button:hover {&#13;
+  background-color: #0056b3;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description>Zeigt Rückgabeerinnerungen für ausgeliehenes Equipment an und ermöglicht das Versenden von Erinnerungen.</description>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>return_reminders</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Return Reminders</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>amine</sys_created_by>
+        <sys_created_on>2024-09-10 12:03:30</sys_created_on>
+        <sys_id>748a78b583a05650e4af6170deaad34c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Return Reminders</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sp_widget_748a78b583a05650e4af6170deaad34c</sys_update_name>
+        <sys_updated_by>amine</sys_updated_by>
+        <sys_updated_on>2024-09-12 15:05:51</sys_updated_on>
+        <template><![CDATA[<div class="widget-container">
+  <h2 class="widget-title">Return Reminders</h2>
+  <table class="widget-table">
+    <thead>
+      <tr>
+        <th>Ausleihe</th>
+        <th>Benachrichtigungsdatum</th>
+        <th>Aktionen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="reminder in reminders">
+        <td>{{reminder.ausleihe}}</td>
+        <td>{{reminder.benachrichtigungsdatum}}</td>
+        <td>
+          <button ng-click="sendReminder()" class="action-button">Erinnerung senden</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

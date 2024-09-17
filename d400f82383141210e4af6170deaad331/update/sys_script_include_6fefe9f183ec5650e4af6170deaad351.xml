@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1521148_borrowno.LoginValidationAjax</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>LoginValidationAjax</name>
+        <script><![CDATA[var LoginValidationAjax = Class.create();
+LoginValidationAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    validateUser: function() {
+        var username = this.getParameter('sysparm_user');
+        var password = this.getParameter('sysparm_password');
+
+        var result = {};
+
+        // Use GlideSession to check user credentials
+        var user = new GlideUser();
+        if (user.isValidUser(username, password)) {
+            gs.info('User ' + username + ' is authenticated.');
+            result = {
+                status: 'success'
+            };
+        } else {
+            gs.info('Invalid credentials for user: ' + username);
+            result = {
+                status: 'error',
+                message: 'Invalid credentials'
+            };
+        }
+
+        return JSON.stringify(result);
+    },
+
+    type: 'LoginValidationAjax'
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 15:50:11</sys_created_on>
+        <sys_id>6fefe9f183ec5650e4af6170deaad351</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LoginValidationAjax</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_script_include_6fefe9f183ec5650e4af6170deaad351</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-10 15:50:11</sys_updated_on>
+    </sys_script_include>
+</record_update>

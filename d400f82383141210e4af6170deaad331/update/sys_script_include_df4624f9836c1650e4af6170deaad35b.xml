@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1521148_borrowno.UserLoginAjax</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>UserLoginAjax</name>
+        <script><![CDATA[var UserLoginAjax = Class.create();
+UserLoginAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    loginAndGetRoles: function() {
+        var username = this.getParameter('sysparm_user');
+        var password = this.getParameter('sysparm_password'); // Not used in this script
+
+        // Perform user authentication
+        var user = new GlideRecord('sys_user');
+        user.addQuery('user_name', username);
+        user.query();
+
+        if (user.next()) {
+            gs.info('User found: ' + user.getDisplayValue());
+
+            // Fetch roles of the user
+            var userRoles = new GlideRecord('sys_user_has_role');
+            userRoles.addQuery('user', user.sys_id);
+            userRoles.query();
+
+            var roles = [];
+            while (userRoles.next()) {
+                var role = new GlideRecord('sys_user_role');
+                if (role.get(userRoles.role)) {
+                    roles.push(role.getValue('name'));
+                }
+            }
+
+            gs.info('Roles found: ' + roles.join(', '));
+
+            var hasRole = roles.includes('x_1521148_borrowno.ausleiher_user') ||
+                          roles.includes('x_1521148_borrowno.verleiher_user');
+            
+            gs.info('Has required role: ' + hasRole);
+
+            return JSON.stringify({
+                status: 'success',
+                hasRole: hasRole
+            });
+        } else {
+            gs.info('User not found: ' + username);
+            return JSON.stringify({
+                status: 'failure',
+                message: 'User not found'
+            });
+        }
+    }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-10 10:27:45</sys_created_on>
+        <sys_id>df4624f9836c1650e4af6170deaad35b</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>UserLoginAjax</sys_name>
+        <sys_package display_value="BorrowNOW" source="x_1521148_borrowno">d400f82383141210e4af6170deaad331</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="BorrowNOW">d400f82383141210e4af6170deaad331</sys_scope>
+        <sys_update_name>sys_script_include_df4624f9836c1650e4af6170deaad35b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-10 15:41:19</sys_updated_on>
+    </sys_script_include>
+</record_update>
